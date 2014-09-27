@@ -8,6 +8,8 @@ Public Class rightpanel
     Dim i As Integer
     Dim notesshape As PowerPoint.Shape
     Dim shapename As String
+    Dim formatshape As PowerPoint.Shape
+
 #Region "Notes"
 
 #Region "Subs"
@@ -173,12 +175,8 @@ Public Class rightpanel
 #End Region
 
 #End Region
-
-
     '-----------------------------------------------------------------------------------------------------------'
     '-----------------------------------------------------------------------------------------------------------'
-
-
     'all the following commands are for " txtbox.jpeg" file
     'shape.texteffect.alignment >>> align left or right
     'shape.TextFrame.TextRange.ParagraphFormat.TextDirection = PpDirection.ppDirectionRightToLeft >>> right to left or vice versa like ctrl + shift
@@ -201,8 +199,8 @@ Public Class rightpanel
     '========================================================================================'
     'all the following commands are for "general.jpeg" Fill
     'shape.Fill.Solid() >>> 2 " Fill property contains all Fill features"
-    '
- 
+
+#Region "Main Subs"
     Sub showpage(ByVal page As TableLayoutPanel)
         page.Visible = True
         page.Dock = DockStyle.Fill
@@ -237,5 +235,23 @@ Public Class rightpanel
                 showpage(ShadowPage)
         End Select
     End Sub
-   
+    Sub selectshape()
+        formatshape = objapp.ActivePresentation.Slides(1).Shapes(1)
+    End Sub
+#End Region
+ 
+    Private Sub Shrinktext_CheckedChanged(sender As Object, e As EventArgs)
+        selectshape()
+        If Shrinktext.Checked Then
+            formatshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape
+        End If
+    End Sub
+
+    Private Sub Donnotautofit_CheckedChanged(sender As Object, e As EventArgs)
+        selectshape()
+        If ResizeShape.Checked Then
+            formatshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeNone
+        End If
+
+    End Sub
 End Class
