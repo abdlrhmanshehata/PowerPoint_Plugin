@@ -1,0 +1,49 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SemiFinalApproach
+</name>
+</assembly>
+<members>
+<member name="P:SemiFinalApproach.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.Other_office_icon">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:SemiFinalApproach.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:SemiFinalApproach.ThisAddIn.#ctor(Microsoft.Office.Tools.Factory,System.IServiceProvider)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.Initialize">
+</member><member name="M:SemiFinalApproach.ThisAddIn.FinishInitialization">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeDataBindings">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeCachedData">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeData">
+</member><member name="M:SemiFinalApproach.ThisAddIn.BindToData">
+</member><member name="M:SemiFinalApproach.ThisAddIn.StartCaching(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.StopCaching(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.IsCached(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.BeginInitialization">
+</member><member name="M:SemiFinalApproach.ThisAddIn.EndInitialization">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeControls">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeComponents">
+</member><member name="M:SemiFinalApproach.ThisAddIn.NeedsFill(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.OnShutdown">
+</member><member name="T:SemiFinalApproach.ThisAddIn">
+</member><member name="M:SemiFinalApproach.Globals.#ctor">
+</member><member name="T:SemiFinalApproach.Globals">
+</member><member name="M:SemiFinalApproach.ThisRibbonCollection.#ctor(Microsoft.Office.Tools.Ribbon.RibbonFactory)">
+</member><member name="T:SemiFinalApproach.ThisRibbonCollection">
+</member>
+</members>
+</doc>

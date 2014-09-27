@@ -1,0 +1,14 @@
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.pdb
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.xml
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll.manifest
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.vsto
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Ribbon1.resources
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.rightpanel.resources
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Resources.resources
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\d.vbproj.GenerateResource.Cache
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.dll
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.xml
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.pdb
