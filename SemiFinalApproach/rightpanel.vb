@@ -183,6 +183,8 @@ Public Class rightpanel
     'shape.texteffect.bold , italic , name , size >>>> control the font in the shape
     'shape.TextEffect.PresetTextEffect = MsoPresetTextEffect.msoTextEffect10 >>> wordart styles
     'shape.TextEffect.PresetShape = MsoPresetTextEffectShape.msoTextEffectShapeCircleCurve >>> word art shapes
+    '========================================================================================'
+    '========================================================================================'
     'shape.TextFrame.TextRange.ParagraphFormat.Alignment >>> 1
     'shape.TextFrame.VerticalAnchor >>> 1   === i think all about 1 ===
     'shape.TextFrame.Orientation = MsoTextOrientation.msoTextOrientationHorizontal >>> 2a
@@ -255,6 +257,87 @@ Public Class rightpanel
         g = objapp.ActiveWindow.Selection.ShapeRange.Name
         selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
     End Sub
+    Sub showsizedata()
+        selectshape()
+        Dim height, width, rotation As Integer
+        With selectedshape
+            height = .Height
+            width = .Width
+            rotation = .Rotation
+        End With
+        txtSzRotHeight.Text = height
+        txtSzRotWidth.Text = width
+        txtSzRotRotate.Text = rotation
+    End Sub
+    Sub settextPage()
+        selectshape()
+        If selectedshape.HasTextFrame Then
+            With selectedshape.TextFrame
+                Select Case (cboxtextdirection.SelectedIndex)
+                    Case 0
+                        .Orientation = MsoTextOrientation.msoTextOrientationHorizontal
+                    Case 1
+                        .Orientation = MsoTextOrientation.msoTextOrientationDownward
+                    Case 2
+                        .Orientation = MsoTextOrientation.msoTextOrientationUpward
+                End Select
+            End With
+            With selectedshape.TextFrame
+                Select Case cboxtextalignment.SelectedIndex
+                    Case 0
+                        .VerticalAnchor = MsoVerticalAnchor.msoAnchorTop
+                    Case 1
+                        .VerticalAnchor = MsoVerticalAnchor.msoAnchorMiddle
+                    Case 2
+                        .VerticalAnchor = MsoVerticalAnchor.msoAnchorBottom
+                End Select
+            End With
+
+
+        End If
+    End Sub
+    Private Sub SizePage_MouseHover(sender As Object, e As EventArgs)
+        showsizedata()
+    End Sub
 #End Region
+#Region "Buttons"
+#Region "TextBoxPage Buttons"
+    Private Sub cboxtextdirection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxtextdirection.SelectedIndexChanged
+        settextPage()
+    End Sub
+    Private Sub cboxtextalignment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxtextalignment.SelectedIndexChanged
+        settextPage()
+    End Sub
+    Private Sub chkboxStacked_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxStacked.CheckedChanged
+        selectshape()
+        selectedshape.TextEffect.ToggleVerticalText()
+    End Sub
+#End Region
+  
+#End Region
+
+    
+    Private Sub Donnotautofit_CheckedChanged(sender As Object, e As EventArgs) Handles Donnotautofit.CheckedChanged
+        selectshape()
+        selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeNone
+    End Sub
+
+    Private Sub Shrinktext_CheckedChanged(sender As Object, e As EventArgs) Handles Shrinktext.CheckedChanged
+        selectshape()
+        selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape
+    End Sub
+
+    Private Sub ResizeShape_CheckedChanged(sender As Object, e As EventArgs) Handles ResizeShape.CheckedChanged
+        selectshape()
+        selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeShapeToFitText
+    End Sub
  
+    Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxWrap.CheckedChanged
+        If chkboxWrap.Checked Then
+            selectedshape.TextFrame.WordWrap = MsoTriState.msoCTrue
+        Else
+            selectedshape.TextFrame.WordWrap = MsoTriState.msoFalse
+        End If
+
+    End Sub
 End Class
