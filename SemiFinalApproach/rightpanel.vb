@@ -8,7 +8,7 @@ Public Class rightpanel
     Dim i As Integer
     Dim notesshape As PowerPoint.Shape
     Dim shapename As String
-    Dim formatshape As PowerPoint.Shape
+    Dim selectedshape As PowerPoint.Shape
 
 #Region "Notes"
 
@@ -199,6 +199,16 @@ Public Class rightpanel
     '========================================================================================'
     'all the following commands are for "general.jpeg" Fill
     'shape.Fill.Solid() >>> 2 " Fill property contains all Fill features"
+    '========================================================================================'
+    '========================================================================================'
+    'all the following commands are for "Size.jpeg" Size
+    'selectedshape.height=30 >>> 1
+    'selectedshape.width=30 >>> 2 
+    'selectedshape.rotation=30 >>> 3
+    'selectedshape.ScaleHeight(ForTestOnly2.Text, MsoTriState.msoCTrue, MsoScaleFrom.msoScaleFromTopLeft) >>> 4
+    'selectedshape.ScaleWidth(ForTestOnly2.Text, MsoTriState.msoCTrue, MsoScaleFrom.msoScaleFromTopLeft) >>> 5
+    'selectedshape.LockAspectRatio = MsoTriState.msoTriStateToggle >>> 6
+
 
 #Region "Main Subs"
     Sub showpage(ByVal page As TableLayoutPanel)
@@ -215,6 +225,7 @@ Public Class rightpanel
         hidepage(LineColorPage)
         hidepage(LineStylePage)
         hidepage(ShadowPage)
+        hidepage(SizePage)
     End Sub
     Private Sub cboxFormatShape_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxFormatShape.SelectedIndexChanged
         Select Case (cboxFormatShape.SelectedIndex)
@@ -233,25 +244,17 @@ Public Class rightpanel
             Case 4
                 hideall()
                 showpage(ShadowPage)
+            Case 5
+                hideall()
+                showpage(SizePage)
         End Select
     End Sub
     Sub selectshape()
-        formatshape = objapp.ActivePresentation.Slides(1).Shapes(1)
+        Dim k, g As Object
+        k = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
+        g = objapp.ActiveWindow.Selection.ShapeRange.Name
+        selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
     End Sub
 #End Region
  
-    Private Sub Shrinktext_CheckedChanged(sender As Object, e As EventArgs)
-        selectshape()
-        If Shrinktext.Checked Then
-            formatshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape
-        End If
-    End Sub
-
-    Private Sub Donnotautofit_CheckedChanged(sender As Object, e As EventArgs)
-        selectshape()
-        If ResizeShape.Checked Then
-            formatshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeNone
-        End If
-
-    End Sub
 End Class

@@ -4,7 +4,9 @@
 
         ctp = Me.CustomTaskPanes.Add(New rightpanel, "RightSide Add-In")
         ctp.Visible = True
-        ctp.Width = 360
+        ctp.Width = 370
+
+
 
     End Sub
 
