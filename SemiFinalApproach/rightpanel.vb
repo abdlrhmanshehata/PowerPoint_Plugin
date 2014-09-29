@@ -212,7 +212,7 @@ Public Class rightpanel
     'selectedshape.LockAspectRatio = MsoTriState.msoTriStateToggle >>> 6
 
 
-#Region "Main Subs"
+#Region "General Subs"
     Sub showpage(ByVal page As TableLayoutPanel)
         page.Visible = True
         page.Dock = DockStyle.Fill
@@ -257,18 +257,7 @@ Public Class rightpanel
         g = objapp.ActiveWindow.Selection.ShapeRange.Name
         selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
     End Sub
-    Sub showsizedata()
-        selectshape()
-        Dim height, width, rotation As Integer
-        With selectedshape
-            height = .Height
-            width = .Width
-            rotation = .Rotation
-        End With
-        txtSzRotHeight.Text = height
-        txtSzRotWidth.Text = width
-        txtSzRotRotate.Text = rotation
-    End Sub
+    
     Sub settextPage()
         selectshape()
         If selectedshape.HasTextFrame Then
@@ -296,11 +285,11 @@ Public Class rightpanel
 
         End If
     End Sub
-    Private Sub SizePage_MouseHover(sender As Object, e As EventArgs)
-        showsizedata()
-    End Sub
+    
 #End Region
+
 #Region "Buttons"
+
 #Region "TextBoxPage Buttons"
     Private Sub cboxtextdirection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxtextdirection.SelectedIndexChanged
         settextPage()
@@ -312,26 +301,18 @@ Public Class rightpanel
         selectshape()
         selectedshape.TextEffect.ToggleVerticalText()
     End Sub
-#End Region
-  
-#End Region
-
-    
     Private Sub Donnotautofit_CheckedChanged(sender As Object, e As EventArgs) Handles Donnotautofit.CheckedChanged
         selectshape()
         selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeNone
     End Sub
-
     Private Sub Shrinktext_CheckedChanged(sender As Object, e As EventArgs) Handles Shrinktext.CheckedChanged
         selectshape()
         selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape
     End Sub
-
     Private Sub ResizeShape_CheckedChanged(sender As Object, e As EventArgs) Handles ResizeShape.CheckedChanged
         selectshape()
         selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeShapeToFitText
     End Sub
- 
     Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxWrap.CheckedChanged
         If chkboxWrap.Checked Then
             selectedshape.TextFrame.WordWrap = MsoTriState.msoCTrue
@@ -340,4 +321,13 @@ Public Class rightpanel
         End If
 
     End Sub
+    Private Sub btnColumns_Click(sender As Object, e As EventArgs) Handles btnColumns.Click
+        MsgBox("Columns")
+    End Sub
+#End Region
+
+#End Region
+
+
+
 End Class

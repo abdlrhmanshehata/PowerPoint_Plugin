@@ -912,7 +912,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.07505!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.btnSave, 4, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.btnCut, 2, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.btnPaste, 1, 1)
@@ -938,10 +938,10 @@ Partial Class rightpanel
         Me.btnSave.Enabled = False
         Me.btnSave.ImageIndex = 4
         Me.btnSave.ImageList = Me.ImageList1
-        Me.btnSave.Location = New System.Drawing.Point(274, 34)
+        Me.btnSave.Location = New System.Drawing.Point(271, 34)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(72, 44)
+        Me.btnSave.Size = New System.Drawing.Size(75, 44)
         Me.btnSave.TabIndex = 19
         Me.btnSave.Text = " "
         Me.btnSave.UseVisualStyleBackColor = True
@@ -952,7 +952,7 @@ Partial Class rightpanel
         Me.btnCut.Enabled = False
         Me.btnCut.ImageIndex = 1
         Me.btnCut.ImageList = Me.ImageList1
-        Me.btnCut.Location = New System.Drawing.Point(194, 34)
+        Me.btnCut.Location = New System.Drawing.Point(191, 34)
         Me.btnCut.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCut.Name = "btnCut"
         Me.btnCut.Size = New System.Drawing.Size(40, 44)
@@ -966,10 +966,10 @@ Partial Class rightpanel
         Me.btnPaste.Enabled = False
         Me.btnPaste.ImageIndex = 6
         Me.btnPaste.ImageList = Me.ImageList1
-        Me.btnPaste.Location = New System.Drawing.Point(151, 34)
+        Me.btnPaste.Location = New System.Drawing.Point(149, 34)
         Me.btnPaste.Margin = New System.Windows.Forms.Padding(0)
         Me.btnPaste.Name = "btnPaste"
-        Me.btnPaste.Size = New System.Drawing.Size(43, 44)
+        Me.btnPaste.Size = New System.Drawing.Size(42, 44)
         Me.btnPaste.TabIndex = 17
         Me.btnPaste.Text = " "
         Me.btnPaste.UseVisualStyleBackColor = True
@@ -980,7 +980,7 @@ Partial Class rightpanel
         Me.btnCopy.Enabled = False
         Me.btnCopy.ImageIndex = 2
         Me.btnCopy.ImageList = Me.ImageList1
-        Me.btnCopy.Location = New System.Drawing.Point(234, 34)
+        Me.btnCopy.Location = New System.Drawing.Point(231, 34)
         Me.btnCopy.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCopy.Name = "btnCopy"
         Me.btnCopy.Size = New System.Drawing.Size(40, 44)
@@ -995,9 +995,9 @@ Partial Class rightpanel
         Me.cboxFontSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxFontSize.FormattingEnabled = True
         Me.cboxFontSize.Items.AddRange(New Object() {"8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "24", "28", "32", "36", "40", "44", "48", "54", "60", "66", "72", "80", "88", "96", "", "", ""})
-        Me.cboxFontSize.Location = New System.Drawing.Point(154, 3)
+        Me.cboxFontSize.Location = New System.Drawing.Point(152, 3)
         Me.cboxFontSize.Name = "cboxFontSize"
-        Me.cboxFontSize.Size = New System.Drawing.Size(37, 24)
+        Me.cboxFontSize.Size = New System.Drawing.Size(36, 24)
         Me.cboxFontSize.TabIndex = 14
         '
         'cboxFontFamily
@@ -1009,7 +1009,7 @@ Partial Class rightpanel
         Me.cboxFontFamily.Items.AddRange(New Object() {"Abadi MT Condensed", "Adobe Minion Web", "Agency FB", "Aharoni", "Aldhabi", "Algerian", "Almanac MT", "American Uncial", "Andale Mono", "Andalus", "Andy", "Angsana New", "AngsanaUPC", "Aparajita", "Arabic Transparent", "Arabic Typesetting", "Arial", "Arial Black", "Arial Narrow", "Arial Narrow Special", "Arial Rounded MT", "Arial Special", "Arial Unicode MS", "Augsburger Initials", "Baskerville Old Face", "Batang", "BatangChe", "Bauhaus 93", "Beesknees ITC", "Bell MT", "Berlin Sans FB", "Bernard MT Condensed", "Bickley Script", "Blackadder ITC", "Bodoni MT", "Bodoni MT Condensed", "Bon Apetit MT", "Book Antiqua", "Bookman Old Style", "Bookshelf Symbol", "Bradley Hand ITC", "Braggadocio", "BriemScript", "Britannic", "Britannic Bold", "Broadway", "Browallia New", "BrowalliaUPC", "Brush Script MT", "Calibri", "Californian FB", "Calisto MT", "Cambria", "Cambria Math", "Candara", "Cariadings", "Castellar", "Centaur", "Century", "Century Gothic", "Century Schoolbook", "Chiller", "Colonna MT", "Comic Sans MS", "Consolas", "Constantia", "Contemporary Brush", "Cooper Black", "Copperplate Gothic", "Corbel", "Cordia New", "CordiaUPC", "Courier New", "Curlz MT", "DaunPenh", "David", "Desdemona", "DFKai-SB", "DilleniaUPC", "Directions MT", "DokChampa", "Dotum", "DotumChe", "Ebrima", "Eckmann", "Edda", "Edwardian Script ITC", "Elephant", "Engravers MT", "Enviro", "Eras ITC", "Estrangelo Edessa", "EucrosiaUPC", "Euphemia", "Eurostile", "FangSong", "Felix Titling", "Fine Hand", "Fixed Miriam Transparent", "Flexure", "Footlight MT", "Forte", "Franklin Gothic", "Franklin Gothic Medium", "FrankRuehl", "FreesiaUPC", "Freestyle Script", "French Script MT", "Futura", "Gabriola", "Gadugi", "Garamond", "Garamond MT", "Gautami", "Georgia", "Georgia Ref", "Gigi", "Gill Sans MT", "Gill Sans MT Condensed", "Gisha", "Gloucester", "Goudy Old Style", "Goudy Stout", "Gradl", "Gulim", "GulimChe", "Gungsuh", "GungsuhChe", "Haettenschweiler", "Harlow Solid Italic", "Harrington", "High Tower Text", "Holidays MT", "Impact", "Imprint MT Shadow", "Informal Roman", "IrisUPC", "Iskoola Pota", "JasmineUPC", "Jokerman", "Juice ITC", "KaiTi", "Kalinga", "Kartika", "Keystrokes MT", "Khmer UI", "Kino MT", "KodchiangUPC", "Kokila", "Kristen ITC", "Kunstler Script", "Lao UI", "Latha", "LCD", "Leelawadee", "Levenim MT", "LilyUPC", "Lucida Blackletter", "Lucida Bright", "Lucida Bright Math", "Lucida Calligraphy", "Lucida Console", "Lucida Fax", "Lucida Handwriting", "Lucida Sans", "Lucida Sans Typewriter", "Lucida Sans Unicode", "Magneto", "Maiandra GD", "Malgun Gothic", "Mangal", "Map Symbols", "Marlett", "Matisse ITC", "Matura MT Script Capitals", "McZee", "Mead Bold", "Meiryo", "Meiryo UI", "Mercurius Script MT Bold", "Microsoft Himalaya", "Microsoft JhengHei", "Microsoft JhengHei UI", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Sans Serif", "Microsoft Tai Le", "Microsoft Uighur", "Microsoft YaHei", "Microsoft YaHei UI", "Microsoft Yi Baiti", "MingLiU", "MingLiU_HKSCS", "MingLiU_HKSCS-ExtB", "MingLiU-ExtB", "Minion Web", "Miriam", "Miriam Fixed", "Mistral", "Modern No. 20", "Mongolian Baiti", "Monotype Corsiva", "Monotype Sorts", "Monotype.com", "MoolBoran", "MS Gothic", "MS LineDraw", "MS Mincho", "MS Outlook", "MS PGothic", "MS PMincho", "MS Reference", "MS UI Gothic", "MT Extra", "MV Boli", "Myanmar Text", "Narkisim", "New Caledonia", "News Gothic MT", "Niagara", "Nirmala UI", "NSimSun", "Nyala", "OCR A Extended", "OCRB", "OCR-B-Digits", "Old English Text MT", "Onyx", "Palace Script MT", "Palatino Linotype", "Papyrus", "Parade", "Parchment", "Parties MT", "Peignot Medium", "Pepita MT", "Perpetua", "Perpetua Titling MT", "Placard Condensed", "Plantagenet Cherokee", "Playbill", "PMingLiU", "PMingLiU-ExtB", "Poor Richard", "Pristina", "Raavi", "Rage Italic", "Ransom", "Ravie", "RefSpecialty", "Rockwell", "Rockwell Condensed", "Rockwell Extra Bold", "Rod", "Runic MT Condensed", "Sakkal Majalla", "Script MT Bold", "Segoe Chess", "Segoe Print", "Segoe Pseudo", "Segoe Script", "Segoe UI", "Segoe UI Symbol", "Shonar Bangla", "Showcard Gothic", "Shruti", "Signs MT", "SimHei", "Simplified Arabic", "Simplified Arabic Fixed", "SimSun", "SimSun-ExtB", "Snap ITC", "Sports MT", "Stencil", "Stop", "Sylfaen", "Symbol", "Tahoma", "Temp Installer Font", "Tempo Grunge", "Tempus Sans ITC", "Times New Roman", "Times New Roman Special", "Traditional Arabic", "Transport MT", "Trebuchet MS", "Tunga", "Tw Cen MT", "Tw Cen MT Condensed", "Urdu Typesetting", "Utsaah", "Vacation MT", "Vani", "Verdana", "Verdana Ref", "Vijaya", "Viner Hand ITC", "Vivaldi", "Vixar ASCI", "Vladimir Script", "Vrinda", "Webdings", "Westminster", "Wide Latin", "Wingdings"})
         Me.cboxFontFamily.Location = New System.Drawing.Point(3, 3)
         Me.cboxFontFamily.Name = "cboxFontFamily"
-        Me.cboxFontFamily.Size = New System.Drawing.Size(145, 24)
+        Me.cboxFontFamily.Size = New System.Drawing.Size(143, 24)
         Me.cboxFontFamily.TabIndex = 15
         '
         'btnAlignCenter
@@ -1018,7 +1018,7 @@ Partial Class rightpanel
         Me.btnAlignCenter.Enabled = False
         Me.btnAlignCenter.ImageIndex = 7
         Me.btnAlignCenter.ImageList = Me.ImageList1
-        Me.btnAlignCenter.Location = New System.Drawing.Point(234, 0)
+        Me.btnAlignCenter.Location = New System.Drawing.Point(231, 0)
         Me.btnAlignCenter.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAlignCenter.Name = "btnAlignCenter"
         Me.btnAlignCenter.Size = New System.Drawing.Size(40, 34)
@@ -1032,7 +1032,7 @@ Partial Class rightpanel
         Me.btnAlignLeft.Enabled = False
         Me.btnAlignLeft.ImageIndex = 8
         Me.btnAlignLeft.ImageList = Me.ImageList1
-        Me.btnAlignLeft.Location = New System.Drawing.Point(194, 0)
+        Me.btnAlignLeft.Location = New System.Drawing.Point(191, 0)
         Me.btnAlignLeft.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAlignLeft.Name = "btnAlignLeft"
         Me.btnAlignLeft.Size = New System.Drawing.Size(40, 34)
@@ -1046,10 +1046,10 @@ Partial Class rightpanel
         Me.btnAlignRight.Enabled = False
         Me.btnAlignRight.ImageIndex = 9
         Me.btnAlignRight.ImageList = Me.ImageList1
-        Me.btnAlignRight.Location = New System.Drawing.Point(274, 0)
+        Me.btnAlignRight.Location = New System.Drawing.Point(271, 0)
         Me.btnAlignRight.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAlignRight.Name = "btnAlignRight"
-        Me.btnAlignRight.Size = New System.Drawing.Size(72, 34)
+        Me.btnAlignRight.Size = New System.Drawing.Size(75, 34)
         Me.btnAlignRight.TabIndex = 5
         Me.btnAlignRight.Text = " "
         Me.btnAlignRight.UseVisualStyleBackColor = True
@@ -1069,7 +1069,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(145, 38)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(143, 38)
         Me.TableLayoutPanel3.TabIndex = 16
         '
         'btnBold
