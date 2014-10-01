@@ -9,6 +9,7 @@ Public Class rightpanel
     Dim notesshape As PowerPoint.Shape
     Dim shapename As String
     Dim selectedshape As PowerPoint.Shape
+    Dim l As Integer
 
 #Region "Notes"
 
@@ -175,6 +176,8 @@ Public Class rightpanel
 #End Region
 
 #End Region
+
+
     '-----------------------------------------------------------------------------------------------------------'
     '-----------------------------------------------------------------------------------------------------------'
     'all the following commands are for " txtbox.jpeg" file
@@ -210,9 +213,7 @@ Public Class rightpanel
     'selectedshape.ScaleHeight(ForTestOnly2.Text, MsoTriState.msoCTrue, MsoScaleFrom.msoScaleFromTopLeft) >>> 4
     'selectedshape.ScaleWidth(ForTestOnly2.Text, MsoTriState.msoCTrue, MsoScaleFrom.msoScaleFromTopLeft) >>> 5
     'selectedshape.LockAspectRatio = MsoTriState.msoTriStateToggle >>> 6
-
-
-#Region "General Subs"
+#Region "Format Shape"
     Sub showpage(ByVal page As TableLayoutPanel)
         page.Visible = True
         page.Dock = DockStyle.Fill
@@ -234,21 +235,27 @@ Public Class rightpanel
             Case 0
                 hideall()
                 showpage(TextBoxPage)
+                gettimer.Enabled = True
             Case 1
                 hideall()
                 showpage(FillPage)
+                gettimer.Enabled = True
             Case 2
                 hideall()
                 showpage(LineColorPage)
+                gettimer.Enabled = True
             Case 3
                 hideall()
                 showpage(LineStylePage)
+                gettimer.Enabled = True
             Case 4
                 hideall()
                 showpage(ShadowPage)
+                gettimer.Enabled = True
             Case 5
                 hideall()
                 showpage(SizePage)
+                gettimer.Enabled = True
         End Select
     End Sub
     Sub selectshape()
@@ -257,9 +264,65 @@ Public Class rightpanel
         g = objapp.ActiveWindow.Selection.ShapeRange.Name
         selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
     End Sub
-    
+    Public Sub gettimer_Tick(sender As Object, e As EventArgs) Handles gettimer.Tick
+        l += 1
+        If l = 1 Then
+            gettimer.Enabled = False
+            gettextpage()
+        End If
+        l = 0
+        gettimer.Enabled = True
+    End Sub
+
+    '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
+    '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
+    Sub gettextpage()
+        Try
+            selectshape()
+            If selectedshape.HasTextFrame Then
+                '========================================TEXT DIRECTION============================'
+                With cboxtextdirection
+                    Select Case selectedshape.TextFrame.Orientation
+                        Case MsoTextOrientation.msoTextOrientationHorizontal
+                            .SelectedIndex = 0
+                        Case MsoTextOrientation.msoTextOrientationDownward
+                            .SelectedIndex = 1
+                        Case MsoTextOrientation.msoTextOrientationUpward
+                            .SelectedIndex = 2
+                    End Select
+                End With
+                '========================================TEXT ALIGNMENT============================'
+                With cboxtextalignment
+                    Select Case selectedshape.TextFrame.VerticalAnchor
+                        Case MsoVerticalAnchor.msoAnchorTop
+                            .SelectedIndex = 0
+                        Case MsoVerticalAnchor.msoAnchorMiddle
+                            .SelectedIndex = 1
+                        Case MsoVerticalAnchor.msoAnchorBottom
+                            .SelectedIndex = 2
+                    End Select
+                End With
+                '========================================AutoFit=================================='
+                Select Case selectedshape.TextFrame2.AutoSize
+                    Case MsoAutoSize.msoAutoSizeShapeToFitText
+                        ResizeShape.Checked = True
+                    Case MsoAutoSize.msoAutoSizeTextToFitShape
+                        Shrinktext.Checked = True
+                    Case MsoAutoSize.msoAutoSizeNone
+                        Donnotautofit.Checked = True
+                End Select
+                '========================================Margin=================================='
+                txtleftmargin.Text = selectedshape.TextFrame.MarginLeft / 72
+                txtrightmargin.Text = selectedshape.TextFrame.MarginRight / 72
+                txttopmargin.Text = selectedshape.TextFrame.MarginTop / 72
+                txtbottommargin.Text = selectedshape.TextFrame.MarginBottom / 72
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
     Sub settextPage()
         selectshape()
+        gettimer.Enabled = False
         If selectedshape.HasTextFrame Then
             With selectedshape.TextFrame
                 Select Case (cboxtextdirection.SelectedIndex)
@@ -281,20 +344,11 @@ Public Class rightpanel
                         .VerticalAnchor = MsoVerticalAnchor.msoAnchorBottom
                 End Select
             End With
-
-
         End If
     End Sub
-    
-#End Region
 
-#Region "Buttons"
 
-#Region "TextBoxPage Buttons"
-    Private Sub cboxtextdirection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxtextdirection.SelectedIndexChanged
-        settextPage()
-    End Sub
-    Private Sub cboxtextalignment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxtextalignment.SelectedIndexChanged
+    Private Sub cboxtextdirection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxtextdirection.Click, cboxtextdirection.MouseEnter, cboxtextdirection.SelectedIndexChanged
         settextPage()
     End Sub
     Private Sub chkboxStacked_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxStacked.CheckedChanged
@@ -324,10 +378,62 @@ Public Class rightpanel
     Private Sub btnColumns_Click(sender As Object, e As EventArgs) Handles btnColumns.Click
         MsgBox("Columns")
     End Sub
+    Private Sub TextBoxPage_Leave(sender As Object, e As EventArgs) Handles TextBoxPage.MouseLeave
+        gettimer.Enabled = True
+    End Sub
+
+#Region "Margin Buttons"
+    Private Sub plsLM_Click(sender As Object, e As EventArgs) Handles plsLM.Click
+        selectshape()
+        selectedshape.TextFrame.MarginLeft += 7.2
+    End Sub
+    Private Sub mnsLM_Click(sender As Object, e As EventArgs) Handles mnsLM.Click
+        selectshape()
+        selectedshape.TextFrame.MarginLeft -= 7.2
+    End Sub
+    Private Sub plsRM_Click(sender As Object, e As EventArgs) Handles plsRM.Click
+        selectshape()
+        selectedshape.TextFrame.MarginRight += 7.2
+    End Sub
+    Private Sub msnRM_Click(sender As Object, e As EventArgs) Handles msnRM.Click
+        selectshape()
+        selectedshape.TextFrame.MarginRight -= 7.2
+    End Sub
+    Private Sub plsTM_Click(sender As Object, e As EventArgs) Handles plsTM.Click
+        selectshape()
+        selectedshape.TextFrame.MarginTop += 7.2
+    End Sub
+    Private Sub mnsTM_Click(sender As Object, e As EventArgs) Handles mnsTM.Click
+        selectshape()
+        selectedshape.TextFrame.MarginTop -= 7.2
+    End Sub
+    Private Sub plsBM_Click(sender As Object, e As EventArgs) Handles plsBM.Click
+        selectshape()
+        selectedshape.TextFrame.MarginBottom += 7.2
+    End Sub
+    Private Sub mnsMN_Click(sender As Object, e As EventArgs) Handles mnsMN.Click
+        selectshape()
+        selectedshape.TextFrame.MarginBottom -= 7.2
+    End Sub
 #End Region
 
+    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
+    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #End Region
-
-
+ 
 
 End Class

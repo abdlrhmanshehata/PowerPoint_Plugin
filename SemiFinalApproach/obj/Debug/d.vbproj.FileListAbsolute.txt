@@ -26,3 +26,17 @@ F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\Semi
 F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.dll
 F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.xml
 F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.pdb
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.pdb
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.xml
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll.manifest
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.vsto
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Ribbon1.resources
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.rightpanel.resources
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Resources.resources
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\d.vbproj.GenerateResource.Cache
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.dll
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.xml
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.pdb
