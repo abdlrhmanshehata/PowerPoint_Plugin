@@ -36,7 +36,6 @@ Public Class rightpanel
             Case 1
                 txtNotes.SelectionAlignment = HorizontalAlignment.Left
             Case 2
-
                 txtNotes.SelectionAlignment = HorizontalAlignment.Center
             Case 3
                 txtNotes.SelectionAlignment = HorizontalAlignment.Right
@@ -51,10 +50,8 @@ Public Class rightpanel
         Catch ex As Exception
         End Try
     End Sub
-    Sub getfontstyle()
-
-    End Sub
-
+   
+    
     Sub setfont()
         notesshape.TextFrame.TextRange.Text = txtNotes.Text
         notesshape.TextFrame.TextRange.Font.Name = cboxFontFamily.SelectedItem.ToString
@@ -75,19 +72,26 @@ Public Class rightpanel
     Sub setfontstyle()
 
     End Sub
-
+    
     Sub importnotes()
-        getnoteshape()
-        getfont()
-        getalignment()
-        getfontstyle()
+        Try
+            getcurrentindex()
+            getnoteshape()
+            getfont()
+            getalignment()
+        Catch ex As Exception
+        End Try
     End Sub
     Sub exportnotes()
-        getnoteshape()
-        setfont()
-        setalignment()
+        Try
+            getcurrentindex()
+            getnoteshape()
+            setfont()
+            setalignment()
+            setfontstyle()
+        Catch ex As Exception
+        End Try
     End Sub
-
     Sub disablecontrols()
         btnAlignCenter.Enabled = False
         btnAlignLeft.Enabled = False
@@ -112,43 +116,13 @@ Public Class rightpanel
         btnUnderline.Enabled = True
         btnItalic.Enabled = True
     End Sub
+ 
 
-    Private Sub btnDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDisplay.Click
-        importnotes()
-        btnEdit.Enabled = True
-    End Sub
-    Private Sub btnSaveChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveChanges.Click
-        exportnotes()
-        txtNotes.Text = ""
-        btnDisplay.Enabled = True
-        btnCancel.Enabled = False
-        btnEdit.Enabled = False
-        btnSaveChanges.Enabled = False
-        txtNotes.ReadOnly = True
-        cboxFontFamily.Enabled = False
-        cboxFontSize.Enabled = False
-        disablecontrols()
-    End Sub
-    Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
-        txtNotes.Text = ""
-        btnDisplay.Enabled = True
-        btnCancel.Enabled = False
-        btnEdit.Enabled = False
-        btnSaveChanges.Enabled = False
-        txtNotes.ReadOnly = True
-        cboxFontFamily.Enabled = False
-        cboxFontSize.Enabled = False
-        disablecontrols()
-    End Sub
-    Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
-        txtNotes.ReadOnly = False
-        btnEdit.Enabled = False
-        btnDisplay.Enabled = False
-        btnCancel.Enabled = True
-        btnSaveChanges.Enabled = True
-        cboxFontFamily.Enabled = True
-        cboxFontSize.Enabled = True
-        enablecontrol()
+
+    Private Sub txtNotes_TextChanged(sender As Object, e As EventArgs) Handles txtNotes.TextChanged
+        getnoteshape()
+        getcurrentindex()
+        notesshape.TextFrame.TextRange.Text = txtNotes.Text
     End Sub
 #End Region
 
@@ -172,47 +146,31 @@ Public Class rightpanel
         txtNotes.SelectionAlignment = HorizontalAlignment.Right
     End Sub
 
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
+    End Sub
+    Private Sub btnCopy_Click(sender As Object, e As EventArgs) Handles btnCopy.Click
+
+    End Sub
+    Private Sub btnCut_Click(sender As Object, e As EventArgs) Handles btnCut.Click
+
+    End Sub
+    Private Sub btnPaste_Click(sender As Object, e As EventArgs) Handles btnPaste.Click
+
+    End Sub
+    Private Sub btnUnderline_Click(sender As Object, e As EventArgs) Handles btnUnderline.Click
+
+    End Sub
+    Private Sub btnItalic_Click(sender As Object, e As EventArgs) Handles btnItalic.Click
+
+    End Sub
+    Private Sub btnBold_Click(sender As Object, e As EventArgs) Handles btnBold.Click
+
+    End Sub
 #End Region
 
 #End Region
 
-
-    '-----------------------------------------------------------------------------------------------------------'
-    '-----------------------------------------------------------------------------------------------------------'
-    'all the following commands are for " txtbox.jpeg" file
-    'shape.texteffect.alignment >>> align left or right
-    'shape.TextFrame.TextRange.ParagraphFormat.TextDirection = PpDirection.ppDirectionRightToLeft >>> right to left or vice versa like ctrl + shift
-    'shape.texteffect.bold , italic , name , size >>>> control the font in the shape
-    'shape.TextEffect.PresetTextEffect = MsoPresetTextEffect.msoTextEffect10 >>> wordart styles
-    'shape.TextEffect.PresetShape = MsoPresetTextEffectShape.msoTextEffectShapeCircleCurve >>> word art shapes
-    '========================================================================================'
-    '========================================================================================'
-    'shape.TextFrame.TextRange.ParagraphFormat.Alignment >>> 1
-    'shape.TextFrame.VerticalAnchor >>> 1   === i think all about 1 ===
-    'shape.TextFrame.Orientation = MsoTextOrientation.msoTextOrientationHorizontal >>> 2a
-    'shape.TextFrame.Orientation = MsoTextOrientation.msoTextOrientationDownward >>> 2b
-    'shape.TextFrame.Orientation = MsoTextOrientation.msoTextOrientationUpward >>> 2c
-    'shape.TextEffect.ToggleVerticalText()  >>>  2d
-    'shape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeNone  >>> 3
-    'shape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeShapeToFitText  >>>  5
-    'shape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape >>> 4
-    'shape.TextFrame.MarginLeft -= 0.4 >>> 6
-    'shape.TextFrame.WordWrap = MsoTriState.msoTriStateToggle >>> 7
-    'shape.TextFrame2.Column  >>> 8   ==== HINT : needs a messagebox ====
-    '========================================================================================'
-    '========================================================================================'
-    'all the following commands are for "general.jpeg" Fill
-    'shape.Fill.Solid() >>> 2 " Fill property contains all Fill features"
-    '========================================================================================'
-    '========================================================================================'
-    'all the following commands are for "Size.jpeg" Size
-    'selectedshape.height=30 >>> 1
-    'selectedshape.width=30 >>> 2 
-    'selectedshape.rotation=30 >>> 3
-    'selectedshape.ScaleHeight(ForTestOnly2.Text, MsoTriState.msoCTrue, MsoScaleFrom.msoScaleFromTopLeft) >>> 4
-    'selectedshape.ScaleWidth(ForTestOnly2.Text, MsoTriState.msoCTrue, MsoScaleFrom.msoScaleFromTopLeft) >>> 5
-    'selectedshape.LockAspectRatio = MsoTriState.msoTriStateToggle >>> 6
 #Region "Format Shape"
     Sub showpage(ByVal page As TableLayoutPanel)
         page.Visible = True
@@ -235,50 +193,43 @@ Public Class rightpanel
             Case 0
                 hideall()
                 showpage(TextBoxPage)
-                gettimer.Enabled = True
+                Fixedtimer.Enabled = True
             Case 1
                 hideall()
                 showpage(FillPage)
-                gettimer.Enabled = True
             Case 2
                 hideall()
                 showpage(LineColorPage)
-                gettimer.Enabled = True
             Case 3
                 hideall()
                 showpage(LineStylePage)
-                gettimer.Enabled = True
             Case 4
                 hideall()
                 showpage(ShadowPage)
-                gettimer.Enabled = True
             Case 5
                 hideall()
                 showpage(SizePage)
-                gettimer.Enabled = True
         End Select
     End Sub
     Sub selectshape()
-        Dim k, g As Object
-        k = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
-        g = objapp.ActiveWindow.Selection.ShapeRange.Name
-        selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
-    End Sub
-    Public Sub gettimer_Tick(sender As Object, e As EventArgs) Handles gettimer.Tick
-        l += 1
-        If l = 1 Then
-            gettimer.Enabled = False
-            gettextpage()
-        End If
-        l = 0
-        gettimer.Enabled = True
-    End Sub
+        Try
+            Dim k, g As Object
+            k = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
+            g = objapp.ActiveWindow.Selection.ShapeRange.Name
+            selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
+        Catch ex As Exception
 
+        End Try
+    
+    End Sub
+    Private Sub TabPage2_Enter(sender As Object, e As EventArgs) Handles TabPage2.Enter
+        Fixedtimer.Enabled = True
+    End Sub
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
     Sub gettextpage()
+        selectshape()
         Try
-            selectshape()
             If selectedshape.HasTextFrame Then
                 '========================================TEXT DIRECTION============================'
                 With cboxtextdirection
@@ -322,118 +273,120 @@ Public Class rightpanel
     End Sub
     Sub settextPage()
         selectshape()
-        gettimer.Enabled = False
-        If selectedshape.HasTextFrame Then
-            With selectedshape.TextFrame
-                Select Case (cboxtextdirection.SelectedIndex)
-                    Case 0
-                        .Orientation = MsoTextOrientation.msoTextOrientationHorizontal
-                    Case 1
-                        .Orientation = MsoTextOrientation.msoTextOrientationDownward
-                    Case 2
-                        .Orientation = MsoTextOrientation.msoTextOrientationUpward
-                End Select
-            End With
-            With selectedshape.TextFrame
-                Select Case cboxtextalignment.SelectedIndex
-                    Case 0
-                        .VerticalAnchor = MsoVerticalAnchor.msoAnchorTop
-                    Case 1
-                        .VerticalAnchor = MsoVerticalAnchor.msoAnchorMiddle
-                    Case 2
-                        .VerticalAnchor = MsoVerticalAnchor.msoAnchorBottom
-                End Select
-            End With
+        Try
+            If selectedshape.HasTextFrame Then
+                '============================================TEXT DIRECTION================================================================='
+                With selectedshape.TextFrame
+                    Select Case (cboxtextdirection.SelectedIndex)
+                        Case 0
+                            .Orientation = MsoTextOrientation.msoTextOrientationHorizontal
+                        Case 1
+                            .Orientation = MsoTextOrientation.msoTextOrientationDownward
+                        Case 2
+                            .Orientation = MsoTextOrientation.msoTextOrientationUpward
+                    End Select
+                End With
+                '======================================================TEXT ALIGNMENT==========================================================='
+                With selectedshape.TextFrame
+                    Select Case cboxtextalignment.SelectedIndex
+                        Case 0
+                            .VerticalAnchor = MsoVerticalAnchor.msoAnchorTop
+                        Case 1
+                            .VerticalAnchor = MsoVerticalAnchor.msoAnchorMiddle
+                        Case 2
+                            .VerticalAnchor = MsoVerticalAnchor.msoAnchorBottom
+                    End Select
+                End With
+                '================================================== AUTOFIT================================================================='
+                If Donnotautofit.Checked Then
+                    selectedshape.TextFrame.AutoSize = PpAutoSize.ppAutoSizeNone
+                ElseIf ResizeShape.Checked Then
+                    selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeShapeToFitText
+                ElseIf Shrinktext.Checked Then
+                    selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape
+                End If
+                '================================================== Margin================================================================='
+                selectedshape.TextFrame.MarginLeft = txtleftmargin.Text * 72
+                selectedshape.TextFrame.MarginBottom = txtbottommargin.Text * 72
+                selectedshape.TextFrame.MarginRight = txtrightmargin.Text * 72
+                selectedshape.TextFrame.MarginTop = txttopmargin.Text * 72
+                '================================================== wrap text================================================================='
+                If chkboxWrap.Checked Then
+
+                Else
+                    selectedshape.TextFrame.WordWrap = MsoTriState.msoTriStateToggle
+                End If
+            End If
+        Catch
+
+        End Try
+    End Sub
+
+    Private Sub Fixedtimer_Tick(sender As Object, e As EventArgs) Handles Fixedtimer.Tick
+        Dim location As System.Drawing.Point
+        Dim critical As System.Drawing.Point
+        critical.X = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
+        location.X = MousePosition.X
+        location.Y = MousePosition.Y
+        If location.X > critical.X Then
+            settextPage()
+            exportnotes()
+        Else
+            gettextpage()
+            importnotes()
         End If
     End Sub
-
-
-    Private Sub cboxtextdirection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxtextdirection.Click, cboxtextdirection.MouseEnter, cboxtextdirection.SelectedIndexChanged
-        settextPage()
-    End Sub
-    Private Sub chkboxStacked_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxStacked.CheckedChanged
+ 
+    Private Sub chkboxStacked_CheckedChanged(sender As Object, e As EventArgs)
         selectshape()
         selectedshape.TextEffect.ToggleVerticalText()
     End Sub
-    Private Sub Donnotautofit_CheckedChanged(sender As Object, e As EventArgs) Handles Donnotautofit.CheckedChanged
-        selectshape()
-        selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeNone
-    End Sub
-    Private Sub Shrinktext_CheckedChanged(sender As Object, e As EventArgs) Handles Shrinktext.CheckedChanged
-        selectshape()
-        selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape
-    End Sub
-    Private Sub ResizeShape_CheckedChanged(sender As Object, e As EventArgs) Handles ResizeShape.CheckedChanged
-        selectshape()
-        selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeShapeToFitText
-    End Sub
-    Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxWrap.CheckedChanged
+    Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs)
         If chkboxWrap.Checked Then
             selectedshape.TextFrame.WordWrap = MsoTriState.msoCTrue
         Else
             selectedshape.TextFrame.WordWrap = MsoTriState.msoFalse
         End If
-
-    End Sub
-    Private Sub btnColumns_Click(sender As Object, e As EventArgs) Handles btnColumns.Click
-        MsgBox("Columns")
-    End Sub
-    Private Sub TextBoxPage_Leave(sender As Object, e As EventArgs) Handles TextBoxPage.MouseLeave
-        gettimer.Enabled = True
     End Sub
 
-#Region "Margin Buttons"
     Private Sub plsLM_Click(sender As Object, e As EventArgs) Handles plsLM.Click
-        selectshape()
-        selectedshape.TextFrame.MarginLeft += 7.2
+        txtleftmargin.Text += 0.1
+        Fixedtimer_Tick(sender, e)
     End Sub
     Private Sub mnsLM_Click(sender As Object, e As EventArgs) Handles mnsLM.Click
-        selectshape()
-        selectedshape.TextFrame.MarginLeft -= 7.2
-    End Sub
-    Private Sub plsRM_Click(sender As Object, e As EventArgs) Handles plsRM.Click
-        selectshape()
-        selectedshape.TextFrame.MarginRight += 7.2
-    End Sub
-    Private Sub msnRM_Click(sender As Object, e As EventArgs) Handles msnRM.Click
-        selectshape()
-        selectedshape.TextFrame.MarginRight -= 7.2
-    End Sub
-    Private Sub plsTM_Click(sender As Object, e As EventArgs) Handles plsTM.Click
-        selectshape()
-        selectedshape.TextFrame.MarginTop += 7.2
-    End Sub
-    Private Sub mnsTM_Click(sender As Object, e As EventArgs) Handles mnsTM.Click
-        selectshape()
-        selectedshape.TextFrame.MarginTop -= 7.2
+        txtleftmargin.Text -= 0.1
+        Fixedtimer_Tick(sender, e)
     End Sub
     Private Sub plsBM_Click(sender As Object, e As EventArgs) Handles plsBM.Click
-        selectshape()
-        selectedshape.TextFrame.MarginBottom += 7.2
+        txtbottommargin.Text += 0.1
+        Fixedtimer_Tick(sender, e)
     End Sub
-    Private Sub mnsMN_Click(sender As Object, e As EventArgs) Handles mnsMN.Click
-        selectshape()
-        selectedshape.TextFrame.MarginBottom -= 7.2
+    Sub mnsBM_click() Handles mnsBM.Click
+        txtbottommargin.Text -= 0.1
+        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+    End Sub
+    Sub plsRM_click() Handles plsRM.Click
+        txtrightmargin.Text += 0.1
+        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+    End Sub
+    Sub msnRM_click() Handles mnsRM.Click
+        txtrightmargin.Text -= 0.1
+        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+    End Sub
+    Sub plsTM_click() Handles plsTM.Click
+        txttopmargin.Text += 0.1
+        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+    End Sub
+    Sub mnsTM_click() Handles mnsTM.Click
+        txttopmargin.Text -= 0.1
+        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
     End Sub
 #End Region
 
-    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
-    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox(Screen.PrimaryScreen.WorkingArea.Width - Me.Width)
+    End Sub
 
-
-
-
-
-
-
-
-
-
-
-
-
-#End Region
- 
-
+    
 End Class
