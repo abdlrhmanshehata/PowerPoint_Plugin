@@ -327,25 +327,25 @@ Public Class rightpanel
             importnotes()
         End If
     End Sub
-    Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxWrap.CheckedChanged
         If chkboxWrap.Checked Then
             selectedshape.TextFrame.WordWrap = MsoTriState.msoCTrue
         Else
             selectedshape.TextFrame.WordWrap = MsoTriState.msoFalse
         End If
     End Sub
-    Private Sub plsLM_Click(sender As Object, e As EventArgs)
+    Private Sub plsLM_Click(sender As Object, e As EventArgs) Handles plsLM.Click
         selectedshape.TextFrame.MarginLeft += 0.1 * 72
         gettextpage()
     End Sub
-    Private Sub mnsLM_Click(sender As Object, e As EventArgs)
+    Private Sub mnsLM_Click(sender As Object, e As EventArgs) Handles mnsLM.Click
         Try
             selectedshape.TextFrame.MarginLeft -= 0.1 * 72
             gettextpage()
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub plsBM_Click(sender As Object, e As EventArgs)
+    Private Sub plsBM_Click(sender As Object, e As EventArgs) Handles plsBM.Click
         selectedshape.TextFrame.MarginBottom += 0.1 * 72
         gettextpage()
     End Sub
