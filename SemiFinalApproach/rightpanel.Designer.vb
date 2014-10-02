@@ -35,7 +35,6 @@ Partial Class rightpanel
         Me.textlayoutcontents = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cboxtextdirection = New System.Windows.Forms.ComboBox()
-        Me.chkboxStacked = New System.Windows.Forms.CheckBox()
         Me.textlayoutcontents2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cboxtextalignment = New System.Windows.Forms.ComboBox()
@@ -150,8 +149,6 @@ Partial Class rightpanel
         Me.txtNotes = New System.Windows.Forms.RichTextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Fixedtimer = New System.Windows.Forms.Timer(Me.components)
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.splitFormat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -213,7 +210,6 @@ Partial Class rightpanel
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -292,14 +288,14 @@ Partial Class rightpanel
         Me.TextBoxPage.Controls.Add(Me.TextLayout, 0, 0)
         Me.TextBoxPage.Controls.Add(Me.AutoFit, 0, 1)
         Me.TextBoxPage.Controls.Add(Me.InternalMargin, 0, 2)
-        Me.TextBoxPage.Location = New System.Drawing.Point(45, 126)
+        Me.TextBoxPage.Location = New System.Drawing.Point(41, 111)
         Me.TextBoxPage.Name = "TextBoxPage"
         Me.TextBoxPage.RowCount = 3
         Me.TextBoxPage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.56237!))
         Me.TextBoxPage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.74233!))
         Me.TextBoxPage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.6953!))
-        Me.TextBoxPage.Size = New System.Drawing.Size(126, 130)
-        Me.TextBoxPage.TabIndex = 20
+        Me.TextBoxPage.Size = New System.Drawing.Size(120, 104)
+        Me.TextBoxPage.TabIndex = 22
         Me.TextBoxPage.Visible = False
         '
         'TextLayout
@@ -308,7 +304,7 @@ Partial Class rightpanel
         Me.TextLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TextLayout.Location = New System.Drawing.Point(3, 3)
         Me.TextLayout.Name = "TextLayout"
-        Me.TextLayout.Size = New System.Drawing.Size(120, 27)
+        Me.TextLayout.Size = New System.Drawing.Size(114, 20)
         Me.TextLayout.TabIndex = 0
         Me.TextLayout.TabStop = False
         Me.TextLayout.Text = "TextLayout"
@@ -325,18 +321,17 @@ Partial Class rightpanel
         Me.contenttextlayout.RowCount = 2
         Me.contenttextlayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.contenttextlayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.contenttextlayout.Size = New System.Drawing.Size(114, 8)
+        Me.contenttextlayout.Size = New System.Drawing.Size(108, 1)
         Me.contenttextlayout.TabIndex = 0
         '
         'textlayoutcontents
         '
         Me.textlayoutcontents.Controls.Add(Me.Label5)
         Me.textlayoutcontents.Controls.Add(Me.cboxtextdirection)
-        Me.textlayoutcontents.Controls.Add(Me.chkboxStacked)
         Me.textlayoutcontents.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.textlayoutcontents.Location = New System.Drawing.Point(3, 7)
+        Me.textlayoutcontents.Location = New System.Drawing.Point(3, 3)
         Me.textlayoutcontents.Name = "textlayoutcontents"
-        Me.textlayoutcontents.Size = New System.Drawing.Size(108, 1)
+        Me.textlayoutcontents.Size = New System.Drawing.Size(102, 1)
         Me.textlayoutcontents.TabIndex = 0
         '
         'Label5
@@ -357,16 +352,6 @@ Partial Class rightpanel
         Me.cboxtextdirection.Size = New System.Drawing.Size(112, 21)
         Me.cboxtextdirection.TabIndex = 1
         '
-        'chkboxStacked
-        '
-        Me.chkboxStacked.AutoSize = True
-        Me.chkboxStacked.Location = New System.Drawing.Point(3, 54)
-        Me.chkboxStacked.Name = "chkboxStacked"
-        Me.chkboxStacked.Size = New System.Drawing.Size(66, 17)
-        Me.chkboxStacked.TabIndex = 2
-        Me.chkboxStacked.Text = "Stacked"
-        Me.chkboxStacked.UseVisualStyleBackColor = True
-        '
         'textlayoutcontents2
         '
         Me.textlayoutcontents2.Controls.Add(Me.Label6)
@@ -374,7 +359,7 @@ Partial Class rightpanel
         Me.textlayoutcontents2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.textlayoutcontents2.Location = New System.Drawing.Point(3, 3)
         Me.textlayoutcontents2.Name = "textlayoutcontents2"
-        Me.textlayoutcontents2.Size = New System.Drawing.Size(108, 1)
+        Me.textlayoutcontents2.Size = New System.Drawing.Size(102, 1)
         Me.textlayoutcontents2.TabIndex = 1
         '
         'Label6
@@ -399,9 +384,9 @@ Partial Class rightpanel
         '
         Me.AutoFit.Controls.Add(Me.ContentAutofit)
         Me.AutoFit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AutoFit.Location = New System.Drawing.Point(3, 36)
+        Me.AutoFit.Location = New System.Drawing.Point(3, 29)
         Me.AutoFit.Name = "AutoFit"
-        Me.AutoFit.Size = New System.Drawing.Size(120, 37)
+        Me.AutoFit.Size = New System.Drawing.Size(114, 29)
         Me.AutoFit.TabIndex = 0
         Me.AutoFit.TabStop = False
         Me.AutoFit.Text = "AutoFit"
@@ -420,7 +405,7 @@ Partial Class rightpanel
         Me.ContentAutofit.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.ContentAutofit.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.ContentAutofit.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.ContentAutofit.Size = New System.Drawing.Size(114, 18)
+        Me.ContentAutofit.Size = New System.Drawing.Size(108, 10)
         Me.ContentAutofit.TabIndex = 0
         '
         'Donnotautofit
@@ -437,9 +422,9 @@ Partial Class rightpanel
         'Shrinktext
         '
         Me.Shrinktext.AutoSize = True
-        Me.Shrinktext.Location = New System.Drawing.Point(3, 9)
+        Me.Shrinktext.Location = New System.Drawing.Point(3, 6)
         Me.Shrinktext.Name = "Shrinktext"
-        Me.Shrinktext.Size = New System.Drawing.Size(108, 1)
+        Me.Shrinktext.Size = New System.Drawing.Size(102, 1)
         Me.Shrinktext.TabIndex = 1
         Me.Shrinktext.TabStop = True
         Me.Shrinktext.Text = "&Shrink text on overflow"
@@ -448,9 +433,9 @@ Partial Class rightpanel
         'ResizeShape
         '
         Me.ResizeShape.AutoSize = True
-        Me.ResizeShape.Location = New System.Drawing.Point(3, 15)
+        Me.ResizeShape.Location = New System.Drawing.Point(3, 9)
         Me.ResizeShape.Name = "ResizeShape"
-        Me.ResizeShape.Size = New System.Drawing.Size(108, 1)
+        Me.ResizeShape.Size = New System.Drawing.Size(102, 1)
         Me.ResizeShape.TabIndex = 2
         Me.ResizeShape.TabStop = True
         Me.ResizeShape.Text = "&Resize Shape to fit text"
@@ -460,9 +445,9 @@ Partial Class rightpanel
         '
         Me.InternalMargin.Controls.Add(Me.contentinternalmargin)
         Me.InternalMargin.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.InternalMargin.Location = New System.Drawing.Point(3, 79)
+        Me.InternalMargin.Location = New System.Drawing.Point(3, 64)
         Me.InternalMargin.Name = "InternalMargin"
-        Me.InternalMargin.Size = New System.Drawing.Size(120, 48)
+        Me.InternalMargin.Size = New System.Drawing.Size(114, 37)
         Me.InternalMargin.TabIndex = 0
         Me.InternalMargin.TabStop = False
         Me.InternalMargin.Text = "InternalMargin"
@@ -482,8 +467,8 @@ Partial Class rightpanel
         '
         Me.contentinternalmargin.Panel2.Controls.Add(Me.chkboxWrap)
         Me.contentinternalmargin.Panel2.Controls.Add(Me.btnColumns)
-        Me.contentinternalmargin.Size = New System.Drawing.Size(114, 29)
-        Me.contentinternalmargin.SplitterDistance = 25
+        Me.contentinternalmargin.Size = New System.Drawing.Size(108, 18)
+        Me.contentinternalmargin.SplitterDistance = 28
         Me.contentinternalmargin.TabIndex = 0
         '
         'internalmarginpanel
@@ -501,7 +486,7 @@ Partial Class rightpanel
         Me.internalmarginpanel.RowCount = 2
         Me.internalmarginpanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.internalmarginpanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.internalmarginpanel.Size = New System.Drawing.Size(158, 25)
+        Me.internalmarginpanel.Size = New System.Drawing.Size(147, 28)
         Me.internalmarginpanel.TabIndex = 2
         '
         'marginleftpanel
@@ -513,7 +498,7 @@ Partial Class rightpanel
         Me.marginleftpanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.marginleftpanel.Location = New System.Drawing.Point(3, 3)
         Me.marginleftpanel.Name = "marginleftpanel"
-        Me.marginleftpanel.Size = New System.Drawing.Size(73, 6)
+        Me.marginleftpanel.Size = New System.Drawing.Size(67, 8)
         Me.marginleftpanel.TabIndex = 1
         '
         'Label1
@@ -560,9 +545,9 @@ Partial Class rightpanel
         Me.topmarginpanel.Controls.Add(Me.plsTM)
         Me.topmarginpanel.Controls.Add(Me.mnsTM)
         Me.topmarginpanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.topmarginpanel.Location = New System.Drawing.Point(82, 3)
+        Me.topmarginpanel.Location = New System.Drawing.Point(76, 3)
         Me.topmarginpanel.Name = "topmarginpanel"
-        Me.topmarginpanel.Size = New System.Drawing.Size(73, 6)
+        Me.topmarginpanel.Size = New System.Drawing.Size(68, 8)
         Me.topmarginpanel.TabIndex = 1
         '
         'Label2
@@ -586,7 +571,7 @@ Partial Class rightpanel
         '
         'plsTM
         '
-        Me.plsTM.Location = New System.Drawing.Point(48, 3)
+        Me.plsTM.Location = New System.Drawing.Point(3, 9)
         Me.plsTM.Name = "plsTM"
         Me.plsTM.Size = New System.Drawing.Size(18, 22)
         Me.plsTM.TabIndex = 3
@@ -595,7 +580,7 @@ Partial Class rightpanel
         '
         'mnsTM
         '
-        Me.mnsTM.Location = New System.Drawing.Point(3, 31)
+        Me.mnsTM.Location = New System.Drawing.Point(27, 9)
         Me.mnsTM.Name = "mnsTM"
         Me.mnsTM.Size = New System.Drawing.Size(18, 22)
         Me.mnsTM.TabIndex = 2
@@ -609,9 +594,9 @@ Partial Class rightpanel
         Me.rightmarginpanel.Controls.Add(Me.plsRM)
         Me.rightmarginpanel.Controls.Add(Me.mnsRM)
         Me.rightmarginpanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rightmarginpanel.Location = New System.Drawing.Point(3, 15)
+        Me.rightmarginpanel.Location = New System.Drawing.Point(3, 17)
         Me.rightmarginpanel.Name = "rightmarginpanel"
-        Me.rightmarginpanel.Size = New System.Drawing.Size(73, 7)
+        Me.rightmarginpanel.Size = New System.Drawing.Size(67, 8)
         Me.rightmarginpanel.TabIndex = 1
         '
         'Label3
@@ -658,9 +643,9 @@ Partial Class rightpanel
         Me.bottommarginpanel.Controls.Add(Me.plsBM)
         Me.bottommarginpanel.Controls.Add(Me.mnsBM)
         Me.bottommarginpanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bottommarginpanel.Location = New System.Drawing.Point(82, 15)
+        Me.bottommarginpanel.Location = New System.Drawing.Point(76, 17)
         Me.bottommarginpanel.Name = "bottommarginpanel"
-        Me.bottommarginpanel.Size = New System.Drawing.Size(73, 7)
+        Me.bottommarginpanel.Size = New System.Drawing.Size(68, 8)
         Me.bottommarginpanel.TabIndex = 1
         '
         'Label4
@@ -684,7 +669,7 @@ Partial Class rightpanel
         '
         'plsBM
         '
-        Me.plsBM.Location = New System.Drawing.Point(48, 3)
+        Me.plsBM.Location = New System.Drawing.Point(3, 9)
         Me.plsBM.Name = "plsBM"
         Me.plsBM.Size = New System.Drawing.Size(18, 22)
         Me.plsBM.TabIndex = 3
@@ -693,7 +678,7 @@ Partial Class rightpanel
         '
         'mnsBM
         '
-        Me.mnsBM.Location = New System.Drawing.Point(3, 31)
+        Me.mnsBM.Location = New System.Drawing.Point(27, 9)
         Me.mnsBM.Name = "mnsBM"
         Me.mnsBM.Size = New System.Drawing.Size(18, 22)
         Me.mnsBM.TabIndex = 2
@@ -706,7 +691,7 @@ Partial Class rightpanel
         Me.chkboxWrap.Dock = System.Windows.Forms.DockStyle.Fill
         Me.chkboxWrap.Location = New System.Drawing.Point(0, 0)
         Me.chkboxWrap.Name = "chkboxWrap"
-        Me.chkboxWrap.Size = New System.Drawing.Size(158, 26)
+        Me.chkboxWrap.Size = New System.Drawing.Size(147, 30)
         Me.chkboxWrap.TabIndex = 1
         Me.chkboxWrap.Text = "&Wrap text in shape"
         Me.chkboxWrap.UseVisualStyleBackColor = True
@@ -716,7 +701,7 @@ Partial Class rightpanel
         Me.btnColumns.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnColumns.Location = New System.Drawing.Point(0, 0)
         Me.btnColumns.Name = "btnColumns"
-        Me.btnColumns.Size = New System.Drawing.Size(158, 26)
+        Me.btnColumns.Size = New System.Drawing.Size(147, 30)
         Me.btnColumns.TabIndex = 0
         Me.btnColumns.Text = "Columns"
         Me.btnColumns.UseVisualStyleBackColor = True
@@ -1482,7 +1467,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.88172!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.btnSave, 4, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.btnCut, 2, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.btnPaste, 1, 1)
@@ -1507,10 +1492,10 @@ Partial Class rightpanel
         Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnSave.ImageIndex = 4
         Me.btnSave.ImageList = Me.ImageList1
-        Me.btnSave.Location = New System.Drawing.Point(287, 30)
+        Me.btnSave.Location = New System.Drawing.Point(280, 30)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(59, 38)
+        Me.btnSave.Size = New System.Drawing.Size(66, 38)
         Me.btnSave.TabIndex = 19
         Me.btnSave.Text = " "
         Me.btnSave.UseVisualStyleBackColor = True
@@ -1520,7 +1505,7 @@ Partial Class rightpanel
         Me.btnCut.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCut.ImageIndex = 1
         Me.btnCut.ImageList = Me.ImageList1
-        Me.btnCut.Location = New System.Drawing.Point(186, 30)
+        Me.btnCut.Location = New System.Drawing.Point(179, 30)
         Me.btnCut.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCut.Name = "btnCut"
         Me.btnCut.Size = New System.Drawing.Size(48, 38)
@@ -1533,10 +1518,10 @@ Partial Class rightpanel
         Me.btnPaste.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnPaste.ImageIndex = 6
         Me.btnPaste.ImageList = Me.ImageList1
-        Me.btnPaste.Location = New System.Drawing.Point(136, 30)
+        Me.btnPaste.Location = New System.Drawing.Point(131, 30)
         Me.btnPaste.Margin = New System.Windows.Forms.Padding(0)
         Me.btnPaste.Name = "btnPaste"
-        Me.btnPaste.Size = New System.Drawing.Size(50, 38)
+        Me.btnPaste.Size = New System.Drawing.Size(48, 38)
         Me.btnPaste.TabIndex = 17
         Me.btnPaste.Text = " "
         Me.btnPaste.UseVisualStyleBackColor = True
@@ -1546,7 +1531,7 @@ Partial Class rightpanel
         Me.btnCopy.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCopy.ImageIndex = 2
         Me.btnCopy.ImageList = Me.ImageList1
-        Me.btnCopy.Location = New System.Drawing.Point(234, 30)
+        Me.btnCopy.Location = New System.Drawing.Point(227, 30)
         Me.btnCopy.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCopy.Name = "btnCopy"
         Me.btnCopy.Size = New System.Drawing.Size(53, 38)
@@ -1560,9 +1545,9 @@ Partial Class rightpanel
         Me.cboxFontSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxFontSize.FormattingEnabled = True
         Me.cboxFontSize.Items.AddRange(New Object() {"8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "24", "28", "32", "36", "40", "44", "48", "54", "60", "66", "72", "80", "88", "96", "", "", ""})
-        Me.cboxFontSize.Location = New System.Drawing.Point(139, 3)
+        Me.cboxFontSize.Location = New System.Drawing.Point(134, 3)
         Me.cboxFontSize.Name = "cboxFontSize"
-        Me.cboxFontSize.Size = New System.Drawing.Size(44, 24)
+        Me.cboxFontSize.Size = New System.Drawing.Size(42, 24)
         Me.cboxFontSize.TabIndex = 14
         '
         'cboxFontFamily
@@ -1573,7 +1558,7 @@ Partial Class rightpanel
         Me.cboxFontFamily.Items.AddRange(New Object() {"Abadi MT Condensed", "Adobe Minion Web", "Agency FB", "Aharoni", "Aldhabi", "Algerian", "Almanac MT", "American Uncial", "Andale Mono", "Andalus", "Andy", "Angsana New", "AngsanaUPC", "Aparajita", "Arabic Transparent", "Arabic Typesetting", "Arial", "Arial Black", "Arial Narrow", "Arial Narrow Special", "Arial Rounded MT", "Arial Special", "Arial Unicode MS", "Augsburger Initials", "Baskerville Old Face", "Batang", "BatangChe", "Bauhaus 93", "Beesknees ITC", "Bell MT", "Berlin Sans FB", "Bernard MT Condensed", "Bickley Script", "Blackadder ITC", "Bodoni MT", "Bodoni MT Condensed", "Bon Apetit MT", "Book Antiqua", "Bookman Old Style", "Bookshelf Symbol", "Bradley Hand ITC", "Braggadocio", "BriemScript", "Britannic", "Britannic Bold", "Broadway", "Browallia New", "BrowalliaUPC", "Brush Script MT", "Calibri", "Californian FB", "Calisto MT", "Cambria", "Cambria Math", "Candara", "Cariadings", "Castellar", "Centaur", "Century", "Century Gothic", "Century Schoolbook", "Chiller", "Colonna MT", "Comic Sans MS", "Consolas", "Constantia", "Contemporary Brush", "Cooper Black", "Copperplate Gothic", "Corbel", "Cordia New", "CordiaUPC", "Courier New", "Curlz MT", "DaunPenh", "David", "Desdemona", "DFKai-SB", "DilleniaUPC", "Directions MT", "DokChampa", "Dotum", "DotumChe", "Ebrima", "Eckmann", "Edda", "Edwardian Script ITC", "Elephant", "Engravers MT", "Enviro", "Eras ITC", "Estrangelo Edessa", "EucrosiaUPC", "Euphemia", "Eurostile", "FangSong", "Felix Titling", "Fine Hand", "Fixed Miriam Transparent", "Flexure", "Footlight MT", "Forte", "Franklin Gothic", "Franklin Gothic Medium", "FrankRuehl", "FreesiaUPC", "Freestyle Script", "French Script MT", "Futura", "Gabriola", "Gadugi", "Garamond", "Garamond MT", "Gautami", "Georgia", "Georgia Ref", "Gigi", "Gill Sans MT", "Gill Sans MT Condensed", "Gisha", "Gloucester", "Goudy Old Style", "Goudy Stout", "Gradl", "Gulim", "GulimChe", "Gungsuh", "GungsuhChe", "Haettenschweiler", "Harlow Solid Italic", "Harrington", "High Tower Text", "Holidays MT", "Impact", "Imprint MT Shadow", "Informal Roman", "IrisUPC", "Iskoola Pota", "JasmineUPC", "Jokerman", "Juice ITC", "KaiTi", "Kalinga", "Kartika", "Keystrokes MT", "Khmer UI", "Kino MT", "KodchiangUPC", "Kokila", "Kristen ITC", "Kunstler Script", "Lao UI", "Latha", "LCD", "Leelawadee", "Levenim MT", "LilyUPC", "Lucida Blackletter", "Lucida Bright", "Lucida Bright Math", "Lucida Calligraphy", "Lucida Console", "Lucida Fax", "Lucida Handwriting", "Lucida Sans", "Lucida Sans Typewriter", "Lucida Sans Unicode", "Magneto", "Maiandra GD", "Malgun Gothic", "Mangal", "Map Symbols", "Marlett", "Matisse ITC", "Matura MT Script Capitals", "McZee", "Mead Bold", "Meiryo", "Meiryo UI", "Mercurius Script MT Bold", "Microsoft Himalaya", "Microsoft JhengHei", "Microsoft JhengHei UI", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Sans Serif", "Microsoft Tai Le", "Microsoft Uighur", "Microsoft YaHei", "Microsoft YaHei UI", "Microsoft Yi Baiti", "MingLiU", "MingLiU_HKSCS", "MingLiU_HKSCS-ExtB", "MingLiU-ExtB", "Minion Web", "Miriam", "Miriam Fixed", "Mistral", "Modern No. 20", "Mongolian Baiti", "Monotype Corsiva", "Monotype Sorts", "Monotype.com", "MoolBoran", "MS Gothic", "MS LineDraw", "MS Mincho", "MS Outlook", "MS PGothic", "MS PMincho", "MS Reference", "MS UI Gothic", "MT Extra", "MV Boli", "Myanmar Text", "Narkisim", "New Caledonia", "News Gothic MT", "Niagara", "Nirmala UI", "NSimSun", "Nyala", "OCR A Extended", "OCRB", "OCR-B-Digits", "Old English Text MT", "Onyx", "Palace Script MT", "Palatino Linotype", "Papyrus", "Parade", "Parchment", "Parties MT", "Peignot Medium", "Pepita MT", "Perpetua", "Perpetua Titling MT", "Placard Condensed", "Plantagenet Cherokee", "Playbill", "PMingLiU", "PMingLiU-ExtB", "Poor Richard", "Pristina", "Raavi", "Rage Italic", "Ransom", "Ravie", "RefSpecialty", "Rockwell", "Rockwell Condensed", "Rockwell Extra Bold", "Rod", "Runic MT Condensed", "Sakkal Majalla", "Script MT Bold", "Segoe Chess", "Segoe Print", "Segoe Pseudo", "Segoe Script", "Segoe UI", "Segoe UI Symbol", "Shonar Bangla", "Showcard Gothic", "Shruti", "Signs MT", "SimHei", "Simplified Arabic", "Simplified Arabic Fixed", "SimSun", "SimSun-ExtB", "Snap ITC", "Sports MT", "Stencil", "Stop", "Sylfaen", "Symbol", "Tahoma", "Temp Installer Font", "Tempo Grunge", "Tempus Sans ITC", "Times New Roman", "Times New Roman Special", "Traditional Arabic", "Transport MT", "Trebuchet MS", "Tunga", "Tw Cen MT", "Tw Cen MT Condensed", "Urdu Typesetting", "Utsaah", "Vacation MT", "Vani", "Verdana", "Verdana Ref", "Vijaya", "Viner Hand ITC", "Vivaldi", "Vixar ASCI", "Vladimir Script", "Vrinda", "Webdings", "Westminster", "Wide Latin", "Wingdings"})
         Me.cboxFontFamily.Location = New System.Drawing.Point(3, 3)
         Me.cboxFontFamily.Name = "cboxFontFamily"
-        Me.cboxFontFamily.Size = New System.Drawing.Size(130, 24)
+        Me.cboxFontFamily.Size = New System.Drawing.Size(125, 24)
         Me.cboxFontFamily.TabIndex = 15
         '
         'btnAlignCenter
@@ -1581,7 +1566,7 @@ Partial Class rightpanel
         Me.btnAlignCenter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAlignCenter.ImageIndex = 7
         Me.btnAlignCenter.ImageList = Me.ImageList1
-        Me.btnAlignCenter.Location = New System.Drawing.Point(234, 0)
+        Me.btnAlignCenter.Location = New System.Drawing.Point(227, 0)
         Me.btnAlignCenter.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAlignCenter.Name = "btnAlignCenter"
         Me.btnAlignCenter.Size = New System.Drawing.Size(53, 30)
@@ -1594,7 +1579,7 @@ Partial Class rightpanel
         Me.btnAlignLeft.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAlignLeft.ImageIndex = 8
         Me.btnAlignLeft.ImageList = Me.ImageList1
-        Me.btnAlignLeft.Location = New System.Drawing.Point(186, 0)
+        Me.btnAlignLeft.Location = New System.Drawing.Point(179, 0)
         Me.btnAlignLeft.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAlignLeft.Name = "btnAlignLeft"
         Me.btnAlignLeft.Size = New System.Drawing.Size(48, 30)
@@ -1607,10 +1592,10 @@ Partial Class rightpanel
         Me.btnAlignRight.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAlignRight.ImageIndex = 9
         Me.btnAlignRight.ImageList = Me.ImageList1
-        Me.btnAlignRight.Location = New System.Drawing.Point(287, 0)
+        Me.btnAlignRight.Location = New System.Drawing.Point(280, 0)
         Me.btnAlignRight.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAlignRight.Name = "btnAlignRight"
-        Me.btnAlignRight.Size = New System.Drawing.Size(59, 30)
+        Me.btnAlignRight.Size = New System.Drawing.Size(66, 30)
         Me.btnAlignRight.TabIndex = 5
         Me.btnAlignRight.Text = " "
         Me.btnAlignRight.UseVisualStyleBackColor = True
@@ -1630,7 +1615,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(130, 32)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(125, 32)
         Me.TableLayoutPanel3.TabIndex = 16
         '
         'btnBold
@@ -1680,7 +1665,7 @@ Partial Class rightpanel
         Me.txtSlideId.Multiline = True
         Me.txtSlideId.Name = "txtSlideId"
         Me.txtSlideId.ReadOnly = True
-        Me.txtSlideId.Size = New System.Drawing.Size(346, 26)
+        Me.txtSlideId.Size = New System.Drawing.Size(346, 38)
         Me.txtSlideId.TabIndex = 2
         Me.txtSlideId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1697,7 +1682,6 @@ Partial Class rightpanel
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -1707,26 +1691,6 @@ Partial Class rightpanel
         '
         'Fixedtimer
         '
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.Button1)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(352, 467)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "TabPage3"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(62, 100)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 157)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'rightpanel
         '
@@ -1745,7 +1709,6 @@ Partial Class rightpanel
         Me.TextLayout.ResumeLayout(False)
         Me.contenttextlayout.ResumeLayout(False)
         Me.textlayoutcontents.ResumeLayout(False)
-        Me.textlayoutcontents.PerformLayout()
         Me.textlayoutcontents2.ResumeLayout(False)
         Me.AutoFit.ResumeLayout(False)
         Me.ContentAutofit.ResumeLayout(False)
@@ -1812,7 +1775,6 @@ Partial Class rightpanel
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1907,7 +1869,6 @@ Partial Class rightpanel
     Friend WithEvents textlayoutcontents As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents cboxtextdirection As System.Windows.Forms.ComboBox
-    Friend WithEvents chkboxStacked As System.Windows.Forms.CheckBox
     Friend WithEvents textlayoutcontents2 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents cboxtextalignment As System.Windows.Forms.ComboBox
@@ -1942,7 +1903,5 @@ Partial Class rightpanel
     Friend WithEvents chkboxWrap As System.Windows.Forms.CheckBox
     Friend WithEvents btnColumns As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

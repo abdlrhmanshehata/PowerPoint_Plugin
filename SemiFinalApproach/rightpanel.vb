@@ -10,7 +10,6 @@ Public Class rightpanel
     Dim shapename As String
     Dim selectedshape As PowerPoint.Shape
     Dim l As Integer
-
 #Region "Notes"
 
 #Region "Subs"
@@ -50,8 +49,8 @@ Public Class rightpanel
         Catch ex As Exception
         End Try
     End Sub
-   
-    
+
+
     Sub setfont()
         notesshape.TextFrame.TextRange.Text = txtNotes.Text
         notesshape.TextFrame.TextRange.Font.Name = cboxFontFamily.SelectedItem.ToString
@@ -72,7 +71,7 @@ Public Class rightpanel
     Sub setfontstyle()
 
     End Sub
-    
+
     Sub importnotes()
         Try
             getcurrentindex()
@@ -116,7 +115,7 @@ Public Class rightpanel
         btnUnderline.Enabled = True
         btnItalic.Enabled = True
     End Sub
- 
+
 
 
     Private Sub txtNotes_TextChanged(sender As Object, e As EventArgs) Handles txtNotes.TextChanged
@@ -284,6 +283,9 @@ Public Class rightpanel
                             .Orientation = MsoTextOrientation.msoTextOrientationDownward
                         Case 2
                             .Orientation = MsoTextOrientation.msoTextOrientationUpward
+                            'Case 3
+                            '    selectedshape.TextEffect.KernedPairs = MsoTriState.msoTrue
+
                     End Select
                 End With
                 '======================================================TEXT ALIGNMENT==========================================================='
@@ -305,17 +307,6 @@ Public Class rightpanel
                 ElseIf Shrinktext.Checked Then
                     selectedshape.TextFrame2.AutoSize = MsoAutoSize.msoAutoSizeTextToFitShape
                 End If
-                '================================================== Margin================================================================='
-                selectedshape.TextFrame.MarginLeft = txtleftmargin.Text * 72
-                selectedshape.TextFrame.MarginBottom = txtbottommargin.Text * 72
-                selectedshape.TextFrame.MarginRight = txtrightmargin.Text * 72
-                selectedshape.TextFrame.MarginTop = txttopmargin.Text * 72
-                '================================================== wrap text================================================================='
-                If chkboxWrap.Checked Then
-
-                Else
-                    selectedshape.TextFrame.WordWrap = MsoTriState.msoTriStateToggle
-                End If
             End If
         Catch
 
@@ -336,11 +327,6 @@ Public Class rightpanel
             importnotes()
         End If
     End Sub
- 
-    Private Sub chkboxStacked_CheckedChanged(sender As Object, e As EventArgs)
-        selectshape()
-        selectedshape.TextEffect.ToggleVerticalText()
-    End Sub
     Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs)
         If chkboxWrap.Checked Then
             selectedshape.TextFrame.WordWrap = MsoTriState.msoCTrue
@@ -348,45 +334,53 @@ Public Class rightpanel
             selectedshape.TextFrame.WordWrap = MsoTriState.msoFalse
         End If
     End Sub
-
-    Private Sub plsLM_Click(sender As Object, e As EventArgs) Handles plsLM.Click
-        txtleftmargin.Text += 0.1
-        Fixedtimer_Tick(sender, e)
+    Private Sub plsLM_Click(sender As Object, e As EventArgs)
+        selectedshape.TextFrame.MarginLeft += 0.1 * 72
+        gettextpage()
     End Sub
-    Private Sub mnsLM_Click(sender As Object, e As EventArgs) Handles mnsLM.Click
-        txtleftmargin.Text -= 0.1
-        Fixedtimer_Tick(sender, e)
+    Private Sub mnsLM_Click(sender As Object, e As EventArgs)
+        Try
+            selectedshape.TextFrame.MarginLeft -= 0.1 * 72
+            gettextpage()
+        Catch ex As Exception
+        End Try
     End Sub
-    Private Sub plsBM_Click(sender As Object, e As EventArgs) Handles plsBM.Click
-        txtbottommargin.Text += 0.1
-        Fixedtimer_Tick(sender, e)
+    Private Sub plsBM_Click(sender As Object, e As EventArgs)
+        selectedshape.TextFrame.MarginBottom += 0.1 * 72
+        gettextpage()
     End Sub
     Sub mnsBM_click() Handles mnsBM.Click
-        txtbottommargin.Text -= 0.1
-        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+        Try
+            selectedshape.TextFrame.MarginBottom -= 0.1 * 72
+            gettextpage()
+        Catch ex As Exception
+        End Try
+
     End Sub
     Sub plsRM_click() Handles plsRM.Click
-        txtrightmargin.Text += 0.1
-        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+        selectedshape.TextFrame.MarginRight += 0.1 * 72
+        gettextpage()
     End Sub
     Sub msnRM_click() Handles mnsRM.Click
-        txtrightmargin.Text -= 0.1
-        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+        Try
+            selectedshape.TextFrame.MarginRight -= 0.1 * 72
+            gettextpage()
+        Catch ex As Exception
+        End Try
+
     End Sub
     Sub plsTM_click() Handles plsTM.Click
-        txttopmargin.Text += 0.1
-        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+        selectedshape.TextFrame.MarginTop += 0.1 * 72
+        gettextpage()
     End Sub
     Sub mnsTM_click() Handles mnsTM.Click
-        txttopmargin.Text -= 0.1
-        Fixedtimer_Tick(sender:=Nothing, e:=Nothing)
+        Try
+            selectedshape.TextFrame.MarginTop -= 0.1 * 72
+            gettextpage()
+        Catch ex As Exception
+        End Try
+
     End Sub
 #End Region
-
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MsgBox(Screen.PrimaryScreen.WorkingArea.Width - Me.Width)
-    End Sub
-
-    
+ 
 End Class

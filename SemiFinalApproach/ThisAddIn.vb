@@ -5,12 +5,11 @@ Public Class ThisAddIn
 
     Private Sub ThisAddIn_Startup() Handles Me.Startup
         ctp = Me.CustomTaskPanes.Add(New rightpanel, "RightSide Add-In")
-        ctp.Visible = True
+        ctp.Visible = False
         ctp.Width = 370
     End Sub
 
     Private Sub ThisAddIn_Shutdown() Handles Me.Shutdown
-
     End Sub
 
 End Class
