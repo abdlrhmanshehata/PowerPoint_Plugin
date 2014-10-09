@@ -10,51 +10,141 @@ Public Class rightpanel
     Dim shapename As String
     Dim selectedshape As PowerPoint.Shape
     Dim l As Integer
+#Region "General"
+    Sub getnoteshape()
+        Try
+            getcurrentindex()
+            For Each shape As PowerPoint.Shape In objapp.ActivePresentation.Slides(i).NotesPage.Shapes
+                If shape.HasTextFrame Then
+                    If shape.Width > 300 Then
+                        shapename = shape.Name
+                        notesshape = objapp.ActivePresentation.Slides(i).NotesPage.Shapes(shapename)
+                    End If
+                End If
+            Next
+        Catch ex As Exception
+        End Try
+    End Sub
+    Sub getcurrentindex()
+        Try
+            i = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
+            txtSlideId.Text = "Current SlideId: " & i
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+    Private Sub Fixedtimer_Tick(sender As Object, e As EventArgs) Handles Fixedtimer.Tick
+        getcurrentindex()
+        getnoteshape()
+
+        Dim location As System.Drawing.Point
+        Dim critical As System.Drawing.Point
+        critical.X = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
+        location.X = MousePosition.X
+        location.Y = MousePosition.Y
+        '===============================Mouse In=============================================
+        If location.X > critical.X Then
+            settextPage()
+            setnotespage()
+            '===============================Mouse Out=============================================
+        Else
+            gettextpage()
+            getnotespage()
+        End If
+    End Sub
+#End Region
+
+    '===============================NOTES NOTES NOTES NOTES NOTES NOTES NOTES ====================='
 #Region "Notes"
 
 #Region "Subs"
-    Sub getnoteshape()
-        getcurrentindex()
-        For Each shape As PowerPoint.Shape In objapp.ActivePresentation.Slides(i).NotesPage.Shapes
-            If shape.HasTextFrame Then
-                If shape.Width > 300 Then
-                    shapename = shape.Name
-                    notesshape = objapp.ActivePresentation.Slides(i).NotesPage.Shapes(shapename)
-                End If
-            End If
-        Next
-    End Sub
-    Sub getcurrentindex()
-        i = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
-        txtSlideId.Text = "Current SlideId: " & i
-    End Sub
     Sub getalignment()
-        Dim alignment As Integer
-        alignment = notesshape.TextFrame.TextRange.ParagraphFormat.Alignment
-        Select Case alignment
-            Case 1
-                txtNotes.SelectionAlignment = HorizontalAlignment.Left
-            Case 2
-                txtNotes.SelectionAlignment = HorizontalAlignment.Center
-            Case 3
-                txtNotes.SelectionAlignment = HorizontalAlignment.Right
-        End Select
+
+        Dim alignment As Integer = notesshape.TextFrame.TextRange.ParagraphFormat.Alignment
+        Dim txtnotesalignment As Integer = txtNotes.SelectionAlignment
+
+        If txtnotesalignment <> alignment Then
+            Select Case alignment
+                Case 1
+                    txtNotes.SelectionAlignment = HorizontalAlignment.Left
+                Case 2
+                    txtNotes.SelectionAlignment = HorizontalAlignment.Center
+                Case 3
+                    txtNotes.SelectionAlignment = HorizontalAlignment.Right
+            End Select
+        End If
+ 
+    End Sub
+    Sub gettext()
+        Try
+            txtNotes.Text = notesshape.TextFrame.TextRange.Text
+        Catch ex As Exception
+        End Try
     End Sub
     Sub getfont()
-        txtNotes.Text = notesshape.TextFrame.TextRange.Text
-        txtNotes.Font = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size)
+        Dim notesfontname As String = notesshape.TextFrame.TextRange.Font.Name
+        Dim notesfontsize As Integer = notesshape.TextFrame.TextRange.Font.Size
+        Dim myfont As System.Drawing.Font = New Drawing.Font(notesfontname, notesfontsize)
+
+        If txtNotes.Font.Name <> notesfontname Or txtNotes.Font.Size <> notesfontsize Then
+            txtNotes.Font = myfont
+            Try
+                cboxFontFamily.SelectedIndex = cboxFontFamily.Items.IndexOf(notesfontname)
+                cboxFontSize.SelectedIndex = cboxFontSize.Items.IndexOf(CStr(notesfontsize))
+            Catch ex As Exception
+            End Try
+        End If
+    End Sub
+    Sub getfontstyle()
         Try
-            cboxFontFamily.SelectedIndex = cboxFontFamily.Items.IndexOf(notesshape.TextFrame.TextRange.Font.Name)
-            cboxFontSize.SelectedIndex = cboxFontSize.Items.IndexOf(CStr(notesshape.TextFrame.TextRange.Font.Size))
+            For Each word As PowerPoint.TextRange In notesshape.TextFrame.TextRange.Words
+                If word.Text <> " " Then
+                    Dim length = word.Length
+                    Dim index As Integer = word.Start
+                    Dim theword As String = word.Text
+                    txtNotes.DeselectAll()
+                    txtNotes.Select(index - 1, length)
+
+                    With txtNotes.SelectionFont
+                        If .Bold <> word.Font.Bold And .Italic <> word.Font.Italic Then
+                            newfontstyle(FontStyle.Bold Or FontStyle.Italic)
+                        End If
+                        If .Bold <> word.Font.Bold Then
+                            newfontstyle(Drawing.FontStyle.Bold)
+                        End If
+                        If .Italic <> word.Font.Italic Then
+                            newfontstyle(Drawing.FontStyle.Italic)
+                        End If
+                        If .Underline <> word.Font.Underline Then
+                            newfontstyle(Drawing.FontStyle.Underline)
+                        End If
+                    End With
+
+                End If
+            Next
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Sub getnotespage() 'Time Function 
+        Try
+            If txtNotes.Text <> notesshape.TextFrame.TextRange.Text Then
+                gettext()
+            End If
+            getfont()
+            getfontstyle()
         Catch ex As Exception
         End Try
     End Sub
 
+    Sub setnotespage()
+        settext()
+        setfontstyle()
+    End Sub
 
-    Sub setfont()
-        notesshape.TextFrame.TextRange.Text = txtNotes.Text
-        notesshape.TextFrame.TextRange.Font.Name = cboxFontFamily.SelectedItem.ToString
-        notesshape.TextFrame.TextRange.Font.Size = CInt(cboxFontSize.SelectedItem.ToString)
+    Sub setfontstyle()
+    
     End Sub
     Sub setalignment()
         Dim alignment As Integer
@@ -68,108 +158,90 @@ Public Class rightpanel
                 notesshape.TextFrame.TextRange.ParagraphFormat.Alignment = PpParagraphAlignment.ppAlignRight
         End Select
     End Sub
-    Sub setfontstyle()
-
-    End Sub
-
-    Sub importnotes()
-        Try
-            getcurrentindex()
-            getnoteshape()
-            getfont()
-            getalignment()
-        Catch ex As Exception
-        End Try
-    End Sub
-    Sub exportnotes()
-        Try
-            getcurrentindex()
-            getnoteshape()
-            setfont()
-            setalignment()
-            setfontstyle()
-        Catch ex As Exception
-        End Try
-    End Sub
-    Sub disablecontrols()
-        btnAlignCenter.Enabled = False
-        btnAlignLeft.Enabled = False
-        btnAlignRight.Enabled = False
-        btnCopy.Enabled = False
-        btnCut.Enabled = False
-        btnPaste.Enabled = False
-        btnSave.Enabled = False
-        btnBold.Enabled = False
-        btnUnderline.Enabled = False
-        btnItalic.Enabled = False
-    End Sub
-    Sub enablecontrol()
-        btnAlignCenter.Enabled = True
-        btnAlignLeft.Enabled = True
-        btnAlignRight.Enabled = True
-        btnCopy.Enabled = True
-        btnCut.Enabled = True
-        btnPaste.Enabled = True
-        btnSave.Enabled = True
-        btnBold.Enabled = True
-        btnUnderline.Enabled = True
-        btnItalic.Enabled = True
-    End Sub
-
-
-
-    Private Sub txtNotes_TextChanged(sender As Object, e As EventArgs) Handles txtNotes.TextChanged
-        getnoteshape()
-        getcurrentindex()
+    Sub settext()
+        Dim mytext As String = txtNotes.Text
+        Dim notestext As String = notesshape.TextFrame.TextRange.Text
         notesshape.TextFrame.TextRange.Text = txtNotes.Text
     End Sub
+    Sub setfont()
+        notesshape.TextFrame.TextRange.Font.Name = cboxFontFamily.SelectedItem.ToString
+        notesshape.TextFrame.TextRange.Font.Size = CInt(cboxFontSize.SelectedItem.ToString)
+    End Sub
+    Sub defaultfontstyle()
+        txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, CInt(cboxFontSize.SelectedItem.ToString), FontStyle.Regular)
+    End Sub
+    Sub newfontstyle(ByVal style As System.Drawing.FontStyle)
+        txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name _
+                                                  , notesshape.TextFrame.TextRange.Font.Size, style)
+    End Sub
+
 #End Region
 
 #Region "Control_Buttons"
     Private Sub cboxFontSize_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboxFontSize.SelectionChangeCommitted
         txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, CInt(cboxFontSize.SelectedItem.ToString))
+        setfont()
     End Sub
     Private Sub cboxFontFamily_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboxFontFamily.SelectionChangeCommitted
         txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, CInt(cboxFontSize.SelectedItem.ToString))
+        setfont()
     End Sub
     Private Sub btnAlignLeft_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignLeft.Click
-        getnoteshape()
         txtNotes.SelectionAlignment = HorizontalAlignment.Left
+        setalignment()
     End Sub
     Private Sub btnAlignCenter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignCenter.Click
-        getnoteshape()
         txtNotes.SelectionAlignment = HorizontalAlignment.Center
+        setalignment()
     End Sub
     Private Sub btnAlignRight_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignRight.Click
-        getnoteshape()
         txtNotes.SelectionAlignment = HorizontalAlignment.Right
+        setalignment()
     End Sub
+
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Try
+            objapp.CommandBars("standard").Controls(3).Execute()
+        Catch ex As Exception
 
+        End Try
     End Sub
     Private Sub btnCopy_Click(sender As Object, e As EventArgs) Handles btnCopy.Click
-
+        Try
+            If txtNotes.SelectedText.Count <> 0 Then
+                txtNotes.Copy()
+            Else
+                MsgBox("Please Select Text")
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
     Private Sub btnCut_Click(sender As Object, e As EventArgs) Handles btnCut.Click
+        Try
+            If txtNotes.SelectedText.Length <> 0 Then
+                txtNotes.Copy()
+                txtNotes.SelectedText = ""
+            Else
+                MsgBox("Please Select Text")
+            End If
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
     Private Sub btnPaste_Click(sender As Object, e As EventArgs) Handles btnPaste.Click
-
-    End Sub
-    Private Sub btnUnderline_Click(sender As Object, e As EventArgs) Handles btnUnderline.Click
-
-    End Sub
-    Private Sub btnItalic_Click(sender As Object, e As EventArgs) Handles btnItalic.Click
-
-    End Sub
-    Private Sub btnBold_Click(sender As Object, e As EventArgs) Handles btnBold.Click
-
+        Try
+            txtNotes.Paste()
+        Catch ex As Exception
+        End Try
     End Sub
 #End Region
 
 #End Region
 
+
+    '===============================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================='
 #Region "Format Shape"
     Sub showpage(ByVal page As TableLayoutPanel)
         page.Visible = True
@@ -219,11 +291,9 @@ Public Class rightpanel
         Catch ex As Exception
 
         End Try
-    
+
     End Sub
-    Private Sub TabPage2_Enter(sender As Object, e As EventArgs) Handles TabPage2.Enter
-        Fixedtimer.Enabled = True
-    End Sub
+
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
     Sub gettextpage()
@@ -312,21 +382,6 @@ Public Class rightpanel
 
         End Try
     End Sub
-
-    Private Sub Fixedtimer_Tick(sender As Object, e As EventArgs) Handles Fixedtimer.Tick
-        Dim location As System.Drawing.Point
-        Dim critical As System.Drawing.Point
-        critical.X = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
-        location.X = MousePosition.X
-        location.Y = MousePosition.Y
-        If location.X > critical.X Then
-            settextPage()
-            exportnotes()
-        Else
-            gettextpage()
-            importnotes()
-        End If
-    End Sub
     Private Sub chkboxWrap_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxWrap.CheckedChanged
         If chkboxWrap.Checked Then
             selectedshape.TextFrame.WordWrap = MsoTriState.msoCTrue
@@ -382,5 +437,15 @@ Public Class rightpanel
 
     End Sub
 #End Region
- 
+
+
+    '===================================TEST TEST TEST TEST TEST ====================================='
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+        Fixedtimer.Enabled = True
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        Fixedtimer.Enabled = False
+    End Sub
 End Class

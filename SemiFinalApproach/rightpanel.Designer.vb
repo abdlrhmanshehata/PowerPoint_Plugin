@@ -25,7 +25,7 @@ Partial Class rightpanel
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rightpanel))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ShapeFormat = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.splitFormat = New System.Windows.Forms.SplitContainer()
         Me.cboxFormatShape = New System.Windows.Forms.ComboBox()
@@ -128,28 +128,32 @@ Partial Class rightpanel
         Me.LineStyle = New System.Windows.Forms.GroupBox()
         Me.ShadowPage = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.NotesSection = New System.Windows.Forms.TabPage()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.txtSlideId = New System.Windows.Forms.TextBox()
         Me.splitNotes = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnCut = New System.Windows.Forms.Button()
-        Me.btnPaste = New System.Windows.Forms.Button()
-        Me.btnCopy = New System.Windows.Forms.Button()
-        Me.cboxFontSize = New System.Windows.Forms.ComboBox()
-        Me.cboxFontFamily = New System.Windows.Forms.ComboBox()
-        Me.btnAlignCenter = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.btnAlignLeft = New System.Windows.Forms.Button()
+        Me.btnCopy = New System.Windows.Forms.Button()
+        Me.btnAlignCenter = New System.Windows.Forms.Button()
         Me.btnAlignRight = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnBold = New System.Windows.Forms.Button()
-        Me.btnItalic = New System.Windows.Forms.Button()
-        Me.btnUnderline = New System.Windows.Forms.Button()
-        Me.txtSlideId = New System.Windows.Forms.TextBox()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnitalic = New System.Windows.Forms.CheckBox()
+        Me.btnPaste = New System.Windows.Forms.Button()
+        Me.btnunderline = New System.Windows.Forms.CheckBox()
+        Me.btnBold = New System.Windows.Forms.CheckBox()
+        Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
+        Me.cboxFontFamily = New System.Windows.Forms.ComboBox()
+        Me.cboxFontSize = New System.Windows.Forms.ComboBox()
         Me.txtNotes = New System.Windows.Forms.RichTextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Fixedtimer = New System.Windows.Forms.Timer(Me.components)
-        Me.TabPage2.SuspendLayout()
+        Me.ShapeFormat.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.splitFormat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitFormat.Panel1.SuspendLayout()
@@ -201,14 +205,21 @@ Partial Class rightpanel
         Me.originalsize_1.SuspendLayout()
         Me.LineStylePage.SuspendLayout()
         Me.ShadowPage.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.NotesSection.SuspendLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
         CType(Me.splitNotes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitNotes.Panel1.SuspendLayout()
         Me.splitNotes.Panel2.SuspendLayout()
         Me.splitNotes.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
+        Me.TableLayoutPanel8.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -228,16 +239,16 @@ Partial Class rightpanel
         Me.ImageList1.Images.SetKeyName(9, "TextAlignRight.jpg")
         Me.ImageList1.Images.SetKeyName(10, "Underline.jpg")
         '
-        'TabPage2
+        'ShapeFormat
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.White
-        Me.TabPage2.Controls.Add(Me.Panel2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(352, 467)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Shape Format"
+        Me.ShapeFormat.BackColor = System.Drawing.Color.Gainsboro
+        Me.ShapeFormat.Controls.Add(Me.Panel2)
+        Me.ShapeFormat.Location = New System.Drawing.Point(4, 22)
+        Me.ShapeFormat.Name = "ShapeFormat"
+        Me.ShapeFormat.Padding = New System.Windows.Forms.Padding(3)
+        Me.ShapeFormat.Size = New System.Drawing.Size(352, 467)
+        Me.ShapeFormat.TabIndex = 1
+        Me.ShapeFormat.Text = "Shape Format"
         '
         'Panel2
         '
@@ -1421,134 +1432,291 @@ Partial Class rightpanel
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Shadow"
         '
-        'TabPage1
+        'NotesSection
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.DimGray
-        Me.TabPage1.Controls.Add(Me.splitNotes)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(352, 467)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Notes Section"
+        Me.NotesSection.BackColor = System.Drawing.Color.Gainsboro
+        Me.NotesSection.Controls.Add(Me.SplitContainer1)
+        Me.NotesSection.Location = New System.Drawing.Point(4, 22)
+        Me.NotesSection.Name = "NotesSection"
+        Me.NotesSection.Padding = New System.Windows.Forms.Padding(3)
+        Me.NotesSection.Size = New System.Drawing.Size(352, 467)
+        Me.NotesSection.TabIndex = 0
+        Me.NotesSection.Text = "Notes Section"
+        '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Location = New System.Drawing.Point(3, 3)
+        Me.SplitContainer1.Name = "SplitContainer1"
+        Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.txtSlideId)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.splitNotes)
+        Me.SplitContainer1.Size = New System.Drawing.Size(346, 461)
+        Me.SplitContainer1.SplitterDistance = 36
+        Me.SplitContainer1.TabIndex = 17
+        '
+        'txtSlideId
+        '
+        Me.txtSlideId.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtSlideId.Font = New System.Drawing.Font("Agency FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSlideId.Location = New System.Drawing.Point(0, 0)
+        Me.txtSlideId.Multiline = True
+        Me.txtSlideId.Name = "txtSlideId"
+        Me.txtSlideId.ReadOnly = True
+        Me.txtSlideId.Size = New System.Drawing.Size(346, 36)
+        Me.txtSlideId.TabIndex = 2
+        Me.txtSlideId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'splitNotes
         '
+        Me.splitNotes.BackColor = System.Drawing.Color.White
         Me.splitNotes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.splitNotes.Location = New System.Drawing.Point(3, 3)
+        Me.splitNotes.Location = New System.Drawing.Point(0, 0)
         Me.splitNotes.Name = "splitNotes"
         Me.splitNotes.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'splitNotes.Panel1
         '
         Me.splitNotes.Panel1.Controls.Add(Me.Panel1)
-        Me.splitNotes.Panel1.Controls.Add(Me.txtSlideId)
         '
         'splitNotes.Panel2
         '
         Me.splitNotes.Panel2.Controls.Add(Me.txtNotes)
-        Me.splitNotes.Size = New System.Drawing.Size(346, 461)
-        Me.splitNotes.SplitterDistance = 112
+        Me.splitNotes.Size = New System.Drawing.Size(346, 421)
+        Me.splitNotes.SplitterDistance = 82
         Me.splitNotes.TabIndex = 0
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 44)
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(346, 68)
+        Me.Panel1.Size = New System.Drawing.Size(346, 82)
         Me.Panel1.TabIndex = 16
         '
-        'TableLayoutPanel2
+        'TableLayoutPanel1
         '
-        Me.TableLayoutPanel2.ColumnCount = 5
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.11828!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.88172!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnSave, 4, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnCut, 2, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnPaste, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnCopy, 3, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.cboxFontSize, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.cboxFontFamily, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAlignCenter, 3, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAlignLeft, 2, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAlignRight, 4, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 0, 1)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.11765!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.88235!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(346, 68)
-        Me.TableLayoutPanel2.TabIndex = 16
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.22543!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.77457!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel6, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(346, 82)
+        Me.TableLayoutPanel1.TabIndex = 2
         '
-        'btnSave
+        'TableLayoutPanel5
         '
-        Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSave.ImageIndex = 4
-        Me.btnSave.ImageList = Me.ImageList1
-        Me.btnSave.Location = New System.Drawing.Point(278, 30)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(68, 38)
-        Me.btnSave.TabIndex = 19
-        Me.btnSave.Text = " "
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.TableLayoutPanel5.ColumnCount = 3
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel5.Controls.Add(Me.btnCut, 0, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnSave, 2, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnAlignLeft, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnCopy, 1, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnAlignCenter, 1, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.btnAlignRight, 2, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(200, 3)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 2
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(143, 76)
+        Me.TableLayoutPanel5.TabIndex = 0
         '
         'btnCut
         '
         Me.btnCut.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCut.ImageIndex = 1
         Me.btnCut.ImageList = Me.ImageList1
-        Me.btnCut.Location = New System.Drawing.Point(177, 30)
+        Me.btnCut.Location = New System.Drawing.Point(0, 38)
         Me.btnCut.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCut.Name = "btnCut"
-        Me.btnCut.Size = New System.Drawing.Size(48, 38)
+        Me.btnCut.Size = New System.Drawing.Size(47, 38)
         Me.btnCut.TabIndex = 18
         Me.btnCut.Text = " "
         Me.btnCut.UseVisualStyleBackColor = True
         '
-        'btnPaste
+        'btnSave
         '
-        Me.btnPaste.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnPaste.ImageIndex = 6
-        Me.btnPaste.ImageList = Me.ImageList1
-        Me.btnPaste.Location = New System.Drawing.Point(130, 30)
-        Me.btnPaste.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnPaste.Name = "btnPaste"
-        Me.btnPaste.Size = New System.Drawing.Size(47, 38)
-        Me.btnPaste.TabIndex = 17
-        Me.btnPaste.Text = " "
-        Me.btnPaste.UseVisualStyleBackColor = True
+        Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSave.ImageIndex = 4
+        Me.btnSave.ImageList = Me.ImageList1
+        Me.btnSave.Location = New System.Drawing.Point(94, 38)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(49, 38)
+        Me.btnSave.TabIndex = 19
+        Me.btnSave.Text = " "
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'btnAlignLeft
+        '
+        Me.btnAlignLeft.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAlignLeft.ImageIndex = 8
+        Me.btnAlignLeft.ImageList = Me.ImageList1
+        Me.btnAlignLeft.Location = New System.Drawing.Point(0, 0)
+        Me.btnAlignLeft.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAlignLeft.Name = "btnAlignLeft"
+        Me.btnAlignLeft.Size = New System.Drawing.Size(47, 38)
+        Me.btnAlignLeft.TabIndex = 3
+        Me.btnAlignLeft.Text = " "
+        Me.btnAlignLeft.UseVisualStyleBackColor = True
         '
         'btnCopy
         '
         Me.btnCopy.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCopy.ImageIndex = 2
         Me.btnCopy.ImageList = Me.ImageList1
-        Me.btnCopy.Location = New System.Drawing.Point(225, 30)
+        Me.btnCopy.Location = New System.Drawing.Point(47, 38)
         Me.btnCopy.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCopy.Name = "btnCopy"
-        Me.btnCopy.Size = New System.Drawing.Size(53, 38)
+        Me.btnCopy.Size = New System.Drawing.Size(47, 38)
         Me.btnCopy.TabIndex = 5
         Me.btnCopy.Text = " "
         Me.btnCopy.UseVisualStyleBackColor = True
         '
-        'cboxFontSize
+        'btnAlignCenter
         '
-        Me.cboxFontSize.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cboxFontSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboxFontSize.FormattingEnabled = True
-        Me.cboxFontSize.Items.AddRange(New Object() {"8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "24", "28", "32", "36", "40", "44", "48", "54", "60", "66", "72", "80", "88", "96", "", "", ""})
-        Me.cboxFontSize.Location = New System.Drawing.Point(133, 3)
-        Me.cboxFontSize.Name = "cboxFontSize"
-        Me.cboxFontSize.Size = New System.Drawing.Size(41, 24)
-        Me.cboxFontSize.TabIndex = 14
+        Me.btnAlignCenter.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAlignCenter.ImageIndex = 7
+        Me.btnAlignCenter.ImageList = Me.ImageList1
+        Me.btnAlignCenter.Location = New System.Drawing.Point(47, 0)
+        Me.btnAlignCenter.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAlignCenter.Name = "btnAlignCenter"
+        Me.btnAlignCenter.Size = New System.Drawing.Size(47, 38)
+        Me.btnAlignCenter.TabIndex = 4
+        Me.btnAlignCenter.Text = " "
+        Me.btnAlignCenter.UseVisualStyleBackColor = True
+        '
+        'btnAlignRight
+        '
+        Me.btnAlignRight.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAlignRight.ImageIndex = 9
+        Me.btnAlignRight.ImageList = Me.ImageList1
+        Me.btnAlignRight.Location = New System.Drawing.Point(94, 0)
+        Me.btnAlignRight.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAlignRight.Name = "btnAlignRight"
+        Me.btnAlignRight.Size = New System.Drawing.Size(49, 38)
+        Me.btnAlignRight.TabIndex = 5
+        Me.btnAlignRight.Text = " "
+        Me.btnAlignRight.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 1
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.TableLayoutPanel7, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.TableLayoutPanel8, 0, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 2
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(191, 76)
+        Me.TableLayoutPanel6.TabIndex = 1
+        '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.ColumnCount = 4
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel7.Controls.Add(Me.btnitalic, 1, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.btnPaste, 3, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.btnunderline, 2, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.btnBold, 0, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(3, 41)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 1
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(185, 32)
+        Me.TableLayoutPanel7.TabIndex = 0
+        '
+        'btnitalic
+        '
+        Me.btnitalic.Appearance = System.Windows.Forms.Appearance.Button
+        Me.btnitalic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnitalic.ImageKey = "Italic.jpg"
+        Me.btnitalic.ImageList = Me.ImageList1
+        Me.btnitalic.Location = New System.Drawing.Point(46, 0)
+        Me.btnitalic.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnitalic.Name = "btnitalic"
+        Me.btnitalic.Size = New System.Drawing.Size(46, 32)
+        Me.btnitalic.TabIndex = 3
+        Me.btnitalic.Text = " "
+        Me.btnitalic.UseVisualStyleBackColor = True
+        '
+        'btnPaste
+        '
+        Me.btnPaste.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnPaste.ImageIndex = 6
+        Me.btnPaste.ImageList = Me.ImageList1
+        Me.btnPaste.Location = New System.Drawing.Point(138, 0)
+        Me.btnPaste.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnPaste.Name = "btnPaste"
+        Me.btnPaste.Size = New System.Drawing.Size(47, 32)
+        Me.btnPaste.TabIndex = 17
+        Me.btnPaste.Text = " "
+        Me.btnPaste.UseVisualStyleBackColor = True
+        '
+        'btnunderline
+        '
+        Me.btnunderline.Appearance = System.Windows.Forms.Appearance.Button
+        Me.btnunderline.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnunderline.ImageKey = "Underline.jpg"
+        Me.btnunderline.ImageList = Me.ImageList1
+        Me.btnunderline.Location = New System.Drawing.Point(92, 0)
+        Me.btnunderline.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnunderline.Name = "btnunderline"
+        Me.btnunderline.Size = New System.Drawing.Size(46, 32)
+        Me.btnunderline.TabIndex = 2
+        Me.btnunderline.Text = " "
+        Me.btnunderline.UseVisualStyleBackColor = True
+        '
+        'btnBold
+        '
+        Me.btnBold.Appearance = System.Windows.Forms.Appearance.Button
+        Me.btnBold.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBold.ImageIndex = 0
+        Me.btnBold.ImageList = Me.ImageList1
+        Me.btnBold.Location = New System.Drawing.Point(0, 0)
+        Me.btnBold.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnBold.Name = "btnBold"
+        Me.btnBold.Size = New System.Drawing.Size(46, 32)
+        Me.btnBold.TabIndex = 2
+        Me.btnBold.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel8
+        '
+        Me.TableLayoutPanel8.ColumnCount = 2
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.26437!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.73563!))
+        Me.TableLayoutPanel8.Controls.Add(Me.cboxFontFamily, 0, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.cboxFontSize, 1, 0)
+        Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel8.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
+        Me.TableLayoutPanel8.RowCount = 1
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(185, 32)
+        Me.TableLayoutPanel8.TabIndex = 1
         '
         'cboxFontFamily
         '
@@ -1558,130 +1726,33 @@ Partial Class rightpanel
         Me.cboxFontFamily.Items.AddRange(New Object() {"Abadi MT Condensed", "Adobe Minion Web", "Agency FB", "Aharoni", "Aldhabi", "Algerian", "Almanac MT", "American Uncial", "Andale Mono", "Andalus", "Andy", "Angsana New", "AngsanaUPC", "Aparajita", "Arabic Transparent", "Arabic Typesetting", "Arial", "Arial Black", "Arial Narrow", "Arial Narrow Special", "Arial Rounded MT", "Arial Special", "Arial Unicode MS", "Augsburger Initials", "Baskerville Old Face", "Batang", "BatangChe", "Bauhaus 93", "Beesknees ITC", "Bell MT", "Berlin Sans FB", "Bernard MT Condensed", "Bickley Script", "Blackadder ITC", "Bodoni MT", "Bodoni MT Condensed", "Bon Apetit MT", "Book Antiqua", "Bookman Old Style", "Bookshelf Symbol", "Bradley Hand ITC", "Braggadocio", "BriemScript", "Britannic", "Britannic Bold", "Broadway", "Browallia New", "BrowalliaUPC", "Brush Script MT", "Calibri", "Californian FB", "Calisto MT", "Cambria", "Cambria Math", "Candara", "Cariadings", "Castellar", "Centaur", "Century", "Century Gothic", "Century Schoolbook", "Chiller", "Colonna MT", "Comic Sans MS", "Consolas", "Constantia", "Contemporary Brush", "Cooper Black", "Copperplate Gothic", "Corbel", "Cordia New", "CordiaUPC", "Courier New", "Curlz MT", "DaunPenh", "David", "Desdemona", "DFKai-SB", "DilleniaUPC", "Directions MT", "DokChampa", "Dotum", "DotumChe", "Ebrima", "Eckmann", "Edda", "Edwardian Script ITC", "Elephant", "Engravers MT", "Enviro", "Eras ITC", "Estrangelo Edessa", "EucrosiaUPC", "Euphemia", "Eurostile", "FangSong", "Felix Titling", "Fine Hand", "Fixed Miriam Transparent", "Flexure", "Footlight MT", "Forte", "Franklin Gothic", "Franklin Gothic Medium", "FrankRuehl", "FreesiaUPC", "Freestyle Script", "French Script MT", "Futura", "Gabriola", "Gadugi", "Garamond", "Garamond MT", "Gautami", "Georgia", "Georgia Ref", "Gigi", "Gill Sans MT", "Gill Sans MT Condensed", "Gisha", "Gloucester", "Goudy Old Style", "Goudy Stout", "Gradl", "Gulim", "GulimChe", "Gungsuh", "GungsuhChe", "Haettenschweiler", "Harlow Solid Italic", "Harrington", "High Tower Text", "Holidays MT", "Impact", "Imprint MT Shadow", "Informal Roman", "IrisUPC", "Iskoola Pota", "JasmineUPC", "Jokerman", "Juice ITC", "KaiTi", "Kalinga", "Kartika", "Keystrokes MT", "Khmer UI", "Kino MT", "KodchiangUPC", "Kokila", "Kristen ITC", "Kunstler Script", "Lao UI", "Latha", "LCD", "Leelawadee", "Levenim MT", "LilyUPC", "Lucida Blackletter", "Lucida Bright", "Lucida Bright Math", "Lucida Calligraphy", "Lucida Console", "Lucida Fax", "Lucida Handwriting", "Lucida Sans", "Lucida Sans Typewriter", "Lucida Sans Unicode", "Magneto", "Maiandra GD", "Malgun Gothic", "Mangal", "Map Symbols", "Marlett", "Matisse ITC", "Matura MT Script Capitals", "McZee", "Mead Bold", "Meiryo", "Meiryo UI", "Mercurius Script MT Bold", "Microsoft Himalaya", "Microsoft JhengHei", "Microsoft JhengHei UI", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Sans Serif", "Microsoft Tai Le", "Microsoft Uighur", "Microsoft YaHei", "Microsoft YaHei UI", "Microsoft Yi Baiti", "MingLiU", "MingLiU_HKSCS", "MingLiU_HKSCS-ExtB", "MingLiU-ExtB", "Minion Web", "Miriam", "Miriam Fixed", "Mistral", "Modern No. 20", "Mongolian Baiti", "Monotype Corsiva", "Monotype Sorts", "Monotype.com", "MoolBoran", "MS Gothic", "MS LineDraw", "MS Mincho", "MS Outlook", "MS PGothic", "MS PMincho", "MS Reference", "MS UI Gothic", "MT Extra", "MV Boli", "Myanmar Text", "Narkisim", "New Caledonia", "News Gothic MT", "Niagara", "Nirmala UI", "NSimSun", "Nyala", "OCR A Extended", "OCRB", "OCR-B-Digits", "Old English Text MT", "Onyx", "Palace Script MT", "Palatino Linotype", "Papyrus", "Parade", "Parchment", "Parties MT", "Peignot Medium", "Pepita MT", "Perpetua", "Perpetua Titling MT", "Placard Condensed", "Plantagenet Cherokee", "Playbill", "PMingLiU", "PMingLiU-ExtB", "Poor Richard", "Pristina", "Raavi", "Rage Italic", "Ransom", "Ravie", "RefSpecialty", "Rockwell", "Rockwell Condensed", "Rockwell Extra Bold", "Rod", "Runic MT Condensed", "Sakkal Majalla", "Script MT Bold", "Segoe Chess", "Segoe Print", "Segoe Pseudo", "Segoe Script", "Segoe UI", "Segoe UI Symbol", "Shonar Bangla", "Showcard Gothic", "Shruti", "Signs MT", "SimHei", "Simplified Arabic", "Simplified Arabic Fixed", "SimSun", "SimSun-ExtB", "Snap ITC", "Sports MT", "Stencil", "Stop", "Sylfaen", "Symbol", "Tahoma", "Temp Installer Font", "Tempo Grunge", "Tempus Sans ITC", "Times New Roman", "Times New Roman Special", "Traditional Arabic", "Transport MT", "Trebuchet MS", "Tunga", "Tw Cen MT", "Tw Cen MT Condensed", "Urdu Typesetting", "Utsaah", "Vacation MT", "Vani", "Verdana", "Verdana Ref", "Vijaya", "Viner Hand ITC", "Vivaldi", "Vixar ASCI", "Vladimir Script", "Vrinda", "Webdings", "Westminster", "Wide Latin", "Wingdings"})
         Me.cboxFontFamily.Location = New System.Drawing.Point(3, 3)
         Me.cboxFontFamily.Name = "cboxFontFamily"
-        Me.cboxFontFamily.Size = New System.Drawing.Size(124, 24)
+        Me.cboxFontFamily.Size = New System.Drawing.Size(125, 24)
         Me.cboxFontFamily.TabIndex = 15
         '
-        'btnAlignCenter
+        'cboxFontSize
         '
-        Me.btnAlignCenter.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAlignCenter.ImageIndex = 7
-        Me.btnAlignCenter.ImageList = Me.ImageList1
-        Me.btnAlignCenter.Location = New System.Drawing.Point(225, 0)
-        Me.btnAlignCenter.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAlignCenter.Name = "btnAlignCenter"
-        Me.btnAlignCenter.Size = New System.Drawing.Size(53, 30)
-        Me.btnAlignCenter.TabIndex = 4
-        Me.btnAlignCenter.Text = " "
-        Me.btnAlignCenter.UseVisualStyleBackColor = True
-        '
-        'btnAlignLeft
-        '
-        Me.btnAlignLeft.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAlignLeft.ImageIndex = 8
-        Me.btnAlignLeft.ImageList = Me.ImageList1
-        Me.btnAlignLeft.Location = New System.Drawing.Point(177, 0)
-        Me.btnAlignLeft.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAlignLeft.Name = "btnAlignLeft"
-        Me.btnAlignLeft.Size = New System.Drawing.Size(48, 30)
-        Me.btnAlignLeft.TabIndex = 3
-        Me.btnAlignLeft.Text = " "
-        Me.btnAlignLeft.UseVisualStyleBackColor = True
-        '
-        'btnAlignRight
-        '
-        Me.btnAlignRight.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAlignRight.ImageIndex = 9
-        Me.btnAlignRight.ImageList = Me.ImageList1
-        Me.btnAlignRight.Location = New System.Drawing.Point(278, 0)
-        Me.btnAlignRight.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnAlignRight.Name = "btnAlignRight"
-        Me.btnAlignRight.Size = New System.Drawing.Size(68, 30)
-        Me.btnAlignRight.TabIndex = 5
-        Me.btnAlignRight.Text = " "
-        Me.btnAlignRight.UseVisualStyleBackColor = True
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.ColumnCount = 4
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.btnBold, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.btnItalic, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.btnUnderline, 0, 0)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 33)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(124, 32)
-        Me.TableLayoutPanel3.TabIndex = 16
-        '
-        'btnBold
-        '
-        Me.btnBold.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBold.ImageIndex = 0
-        Me.btnBold.ImageList = Me.ImageList1
-        Me.btnBold.Location = New System.Drawing.Point(80, 0)
-        Me.btnBold.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnBold.Name = "btnBold"
-        Me.btnBold.Size = New System.Drawing.Size(40, 32)
-        Me.btnBold.TabIndex = 7
-        Me.btnBold.Text = " "
-        Me.btnBold.UseVisualStyleBackColor = True
-        '
-        'btnItalic
-        '
-        Me.btnItalic.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnItalic.ImageIndex = 5
-        Me.btnItalic.ImageList = Me.ImageList1
-        Me.btnItalic.Location = New System.Drawing.Point(40, 0)
-        Me.btnItalic.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnItalic.Name = "btnItalic"
-        Me.btnItalic.Size = New System.Drawing.Size(40, 32)
-        Me.btnItalic.TabIndex = 6
-        Me.btnItalic.Text = " "
-        Me.btnItalic.UseVisualStyleBackColor = True
-        '
-        'btnUnderline
-        '
-        Me.btnUnderline.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnUnderline.ImageIndex = 10
-        Me.btnUnderline.ImageList = Me.ImageList1
-        Me.btnUnderline.Location = New System.Drawing.Point(0, 0)
-        Me.btnUnderline.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnUnderline.Name = "btnUnderline"
-        Me.btnUnderline.Size = New System.Drawing.Size(40, 32)
-        Me.btnUnderline.TabIndex = 4
-        Me.btnUnderline.Text = " "
-        Me.btnUnderline.UseVisualStyleBackColor = True
-        '
-        'txtSlideId
-        '
-        Me.txtSlideId.Dock = System.Windows.Forms.DockStyle.Top
-        Me.txtSlideId.Font = New System.Drawing.Font("Agency FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSlideId.Location = New System.Drawing.Point(0, 0)
-        Me.txtSlideId.Multiline = True
-        Me.txtSlideId.Name = "txtSlideId"
-        Me.txtSlideId.ReadOnly = True
-        Me.txtSlideId.Size = New System.Drawing.Size(346, 38)
-        Me.txtSlideId.TabIndex = 2
-        Me.txtSlideId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.cboxFontSize.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboxFontSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboxFontSize.FormattingEnabled = True
+        Me.cboxFontSize.Items.AddRange(New Object() {"8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "24", "28", "32", "36", "40", "44", "48", "54", "60", "66", "72", "80", "88", "96", "", "", ""})
+        Me.cboxFontSize.Location = New System.Drawing.Point(134, 3)
+        Me.cboxFontSize.Name = "cboxFontSize"
+        Me.cboxFontSize.Size = New System.Drawing.Size(48, 24)
+        Me.cboxFontSize.TabIndex = 14
         '
         'txtNotes
         '
         Me.txtNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNotes.Location = New System.Drawing.Point(0, 0)
         Me.txtNotes.Name = "txtNotes"
-        Me.txtNotes.Size = New System.Drawing.Size(346, 345)
+        Me.txtNotes.Size = New System.Drawing.Size(346, 335)
         Me.txtNotes.TabIndex = 1
-        Me.txtNotes.Text = ""
+        Me.txtNotes.Text = " "
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.NotesSection)
+        Me.TabControl1.Controls.Add(Me.ShapeFormat)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -1691,6 +1762,8 @@ Partial Class rightpanel
         '
         'Fixedtimer
         '
+        Me.Fixedtimer.Enabled = True
+        Me.Fixedtimer.Interval = 40
         '
         'rightpanel
         '
@@ -1699,7 +1772,7 @@ Partial Class rightpanel
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "rightpanel"
         Me.Size = New System.Drawing.Size(360, 493)
-        Me.TabPage2.ResumeLayout(False)
+        Me.ShapeFormat.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.splitFormat.Panel1.ResumeLayout(False)
         Me.splitFormat.Panel2.ResumeLayout(False)
@@ -1765,30 +1838,36 @@ Partial Class rightpanel
         Me.originalsize_1.ResumeLayout(False)
         Me.LineStylePage.ResumeLayout(False)
         Me.ShadowPage.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
+        Me.NotesSection.ResumeLayout(False)
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel1.PerformLayout()
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
         Me.splitNotes.Panel1.ResumeLayout(False)
-        Me.splitNotes.Panel1.PerformLayout()
         Me.splitNotes.Panel2.ResumeLayout(False)
         CType(Me.splitNotes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.splitNotes.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.TableLayoutPanel8.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents ShapeFormat As System.Windows.Forms.TabPage
     Friend WithEvents splitFormat As System.Windows.Forms.SplitContainer
     Friend WithEvents cboxFormatShape As System.Windows.Forms.ComboBox
     Friend WithEvents ShadowPage As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents LineStylePage As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents LineStyle As System.Windows.Forms.GroupBox
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents NotesSection As System.Windows.Forms.TabPage
     Friend WithEvents splitNotes As System.Windows.Forms.SplitContainer
-    Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnCut As System.Windows.Forms.Button
     Friend WithEvents btnPaste As System.Windows.Forms.Button
@@ -1798,12 +1877,7 @@ Partial Class rightpanel
     Friend WithEvents btnAlignCenter As System.Windows.Forms.Button
     Friend WithEvents btnAlignLeft As System.Windows.Forms.Button
     Friend WithEvents btnAlignRight As System.Windows.Forms.Button
-    Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents btnBold As System.Windows.Forms.Button
-    Friend WithEvents btnItalic As System.Windows.Forms.Button
-    Friend WithEvents btnUnderline As System.Windows.Forms.Button
     Friend WithEvents txtSlideId As System.Windows.Forms.TextBox
-    Friend WithEvents txtNotes As System.Windows.Forms.RichTextBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents LineColorPage As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents LineColor As System.Windows.Forms.GroupBox
@@ -1862,7 +1936,6 @@ Partial Class rightpanel
     Friend WithEvents originalsize_1 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents btnOriginalSize As System.Windows.Forms.Button
     Friend WithEvents Fixedtimer As System.Windows.Forms.Timer
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TextBoxPage As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents TextLayout As System.Windows.Forms.GroupBox
     Friend WithEvents contenttextlayout As System.Windows.Forms.TableLayoutPanel
@@ -1902,6 +1975,17 @@ Partial Class rightpanel
     Friend WithEvents mnsBM As System.Windows.Forms.Button
     Friend WithEvents chkboxWrap As System.Windows.Forms.CheckBox
     Friend WithEvents btnColumns As System.Windows.Forms.Button
+    Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel5 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel6 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel7 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel8 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents btnBold As System.Windows.Forms.CheckBox
+    Friend WithEvents btnitalic As System.Windows.Forms.CheckBox
+    Friend WithEvents btnunderline As System.Windows.Forms.CheckBox
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents txtNotes As System.Windows.Forms.RichTextBox
 
 End Class
