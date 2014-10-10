@@ -509,7 +509,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.58333!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.41667!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.mnsLM, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.plsLM, 2, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.txtleftmargin, 1, 0)
@@ -525,10 +525,10 @@ Partial Class rightpanel
         'mnsLM
         '
         Me.mnsLM.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mnsLM.Location = New System.Drawing.Point(28, 0)
+        Me.mnsLM.Location = New System.Drawing.Point(27, 0)
         Me.mnsLM.Margin = New System.Windows.Forms.Padding(0)
         Me.mnsLM.Name = "mnsLM"
-        Me.mnsLM.Size = New System.Drawing.Size(23, 6)
+        Me.mnsLM.Size = New System.Drawing.Size(24, 6)
         Me.mnsLM.TabIndex = 2
         Me.mnsLM.Text = "-"
         Me.mnsLM.UseVisualStyleBackColor = True
@@ -536,7 +536,7 @@ Partial Class rightpanel
         'plsLM
         '
         Me.plsLM.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.plsLM.Location = New System.Drawing.Point(8, 0)
+        Me.plsLM.Location = New System.Drawing.Point(7, 0)
         Me.plsLM.Margin = New System.Windows.Forms.Padding(0)
         Me.plsLM.Name = "plsLM"
         Me.plsLM.Size = New System.Drawing.Size(20, 6)
@@ -632,7 +632,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.35193!))
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.64807!))
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
+        Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23.0!))
         Me.TableLayoutPanel10.Controls.Add(Me.txtrightmargin, 1, 0)
         Me.TableLayoutPanel10.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel10.Controls.Add(Me.plsRM, 2, 0)
@@ -648,7 +648,7 @@ Partial Class rightpanel
         'txtrightmargin
         '
         Me.txtrightmargin.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtrightmargin.Location = New System.Drawing.Point(7, 3)
+        Me.txtrightmargin.Location = New System.Drawing.Point(6, 3)
         Me.txtrightmargin.Multiline = True
         Me.txtrightmargin.Name = "txtrightmargin"
         Me.txtrightmargin.Size = New System.Drawing.Size(1, 1)
@@ -668,7 +668,7 @@ Partial Class rightpanel
         'plsRM
         '
         Me.plsRM.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.plsRM.Location = New System.Drawing.Point(8, 0)
+        Me.plsRM.Location = New System.Drawing.Point(7, 0)
         Me.plsRM.Margin = New System.Windows.Forms.Padding(0)
         Me.plsRM.Name = "plsRM"
         Me.plsRM.Size = New System.Drawing.Size(20, 7)
@@ -679,10 +679,10 @@ Partial Class rightpanel
         'mnsRM
         '
         Me.mnsRM.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mnsRM.Location = New System.Drawing.Point(28, 0)
+        Me.mnsRM.Location = New System.Drawing.Point(27, 0)
         Me.mnsRM.Margin = New System.Windows.Forms.Padding(0)
         Me.mnsRM.Name = "mnsRM"
-        Me.mnsRM.Size = New System.Drawing.Size(23, 7)
+        Me.mnsRM.Size = New System.Drawing.Size(24, 7)
         Me.mnsRM.TabIndex = 2
         Me.mnsRM.Text = "-"
         Me.mnsRM.UseVisualStyleBackColor = True

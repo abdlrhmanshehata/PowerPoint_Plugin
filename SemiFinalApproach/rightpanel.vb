@@ -191,11 +191,15 @@ Public Class rightpanel
         notesshape.TextFrame.TextRange.Font.Size = CInt(cboxFontSize.SelectedItem.ToString)
     End Sub
     Sub defaultfontstyle()
-        txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, CInt(cboxFontSize.SelectedItem.ToString), FontStyle.Regular)
+        txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size, FontStyle.Regular)
     End Sub
     Sub newfontstyle(ByVal style As System.Drawing.FontStyle)
         txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name _
                                                   , notesshape.TextFrame.TextRange.Font.Size, style)
+    End Sub
+
+    Sub makenewfont(ByVal choosestyle As Drawing.FontStyle)
+        txtNotes.Font = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size, choosestyle)
     End Sub
 #End Region
 
@@ -208,6 +212,7 @@ Public Class rightpanel
         txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, CInt(cboxFontSize.SelectedItem.ToString))
         setfont()
     End Sub
+
     Private Sub btnAlignLeft_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignLeft.Click
         txtNotes.SelectionAlignment = HorizontalAlignment.Left
         setalignment()
@@ -220,6 +225,7 @@ Public Class rightpanel
         txtNotes.SelectionAlignment = HorizontalAlignment.Right
         setalignment()
     End Sub
+
     Private Sub btnitalic_CheckedChanged(sender As Object, e As EventArgs) Handles btnitalic.CheckedChanged
         If txtNotes.SelectedText.Length <> 0 Then
             If btnitalic.Checked = True Then
@@ -228,7 +234,8 @@ Public Class rightpanel
                 defaultfontstyle()
             End If
         Else
-            MsgBox(" Please select text")
+            btnitalic.Checked = False
+            MsgBox(" please select text")
         End If
     End Sub
     Private Sub btnBold_CheckedChanged(sender As Object, e As EventArgs) Handles btnBold.CheckedChanged
@@ -239,7 +246,8 @@ Public Class rightpanel
                 defaultfontstyle()
             End If
         Else
-            MsgBox(" Please select text")
+            btnBold.Checked = False
+            MsgBox(" please select text")
         End If
     End Sub
     Private Sub btnunderline_CheckedChanged(sender As Object, e As EventArgs) Handles btnunderline.CheckedChanged
@@ -250,12 +258,15 @@ Public Class rightpanel
                 defaultfontstyle()
             End If
         Else
-            MsgBox(" Please select text")
+            btnunderline.Checked = False
+            MsgBox(" please select text")
         End If
     End Sub
+
     Private Sub btnRefresh_Click() Handles btnRefresh.Click
         setfontstyle()
     End Sub
+
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             objapp.CommandBars("standard").Controls(3).Execute()
