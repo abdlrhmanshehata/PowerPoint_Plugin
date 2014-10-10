@@ -2,7 +2,6 @@
 Imports Microsoft.Office.Core
 Imports System.Windows.Forms
 Imports System.Drawing
-
 Public Class rightpanel
     Dim objapp As PowerPoint.Application = Globals.ThisAddIn.Application
     Dim i As Integer
@@ -51,6 +50,10 @@ Public Class rightpanel
         Else
             gettextpage()
             getnotespage()
+            Try
+                btnRefresh_Click()
+            Catch ex As Exception
+            End Try
         End If
     End Sub
 #End Region
@@ -74,7 +77,7 @@ Public Class rightpanel
                     txtNotes.SelectionAlignment = HorizontalAlignment.Right
             End Select
         End If
- 
+
     End Sub
     Sub gettext()
         Try
@@ -120,7 +123,7 @@ Public Class rightpanel
                             newfontstyle(Drawing.FontStyle.Underline)
                         End If
                     End With
-
+                    txtNotes.DeselectAll()
                 End If
             Next
         Catch ex As Exception
@@ -140,11 +143,29 @@ Public Class rightpanel
 
     Sub setnotespage()
         settext()
-        setfontstyle()
     End Sub
-
     Sub setfontstyle()
-    
+            For j = 1 To txtNotes.Text.Count
+                Dim letter As TextRange = notesshape.TextFrame.TextRange.Characters(j, 1)
+                Dim ifbold As Boolean = letter.Font.Bold
+                Dim ifitalic As Boolean = letter.Font.Italic
+                Dim ifunderline As Boolean = letter.Font.Underline
+                Dim text As String = letter.Text
+            If text <> " " Then
+ 
+                txtNotes.Select(j - 1, 1)
+                If ifbold <> txtNotes.SelectionFont.Bold Then
+                    letter.Font.Bold = MsoTriState.msoCTrue
+                End If
+                If ifitalic <> txtNotes.SelectionFont.Italic Then
+                    letter.Font.Italic = MsoTriState.msoCTrue
+                End If
+                If ifunderline <> txtNotes.SelectionFont.Underline Then
+                    letter.Font.Underline = MsoTriState.msoCTrue
+                End If
+
+            End If
+        Next
     End Sub
     Sub setalignment()
         Dim alignment As Integer
@@ -161,7 +182,9 @@ Public Class rightpanel
     Sub settext()
         Dim mytext As String = txtNotes.Text
         Dim notestext As String = notesshape.TextFrame.TextRange.Text
-        notesshape.TextFrame.TextRange.Text = txtNotes.Text
+        If notestext <> mytext Then
+            notesshape.TextFrame.TextRange.Text = txtNotes.Text
+        End If
     End Sub
     Sub setfont()
         notesshape.TextFrame.TextRange.Font.Name = cboxFontFamily.SelectedItem.ToString
@@ -174,7 +197,6 @@ Public Class rightpanel
         txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name _
                                                   , notesshape.TextFrame.TextRange.Font.Size, style)
     End Sub
-
 #End Region
 
 #Region "Control_Buttons"
@@ -198,8 +220,42 @@ Public Class rightpanel
         txtNotes.SelectionAlignment = HorizontalAlignment.Right
         setalignment()
     End Sub
-
-
+    Private Sub btnitalic_CheckedChanged(sender As Object, e As EventArgs) Handles btnitalic.CheckedChanged
+        If txtNotes.SelectedText.Length <> 0 Then
+            If btnitalic.Checked = True Then
+                newfontstyle(FontStyle.Italic)
+            Else
+                defaultfontstyle()
+            End If
+        Else
+            MsgBox(" Please select text")
+        End If
+    End Sub
+    Private Sub btnBold_CheckedChanged(sender As Object, e As EventArgs) Handles btnBold.CheckedChanged
+        If txtNotes.SelectedText.Length <> 0 Then
+            If btnBold.Checked = True Then
+                newfontstyle(FontStyle.Bold)
+            Else
+                defaultfontstyle()
+            End If
+        Else
+            MsgBox(" Please select text")
+        End If
+    End Sub
+    Private Sub btnunderline_CheckedChanged(sender As Object, e As EventArgs) Handles btnunderline.CheckedChanged
+        If txtNotes.SelectedText.Length <> 0 Then
+            If btnunderline.Checked = True Then
+                newfontstyle(FontStyle.Underline)
+            Else
+                defaultfontstyle()
+            End If
+        Else
+            MsgBox(" Please select text")
+        End If
+    End Sub
+    Private Sub btnRefresh_Click() Handles btnRefresh.Click
+        setfontstyle()
+    End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             objapp.CommandBars("standard").Controls(3).Execute()
@@ -440,12 +496,10 @@ Public Class rightpanel
 
 
     '===================================TEST TEST TEST TEST TEST ====================================='
+ 
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
-        Fixedtimer.Enabled = True
-    End Sub
+    
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        Fixedtimer.Enabled = False
-    End Sub
+    
+    
 End Class

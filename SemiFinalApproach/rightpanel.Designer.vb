@@ -150,9 +150,15 @@ Partial Class rightpanel
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.cboxFontFamily = New System.Windows.Forms.ComboBox()
         Me.cboxFontSize = New System.Windows.Forms.ComboBox()
+        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.txtNotes = New System.Windows.Forms.RichTextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblTest = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Fixedtimer = New System.Windows.Forms.Timer(Me.components)
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ShapeFormat.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.splitFormat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,6 +227,8 @@ Partial Class rightpanel
         Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -1487,7 +1495,7 @@ Partial Class rightpanel
         '
         'splitNotes.Panel2
         '
-        Me.splitNotes.Panel2.Controls.Add(Me.txtNotes)
+        Me.splitNotes.Panel2.Controls.Add(Me.TableLayoutPanel2)
         Me.splitNotes.Size = New System.Drawing.Size(346, 421)
         Me.splitNotes.SplitterDistance = 82
         Me.splitNotes.TabIndex = 0
@@ -1740,12 +1748,23 @@ Partial Class rightpanel
         Me.cboxFontSize.Size = New System.Drawing.Size(48, 24)
         Me.cboxFontSize.TabIndex = 14
         '
+        'btnRefresh
+        '
+        Me.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.Location = New System.Drawing.Point(3, 3)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(340, 39)
+        Me.btnRefresh.TabIndex = 2
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
         'txtNotes
         '
         Me.txtNotes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtNotes.Location = New System.Drawing.Point(0, 0)
+        Me.txtNotes.Location = New System.Drawing.Point(3, 48)
         Me.txtNotes.Name = "txtNotes"
-        Me.txtNotes.Size = New System.Drawing.Size(346, 335)
+        Me.txtNotes.Size = New System.Drawing.Size(340, 284)
         Me.txtNotes.TabIndex = 1
         Me.txtNotes.Text = " "
         '
@@ -1753,6 +1772,7 @@ Partial Class rightpanel
         '
         Me.TabControl1.Controls.Add(Me.NotesSection)
         Me.TabControl1.Controls.Add(Me.ShapeFormat)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -1760,10 +1780,64 @@ Partial Class rightpanel
         Me.TabControl1.Size = New System.Drawing.Size(360, 493)
         Me.TabControl1.TabIndex = 0
         '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Controls.Add(Me.lblTest)
+        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(352, 467)
+        Me.TabPage1.TabIndex = 2
+        Me.TabPage1.Text = "Test"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(176, 77)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(89, 58)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'lblTest
+        '
+        Me.lblTest.AutoSize = True
+        Me.lblTest.Location = New System.Drawing.Point(134, 204)
+        Me.lblTest.Name = "lblTest"
+        Me.lblTest.Size = New System.Drawing.Size(13, 13)
+        Me.lblTest.TabIndex = 1
+        Me.lblTest.Text = "0"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(42, 77)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(89, 58)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Reset"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Fixedtimer
         '
         Me.Fixedtimer.Enabled = True
-        Me.Fixedtimer.Interval = 40
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 1
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.btnRefresh, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.txtNotes, 0, 1)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.73134!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.26865!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(346, 335)
+        Me.TableLayoutPanel2.TabIndex = 3
         '
         'rightpanel
         '
@@ -1855,6 +1929,9 @@ Partial Class rightpanel
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel8.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.TableLayoutPanel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1987,5 +2064,11 @@ Partial Class rightpanel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents txtNotes As System.Windows.Forms.RichTextBox
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents lblTest As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnRefresh As System.Windows.Forms.Button
+    Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
 
 End Class
