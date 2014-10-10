@@ -497,9 +497,4 @@ Public Class rightpanel
 
     '===================================TEST TEST TEST TEST TEST ====================================='
  
-
-    
-
-    
-    
 End Class
