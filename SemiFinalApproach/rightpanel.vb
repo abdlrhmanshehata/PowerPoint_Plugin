@@ -27,7 +27,6 @@ Public Class rightpanel
     Sub getcurrentindex()
         Try
             i = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
-            txtSlideId.Text = "Current SlideId: " & i
         Catch ex As Exception
 
         End Try
@@ -56,8 +55,44 @@ Public Class rightpanel
             End Try
         End If
     End Sub
-#End Region
 
+    Private Sub vscroll_Scroll(sender As Object, e As ScrollEventArgs) Handles vscroll.Scroll
+        Select Case vscroll.Value
+            Case 0
+                setlocTop(3)
+                setlocBot(484)
+            Case 10
+                setlocTop(-27)
+                setlocBot(464)
+            Case 20
+                setlocTop(-47)
+                setlocBot(444)
+            Case 30
+                setlocTop(-67)
+                setlocBot(424)
+            Case 40
+                setlocTop(-87)
+                setlocBot(404)
+            Case 50
+                setlocTop(-107)
+                setlocBot(384)
+            Case 60
+                setlocTop(-127)
+                setlocBot(364)
+        End Select
+    End Sub
+    Sub setlocTop(ByVal y As Integer)
+        PanelTop.Location = New Drawing.Point(PanelTop.Location.X, y)
+    End Sub
+    Sub setlocBot(ByVal y As Integer)
+        SplitNotes.Location = New Drawing.Point(SplitNotes.Location.X, y)
+    End Sub
+    Private Sub rightpanel_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        SplitNotes.Width = Me.Width - 40
+        PanelTop.Width = Me.Width - 40
+    End Sub
+    
+#End Region
     '===============================NOTES NOTES NOTES NOTES NOTES NOTES NOTES ====================='
 #Region "Notes"
 
@@ -263,7 +298,7 @@ Public Class rightpanel
         End If
     End Sub
 
-    Private Sub btnRefresh_Click() Handles btnRefresh.Click
+    Private Sub btnRefresh_Click()
         setfontstyle()
     End Sub
 
@@ -310,45 +345,7 @@ Public Class rightpanel
 
     '===============================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================='
 #Region "Format Shape"
-    Sub showpage(ByVal page As TableLayoutPanel)
-        page.Visible = True
-        page.Dock = DockStyle.Fill
-    End Sub
-    Sub hidepage(ByVal page As TableLayoutPanel)
-        page.Visible = False
-        page.Dock = DockStyle.None
-    End Sub
-    Sub hideall()
-        hidepage(TextBoxPage)
-        hidepage(FillPage)
-        hidepage(LineColorPage)
-        hidepage(LineStylePage)
-        hidepage(ShadowPage)
-        hidepage(SizePage)
-    End Sub
-    Private Sub cboxFormatShape_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxFormatShape.SelectedIndexChanged
-        Select Case (cboxFormatShape.SelectedIndex)
-            Case 0
-                hideall()
-                showpage(TextBoxPage)
-                Fixedtimer.Enabled = True
-            Case 1
-                hideall()
-                showpage(FillPage)
-            Case 2
-                hideall()
-                showpage(LineColorPage)
-            Case 3
-                hideall()
-                showpage(LineStylePage)
-            Case 4
-                hideall()
-                showpage(ShadowPage)
-            Case 5
-                hideall()
-                showpage(SizePage)
-        End Select
-    End Sub
+
     Sub selectshape()
         Try
             Dim k, g As Object
@@ -360,7 +357,6 @@ Public Class rightpanel
         End Try
 
     End Sub
-
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
     Sub gettextpage()
@@ -399,7 +395,7 @@ Public Class rightpanel
                         Donnotautofit.Checked = True
                 End Select
                 '========================================Margin=================================='
-                txtleftmargin.Text = selectedshape.TextFrame.MarginLeft / 72
+                txtleftmargins.Text = selectedshape.TextFrame.MarginLeft / 72
                 txtrightmargin.Text = selectedshape.TextFrame.MarginRight / 72
                 txttopmargin.Text = selectedshape.TextFrame.MarginTop / 72
                 txtbottommargin.Text = selectedshape.TextFrame.MarginBottom / 72
@@ -507,5 +503,6 @@ Public Class rightpanel
 
 
     '===================================TEST TEST TEST TEST TEST ====================================='
- 
+  
+
 End Class

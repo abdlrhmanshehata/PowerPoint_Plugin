@@ -10,8 +10,10 @@ Public Class ThisAddIn
         ctp.Width = 370
         Globals.Ribbons.Ribbon1.ToggleButton1.Checked = True
         Globals.Ribbons.Ribbon1.ToggleButton1_Click()
+
     End Sub
 
     Private Sub ThisAddIn_Shutdown() Handles Me.Shutdown
+
     End Sub
 End Class
