@@ -2,6 +2,8 @@
 Imports Microsoft.Office.Core
 Imports System.Windows.Forms
 Imports System.Drawing
+Imports System.Windows
+
 Public Class rightpanel
     Dim objapp As PowerPoint.Application = Globals.ThisAddIn.Application
     Dim i As Integer
@@ -9,6 +11,7 @@ Public Class rightpanel
     Dim shapename As String
     Dim selectedshape As PowerPoint.Shape
     Dim l As Integer
+    '===============================GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL ====================='
 #Region "General"
     Sub getnoteshape()
         Try
@@ -59,39 +62,33 @@ Public Class rightpanel
     Private Sub vscroll_Scroll(sender As Object, e As ScrollEventArgs) Handles vscroll.Scroll
         Select Case vscroll.Value
             Case 0
-                setlocTop(3)
-                setlocBot(484)
+                setloc(3)
             Case 10
-                setlocTop(-27)
-                setlocBot(464)
+                setloc(-17)
             Case 20
-                setlocTop(-47)
-                setlocBot(444)
+                setloc(-37)
             Case 30
-                setlocTop(-67)
-                setlocBot(424)
+                setloc(-57)
             Case 40
-                setlocTop(-87)
-                setlocBot(404)
+                setloc(-77)
             Case 50
-                setlocTop(-107)
-                setlocBot(384)
-            Case 60
-                setlocTop(-127)
-                setlocBot(364)
+                setloc(-104)
         End Select
     End Sub
-    Sub setlocTop(ByVal y As Integer)
-        PanelTop.Location = New Drawing.Point(PanelTop.Location.X, y)
+    Sub setloc(ByVal y As Integer)
+        TextBoxPage.Location = New Drawing.Point(TextBoxPage.Location.X, y)
     End Sub
-    Sub setlocBot(ByVal y As Integer)
-        SplitNotes.Location = New Drawing.Point(SplitNotes.Location.X, y)
+    Private Sub rightpanel_Load(sender As Object, e As EventArgs) Handles Me.Load
+        cboxFormatShape.SelectedIndex = 0
     End Sub
     Private Sub rightpanel_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
-        SplitNotes.Width = Me.Width - 40
-        PanelTop.Width = Me.Width - 40
+        BottomPanel.Width = Me.Width - 20
+        TopPanel.Width = Me.Width - 20
+        TextBoxPage.Width = Me.Width - 55
+        UppremostPanel.Width = Me.Width - 20
+        BottomPanel.Height = Me.Height - 260
     End Sub
-    
+
 #End Region
     '===============================NOTES NOTES NOTES NOTES NOTES NOTES NOTES ====================='
 #Region "Notes"
@@ -180,14 +177,14 @@ Public Class rightpanel
         settext()
     End Sub
     Sub setfontstyle()
-            For j = 1 To txtNotes.Text.Count
-                Dim letter As TextRange = notesshape.TextFrame.TextRange.Characters(j, 1)
-                Dim ifbold As Boolean = letter.Font.Bold
-                Dim ifitalic As Boolean = letter.Font.Italic
-                Dim ifunderline As Boolean = letter.Font.Underline
-                Dim text As String = letter.Text
+        For j = 1 To txtNotes.Text.Count
+            Dim letter As TextRange = notesshape.TextFrame.TextRange.Characters(j, 1)
+            Dim ifbold As Boolean = letter.Font.Bold
+            Dim ifitalic As Boolean = letter.Font.Italic
+            Dim ifunderline As Boolean = letter.Font.Underline
+            Dim text As String = letter.Text
             If text <> " " Then
- 
+
                 txtNotes.Select(j - 1, 1)
                 If ifbold <> txtNotes.SelectionFont.Bold Then
                     letter.Font.Bold = MsoTriState.msoCTrue
@@ -345,7 +342,10 @@ Public Class rightpanel
 
     '===============================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================='
 #Region "Format Shape"
-
+    Sub resetall()
+        TextBoxPage.Visible = False
+        SizePage.Visible = False
+    End Sub
     Sub selectshape()
         Try
             Dim k, g As Object
@@ -353,9 +353,22 @@ Public Class rightpanel
             g = objapp.ActiveWindow.Selection.ShapeRange.Name
             selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
         Catch ex As Exception
-
         End Try
-
+    End Sub
+    Sub adjustpage(ByVal control As TableLayoutPanel)    ' width : 288 , height :315    X:4 , Y:3
+        resetall()
+        control.Location = New Drawing.Point(4, 3)
+        control.Size = New Drawing.Size(288, 315)
+        control.BringToFront()
+        control.Visible = True
+    End Sub
+    Private Sub cboxFormatShape_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxFormatShape.SelectedIndexChanged
+        Select Case cboxFormatShape.SelectedIndex
+            Case 0
+                adjustpage(TextBoxPage)
+            Case 1
+                adjustpage(SizePage)
+        End Select
     End Sub
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
     '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
@@ -395,10 +408,10 @@ Public Class rightpanel
                         Donnotautofit.Checked = True
                 End Select
                 '========================================Margin=================================='
-                txtleftmargins.Text = selectedshape.TextFrame.MarginLeft / 72
-                txtrightmargin.Text = selectedshape.TextFrame.MarginRight / 72
-                txttopmargin.Text = selectedshape.TextFrame.MarginTop / 72
-                txtbottommargin.Text = selectedshape.TextFrame.MarginBottom / 72
+                txtleftmargin.Value = selectedshape.TextFrame.MarginLeft / 72
+                txtrightmargin.Value = selectedshape.TextFrame.MarginRight / 72
+                txttopmargin.Value = selectedshape.TextFrame.MarginTop / 72
+                txtbottommargin.Value = selectedshape.TextFrame.MarginBottom / 72
             End If
         Catch ex As Exception
         End Try
@@ -452,57 +465,35 @@ Public Class rightpanel
             selectedshape.TextFrame.WordWrap = MsoTriState.msoFalse
         End If
     End Sub
-    Private Sub plsLM_Click(sender As Object, e As EventArgs) Handles plsLM.Click
-        selectedshape.TextFrame.MarginLeft += 0.1 * 72
-        gettextpage()
-    End Sub
-    Private Sub mnsLM_Click(sender As Object, e As EventArgs) Handles mnsLM.Click
+    Private Sub txtleftmargin_ValueChanged(sender As Object, e As EventArgs) Handles txtleftmargin.ValueChanged
         Try
-            selectedshape.TextFrame.MarginLeft -= 0.1 * 72
-            gettextpage()
+            selectedshape.TextFrame.MarginLeft = txtleftmargin.Value * 72
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub plsBM_Click(sender As Object, e As EventArgs) Handles plsBM.Click
-        selectedshape.TextFrame.MarginBottom += 0.1 * 72
-        gettextpage()
-    End Sub
-    Sub mnsBM_click() Handles mnsBM.Click
+    Private Sub txtrightmargin_ValueChanged(sender As Object, e As EventArgs) Handles txtrightmargin.ValueChanged
         Try
-            selectedshape.TextFrame.MarginBottom -= 0.1 * 72
-            gettextpage()
+            selectedshape.TextFrame.MarginRight = txtleftmargin.Value * 72
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub txttopmargin_ValueChanged(sender As Object, e As EventArgs) Handles txttopmargin.ValueChanged
+        Try
+            selectedshape.TextFrame.MarginTop = txttopmargin.Value * 72
         Catch ex As Exception
         End Try
 
     End Sub
-    Sub plsRM_click() Handles plsRM.Click
-        selectedshape.TextFrame.MarginRight += 0.1 * 72
-        gettextpage()
-    End Sub
-    Sub msnRM_click() Handles mnsRM.Click
+    Private Sub txtbottommargin_ValueChanged(sender As Object, e As EventArgs) Handles txtbottommargin.ValueChanged
         Try
-            selectedshape.TextFrame.MarginRight -= 0.1 * 72
-            gettextpage()
+            selectedshape.TextFrame.MarginBottom = txtbottommargin.Value * 72
         Catch ex As Exception
         End Try
+    End Sub
 
-    End Sub
-    Sub plsTM_click() Handles plsTM.Click
-        selectedshape.TextFrame.MarginTop += 0.1 * 72
-        gettextpage()
-    End Sub
-    Sub mnsTM_click() Handles mnsTM.Click
-        Try
-            selectedshape.TextFrame.MarginTop -= 0.1 * 72
-            gettextpage()
-        Catch ex As Exception
-        End Try
+    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
+    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
 
-    End Sub
 #End Region
-
-
-    '===================================TEST TEST TEST TEST TEST ====================================='
-  
-
+ 
 End Class
