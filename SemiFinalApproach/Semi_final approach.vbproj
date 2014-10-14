@@ -39,10 +39,10 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>F:\Programming\O-Desk Projects\Microsoft Plug-in %28Mr.Robert%29\Version 2\</PublishUrl>
+    <PublishUrl>F:\Programming\O-Desk Projects\Microsoft Plug-in %28Mr.Robert%29\Version 3\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.4</ApplicationVersion>
+    <ApplicationVersion>1.0.0.5</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -297,11 +297,30 @@
   <ItemGroup>
     <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Icons\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Other-office-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Bold.jpg" />
+    <Content Include="Icons\ContactCardCut.jpg" />
+    <Content Include="Icons\Copy.jpg" />
+    <Content Include="Icons\Cut.jpg" />
+    <Content Include="Icons\FileSave.png" />
+    <Content Include="Icons\Italic.jpg" />
+    <Content Include="Icons\Paste.jpg" />
+    <Content Include="Icons\TextAlignCenter.jpg" />
+    <Content Include="Icons\TextAlignLeft.jpg" />
+    <Content Include="Icons\TextAlignRight.jpg" />
+    <Content Include="Icons\Underline.jpg" />
+    <Content Include="icons_Alignment\2.PNG" />
+    <Content Include="icons_Alignment\3.PNG" />
+    <Content Include="icons_Alignment\4.PNG" />
+    <None Include="icons_Alignment\9.PNG" />
+    <None Include="icons_Alignment\8.PNG" />
+    <None Include="icons_Alignment\7.PNG" />
+    <None Include="icons_Alignment\6.PNG" />
+    <None Include="icons_Alignment\5.PNG" />
   </ItemGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <PropertyGroup>

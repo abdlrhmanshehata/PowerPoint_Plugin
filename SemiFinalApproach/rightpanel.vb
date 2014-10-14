@@ -11,7 +11,9 @@ Public Class rightpanel
     Dim shapename As String
     Dim selectedshape As PowerPoint.Shape
     Dim l As Integer
-    '===============================GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL ====================='
+    Dim relativestate As MsoTriState
+    '===============================GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL ====================================='
+    '===============================GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL GENERAL ====================================='
 #Region "General"
     Sub getnoteshape()
         Try
@@ -35,10 +37,19 @@ Public Class rightpanel
         End Try
 
     End Sub
+    Sub selectshape()
+        Try
+            Dim k, g As Object
+            k = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
+            g = objapp.ActiveWindow.Selection.ShapeRange.Name
+            selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
+        Catch ex As Exception
+        End Try
+    End Sub
     Private Sub Fixedtimer_Tick(sender As Object, e As EventArgs) Handles Fixedtimer.Tick
         getcurrentindex()
         getnoteshape()
-
+        selectshape()
         Dim location As System.Drawing.Point
         Dim critical As System.Drawing.Point
         critical.X = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
@@ -47,10 +58,12 @@ Public Class rightpanel
         '===============================Mouse In=============================================
         If location.X > critical.X Then
             settextPage()
+            'setsizepage()
             setnotespage()
             '===============================Mouse Out=============================================
         Else
             gettextpage()
+            'getsizepage()
             getnotespage()
             Try
                 btnRefresh_Click()
@@ -62,35 +75,41 @@ Public Class rightpanel
     Private Sub vscroll_Scroll(sender As Object, e As ScrollEventArgs) Handles vscroll.Scroll
         Select Case vscroll.Value
             Case 0
-                setloc(3)
+                setloc(3, 24, 0)
             Case 10
-                setloc(-17)
+                setloc(3, 24, 1)
             Case 20
-                setloc(-37)
+                setloc(3, 24, 2)
             Case 30
-                setloc(-57)
+                setloc(3, 24, 3)
             Case 40
-                setloc(-77)
+                setloc(3, 24, 4)
             Case 50
-                setloc(-104)
+                setloc(3, 24, 5.5)
         End Select
     End Sub
-    Sub setloc(ByVal y As Integer)
-        TextBoxPage.Location = New Drawing.Point(TextBoxPage.Location.X, y)
+    Sub setloc(ByVal start As Integer, ByVal portion As Integer, ByVal caseindex As Integer)
+        Dim y As Integer
+        y = start - (caseindex * portion)
+        If TextBoxPage.Visible = True Then
+            TextBoxPage.Location = New Drawing.Point(TextBoxPage.Location.X, y)
+        End If
+        If SizePage.Visible = True Then
+            SizePage.Location = New Drawing.Point(TextBoxPage.Location.X, y)
+        End If
     End Sub
     Private Sub rightpanel_Load(sender As Object, e As EventArgs) Handles Me.Load
         cboxFormatShape.SelectedIndex = 0
     End Sub
     Private Sub rightpanel_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
-        BottomPanel.Width = Me.Width - 20
-        TopPanel.Width = Me.Width - 20
-        TextBoxPage.Width = Me.Width - 55
-        UppremostPanel.Width = Me.Width - 20
-        BottomPanel.Height = Me.Height - 260
+        TextBoxPage.Width = Me.Width - 30
     End Sub
 
 #End Region
-    '===============================NOTES NOTES NOTES NOTES NOTES NOTES NOTES ====================='
+
+
+    '=======================================NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES============================================='
+    '=======================================NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES============================================='
 #Region "Notes"
 
 #Region "Subs"
@@ -339,26 +358,17 @@ Public Class rightpanel
 
 #End Region
 
-
-    '===============================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================='
+    '=======================================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================================='
+    '=======================================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================================='
 #Region "Format Shape"
     Sub resetall()
         TextBoxPage.Visible = False
         SizePage.Visible = False
     End Sub
-    Sub selectshape()
-        Try
-            Dim k, g As Object
-            k = objapp.ActiveWindow.Selection.SlideRange.SlideNumber
-            g = objapp.ActiveWindow.Selection.ShapeRange.Name
-            selectedshape = objapp.ActivePresentation.Slides(k).Shapes(g)
-        Catch ex As Exception
-        End Try
-    End Sub
     Sub adjustpage(ByVal control As TableLayoutPanel)    ' width : 288 , height :315    X:4 , Y:3
         resetall()
         control.Location = New Drawing.Point(4, 3)
-        control.Size = New Drawing.Size(288, 315)
+        control.Size = New Drawing.Size(340, 330)
         control.BringToFront()
         control.Visible = True
     End Sub
@@ -367,11 +377,11 @@ Public Class rightpanel
             Case 0
                 adjustpage(TextBoxPage)
             Case 1
-                adjustpage(SizePage)
+                'adjustpage(SizePage)
         End Select
     End Sub
-    '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
-    '======================================TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ===================================================='
+
+    '-----------------------------------TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX TEXTBOX ------------------------------------'
     Sub gettextpage()
         selectshape()
         Try
@@ -420,20 +430,19 @@ Public Class rightpanel
         selectshape()
         Try
             If selectedshape.HasTextFrame Then
-                '============================================TEXT DIRECTION================================================================='
+                '======================================================TEXT DIRECTION==========================================================='
                 With selectedshape.TextFrame
-                    Select Case (cboxtextdirection.SelectedIndex)
+                    Select Case cboxtextdirection.SelectedIndex
                         Case 0
                             .Orientation = MsoTextOrientation.msoTextOrientationHorizontal
                         Case 1
                             .Orientation = MsoTextOrientation.msoTextOrientationDownward
                         Case 2
                             .Orientation = MsoTextOrientation.msoTextOrientationUpward
-                            'Case 3
-                            '    selectedshape.TextEffect.KernedPairs = MsoTriState.msoTrue
-
                     End Select
                 End With
+
+
                 '======================================================TEXT ALIGNMENT==========================================================='
                 With selectedshape.TextFrame
                     Select Case cboxtextalignment.SelectedIndex
@@ -491,9 +500,114 @@ Public Class rightpanel
         End Try
     End Sub
 
-    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
-    '======================================SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ===================================================='
+    '----------------------------------SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ---------------------------------------'
+    Sub getsizepage()
+        selectshape()
+        Try
+            If selectedshape.HasTextFrame = MsoTriState.msoFalse Then
+                chkbox_Scale2.Enabled = True
+                chkbox_Scale3.Enabled = True
+                cbox_Resolution.Enabled = True
+            Else
+                chkbox_Scale2.Enabled = False
+                chkbox_Scale3.Enabled = False
+                cbox_Resolution.Enabled = False
+            End If
 
+            '----------------------------------------Size and rotate----------------------------------'
+            If num_Height.Value <> selectedshape.Height / 72 Or num_Width.Value <> selectedshape.Width / 72 Or _
+                num_Rot.Value <> selectedshape.Rotation / 72 Then
+                num_Height.Value = selectedshape.Height / 72
+                num_Width.Value = selectedshape.Width / 72
+                num_Rot.Value = selectedshape.Rotation / 72
+            End If
+
+            '----------------------------------------Scale----------------------------------'
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Sub checkrelativestate()
+        If chkbox_Scale2.Checked Then
+            relativestate = MsoTriState.msoTrue
+        Else
+            relativestate = MsoTriState.msoFalse
+        End If
+    End Sub
+    Private Sub num_Height_ValueChanged(sender As Object, e As EventArgs) Handles num_Height.ValueChanged
+        Try
+            selectedshape.Height = num_Height.Value * 72
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub num_Width_ValueChanged(sender As Object, e As EventArgs) Handles num_Width.ValueChanged
+        Try
+            selectedshape.Width = num_Width.Value * 72
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub num_Rot_ValueChanged(sender As Object, e As EventArgs) Handles num_Rot.ValueChanged
+        Try
+            selectedshape.Rotation = num_Rot.Value
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub chkbox_Scale1_CheckedChanged(sender As Object, e As EventArgs) Handles chkbox_Scale1.CheckedChanged
+        If chkbox_Scale1.Checked Then
+            selectshape()
+            selectedshape.LockAspectRatio = MsoTriState.msoTrue
+        Else
+            selectedshape.LockAspectRatio = MsoTriState.msoFalse
+        End If
+    End Sub
+    Private Sub num_ScaleHeight_ValueChanged(sender As Object, e As EventArgs) Handles num_ScaleHeight.ValueChanged
+        selectshape()
+        checkrelativestate()
+        Try
+            selectedshape.ScaleHeight(num_ScaleHeight.Value / 100, relativestate, MsoScaleFrom.msoScaleFromTopLeft)
+            getsizepage()
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub num_ScaleWidth_ValueChanged(sender As Object, e As EventArgs) Handles num_ScaleWidth.ValueChanged
+        selectshape()
+        checkrelativestate()
+        Try
+            selectedshape.ScaleWidth(num_ScaleWidth.Value / 100, relativestate, MsoScaleFrom.msoScaleFromTopLeft)
+            getsizepage()
+        Catch ex As Exception
+        End Try
+    End Sub
+#End Region
+
+    '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
+    '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
+#Region " Alignment"
+    Sub execute(ByVal idmso As String)
+        Try
+            objapp.CommandBars.ExecuteMso(idmso)
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_AlignLeft.Click
+        execute("ObjectsAlignLeftSmart")
+    End Sub
+    Private Sub btn_AlignTop_Click(sender As Object, e As EventArgs) Handles btn_AlignTop.Click
+        execute("ObjectsAlignTopSmart")
+    End Sub
+    Private Sub btn_AlignRight_Click(sender As Object, e As EventArgs) Handles btn_AlignRight.Click
+        execute("ObjectsAlignRightSmart")
+    End Sub
+    Private Sub btn_AlignBottom_Click(sender As Object, e As EventArgs) Handles btn_AlignBottom.Click
+        execute("ObjectsAlignBottomSmart")
+    End Sub
+    Private Sub btn_AlignCenter_Click(sender As Object, e As EventArgs) Handles btn_AlignCenter.Click
+        execute("ObjectsAlignCenterHorizontalSmart")
+    End Sub
+    Private Sub btn_AlignMiddle_Click(sender As Object, e As EventArgs) Handles btn_AlignMiddle.Click
+        execute(" ObjectsAlignMiddleVerticalSmart")
+    End Sub
 #End Region
  
 End Class
