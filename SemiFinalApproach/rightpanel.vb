@@ -75,21 +75,22 @@ Public Class rightpanel
     Private Sub vscroll_Scroll(sender As Object, e As ScrollEventArgs) Handles vscroll.Scroll
         Select Case vscroll.Value
             Case 0
-                setloc(3, 24, 0)
+                setloc(3, TextBoxPage.Height, TopPanel.Height, 0)
             Case 10
-                setloc(3, 24, 1)
+                setloc(3, TextBoxPage.Height, TopPanel.Height, 1)
             Case 20
-                setloc(3, 24, 2)
+                setloc(3, TextBoxPage.Height, TopPanel.Height, 2)
             Case 30
-                setloc(3, 24, 3)
+                setloc(3, TextBoxPage.Height, TopPanel.Height, 3)
             Case 40
-                setloc(3, 24, 4)
+                setloc(3, TextBoxPage.Height, TopPanel.Height, 4)
             Case 50
-                setloc(3, 24, 5.5)
+                setloc(3, TextBoxPage.Height, TopPanel.Height, 5)
         End Select
     End Sub
-    Sub setloc(ByVal start As Integer, ByVal portion As Integer, ByVal caseindex As Integer)
-        Dim y As Integer
+    Sub setloc(ByVal start As Integer, ByVal contInside As Integer, ByVal contOutside As Integer, ByVal caseindex As Integer)
+        Dim y, portion As Integer
+        portion = (contInside - contOutside) / 5
         y = start - (caseindex * portion)
         If TextBoxPage.Visible = True Then
             TextBoxPage.Location = New Drawing.Point(TextBoxPage.Location.X, y)
@@ -102,12 +103,17 @@ Public Class rightpanel
         cboxFormatShape.SelectedIndex = 0
     End Sub
     Private Sub rightpanel_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
-        TextBoxPage.Width = Me.Width - 30
+        TextBoxPage.Width = Me.Width - 28
+        SCont_A.Height = Me.Height - 12
     End Sub
-
+    Private Sub TopPanel_SizeChanged(sender As Object, e As EventArgs) Handles TopPanel.SizeChanged
+        If TopPanel.Height > TextBoxPage.Height Then
+            vscroll.Enabled = False
+        Else
+            vscroll.Enabled = True
+        End If
+    End Sub
 #End Region
-
-
     '=======================================NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES============================================='
     '=======================================NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES============================================='
 #Region "Notes"
@@ -266,6 +272,7 @@ Public Class rightpanel
 
     Private Sub btnAlignLeft_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignLeft.Click
         txtNotes.SelectionAlignment = HorizontalAlignment.Left
+
         setalignment()
     End Sub
     Private Sub btnAlignCenter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignCenter.Click
@@ -313,7 +320,13 @@ Public Class rightpanel
             MsgBox(" please select text")
         End If
     End Sub
-
+    Private Sub btn_Bullet_CheckedChanged(sender As Object, e As EventArgs) Handles btn_Bullet.CheckedChanged
+        If btn_Bullet.Checked Then
+            txtNotes.SelectionBullet = True
+        Else
+            txtNotes.SelectionBullet = False
+        End If
+    End Sub
     Private Sub btnRefresh_Click()
         setfontstyle()
     End Sub
@@ -366,11 +379,14 @@ Public Class rightpanel
         SizePage.Visible = False
     End Sub
     Sub adjustpage(ByVal control As TableLayoutPanel)    ' width : 288 , height :315    X:4 , Y:3
-        resetall()
-        control.Location = New Drawing.Point(4, 3)
-        control.Size = New Drawing.Size(340, 330)
-        control.BringToFront()
-        control.Visible = True
+        Try
+            resetall()
+            control.Location = New Drawing.Point(4, 3)
+            control.Size = New Drawing.Size(Me.Width - 28, 330)
+            control.BringToFront()
+            control.Visible = True
+        Catch ex As Exception
+        End Try
     End Sub
     Private Sub cboxFormatShape_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxFormatShape.SelectedIndexChanged
         Select Case cboxFormatShape.SelectedIndex
@@ -608,6 +624,44 @@ Public Class rightpanel
     Private Sub btn_AlignMiddle_Click(sender As Object, e As EventArgs) Handles btn_AlignMiddle.Click
         execute(" ObjectsAlignMiddleVerticalSmart")
     End Sub
+    Private Sub btn_SendtoBack_Click(sender As Object, e As EventArgs) Handles btn_SendtoBack.Click
+        execute("ObjectSendToBack")
+    End Sub
+    Private Sub btn_BringForward_Click(sender As Object, e As EventArgs) Handles btn_BringForward.Click
+        execute("ObjectBringForward ")
+    End Sub
+    Private Sub btn_BorderRight_Click(sender As Object, e As EventArgs) Handles btn_BorderRight.Click
+        execute("BorderRight")
+    End Sub
+    Private Sub btn_BorderTop_Click(sender As Object, e As EventArgs) Handles btn_BorderTop.Click
+        execute("BorderTop")
+    End Sub
+    Private Sub btn_BorderBottom_Click(sender As Object, e As EventArgs) Handles btn_BorderBottom.Click
+        execute("BorderBottom")
+    End Sub
+    Private Sub btn_Borderleft_Click(sender As Object, e As EventArgs) Handles btn_Borderleft.Click
+        execute("BorderLeft")
+    End Sub
+    Private Sub btn_BorderAll_Click(sender As Object, e As EventArgs) Handles btn_BorderAll.Click
+        execute("BordersAll")
+    End Sub
+    Private Sub btn_DistColumns_Click(sender As Object, e As EventArgs) Handles btn_DistColumns.Click
+        execute("TableColumnsDistribute")
+    End Sub
+    Private Sub btn_DistRows_Click(sender As Object, e As EventArgs) Handles btn_DistRows.Click
+        execute("TableRowsDistribute")
+    End Sub
+    Private Sub btn_PasteText_Click(sender As Object, e As EventArgs) Handles btn_PasteText.Click
+        execute("Paste")
+    End Sub
+    Private Sub btn_FormatShape_Click(sender As Object, e As EventArgs) Handles btn_FormatShape.Click
+        execute("ObjectFormatDialog")
+    End Sub
+    Private Sub btn_Paragraph_Click(sender As Object, e As EventArgs) Handles btn_Paragraph.Click
+        execute("PowerPointParagraphDialog")
+    End Sub
+   
 #End Region
- 
+    
+    
 End Class
