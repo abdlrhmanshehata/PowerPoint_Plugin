@@ -55,20 +55,17 @@ Public Class rightpanel
         critical.X = Screen.PrimaryScreen.WorkingArea.Width - Me.Width
         location.X = MousePosition.X
         location.Y = MousePosition.Y
-        '===============================Mouse In=============================================
+        '===============================Mouse In the Plug_IN=============================================
         If location.X > critical.X Then
             settextPage()
-            'setsizepage()
             setnotespage()
-            '===============================Mouse Out=============================================
+            '===============================Mouse Out the Plug_IN=============================================
         Else
             gettextpage()
-            'getsizepage()
             getnotespage()
-            Try
-                btnRefresh_Click()
-            Catch ex As Exception
-            End Try
+        End If
+        If Globals.ThisAddIn.CustomTaskPanes.Item(0).Visible = False Then
+            Globals.Ribbons.Ribbon1.ToggleButton1.Checked = False
         End If
     End Sub
 
@@ -95,9 +92,7 @@ Public Class rightpanel
         If TextBoxPage.Visible = True Then
             TextBoxPage.Location = New Drawing.Point(TextBoxPage.Location.X, y)
         End If
-        If SizePage.Visible = True Then
-            SizePage.Location = New Drawing.Point(TextBoxPage.Location.X, y)
-        End If
+         
     End Sub
     Private Sub rightpanel_Load(sender As Object, e As EventArgs) Handles Me.Load
         cboxFormatShape.SelectedIndex = 0
@@ -119,6 +114,26 @@ Public Class rightpanel
 #Region "Notes"
 
 #Region "Subs"
+    Sub disablenotes()
+        txtNotes.Enabled = False
+    End Sub
+    Sub enablenotes()
+        txtNotes.Enabled = True
+    End Sub
+
+
+    Sub getnotespage() 'Time Function 
+        Try
+            disableNotes()
+            If txtNotes.Text <> notesshape.TextFrame.TextRange.Text Then
+                gettext()
+            End If
+            getfont()
+            getfontstyle()
+            btnRefresh_Click()
+        Catch ex As Exception
+        End Try
+    End Sub
     Sub getalignment()
 
         Dim alignment As Integer = notesshape.TextFrame.TextRange.ParagraphFormat.Alignment
@@ -166,20 +181,24 @@ Public Class rightpanel
                     txtNotes.DeselectAll()
                     txtNotes.Select(index - 1, length)
 
-                    With txtNotes.SelectionFont
-                        If .Bold <> word.Font.Bold And .Italic <> word.Font.Italic Then
-                            newfontstyle(FontStyle.Bold Or FontStyle.Italic)
-                        End If
-                        If .Bold <> word.Font.Bold Then
-                            newfontstyle(Drawing.FontStyle.Bold)
-                        End If
-                        If .Italic <> word.Font.Italic Then
-                            newfontstyle(Drawing.FontStyle.Italic)
-                        End If
-                        If .Underline <> word.Font.Underline Then
-                            newfontstyle(Drawing.FontStyle.Underline)
-                        End If
-                    End With
+                    If word.Font.Bold = True Then
+                        newfontstyle(Drawing.FontStyle.Bold)
+                    Else
+                        defaultfontstyle()
+                    End If
+
+                    If word.Font.Italic = True Then
+                        newfontstyle(Drawing.FontStyle.Italic)
+                    Else
+                        defaultfontstyle()
+                    End If
+
+                    If word.Font.Underline = True Then
+                        newfontstyle(Drawing.FontStyle.Underline)
+                    Else
+                        defaultfontstyle()
+                    End If
+
                     txtNotes.DeselectAll()
                 End If
             Next
@@ -187,18 +206,15 @@ Public Class rightpanel
 
         End Try
     End Sub
-    Sub getnotespage() 'Time Function 
-        Try
-            If txtNotes.Text <> notesshape.TextFrame.TextRange.Text Then
-                gettext()
-            End If
-            getfont()
-            getfontstyle()
-        Catch ex As Exception
-        End Try
+    Sub syncbold()
+        Dim start As Integer = txtNotes.SelectionStart
+    End Sub
+    Private Sub txtNotes_SelectionChanged(sender As Object, e As EventArgs) Handles txtNotes.SelectionChanged
+        syncbold()
     End Sub
 
     Sub setnotespage()
+        enablenotes()
         settext()
     End Sub
     Sub setfontstyle()
@@ -251,8 +267,7 @@ Public Class rightpanel
         txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size, FontStyle.Regular)
     End Sub
     Sub newfontstyle(ByVal style As System.Drawing.FontStyle)
-        txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name _
-                                                  , notesshape.TextFrame.TextRange.Font.Size, style)
+        txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size, style)
     End Sub
 
     Sub makenewfont(ByVal choosestyle As Drawing.FontStyle)
@@ -376,7 +391,7 @@ Public Class rightpanel
 #Region "Format Shape"
     Sub resetall()
         TextBoxPage.Visible = False
-        SizePage.Visible = False
+
     End Sub
     Sub adjustpage(ByVal control As TableLayoutPanel)    ' width : 288 , height :315    X:4 , Y:3
         Try
@@ -516,85 +531,7 @@ Public Class rightpanel
         End Try
     End Sub
 
-    '----------------------------------SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ---------------------------------------'
-    Sub getsizepage()
-        selectshape()
-        Try
-            If selectedshape.HasTextFrame = MsoTriState.msoFalse Then
-                chkbox_Scale2.Enabled = True
-                chkbox_Scale3.Enabled = True
-                cbox_Resolution.Enabled = True
-            Else
-                chkbox_Scale2.Enabled = False
-                chkbox_Scale3.Enabled = False
-                cbox_Resolution.Enabled = False
-            End If
-
-            '----------------------------------------Size and rotate----------------------------------'
-            If num_Height.Value <> selectedshape.Height / 72 Or num_Width.Value <> selectedshape.Width / 72 Or _
-                num_Rot.Value <> selectedshape.Rotation / 72 Then
-                num_Height.Value = selectedshape.Height / 72
-                num_Width.Value = selectedshape.Width / 72
-                num_Rot.Value = selectedshape.Rotation / 72
-            End If
-
-            '----------------------------------------Scale----------------------------------'
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
-    Sub checkrelativestate()
-        If chkbox_Scale2.Checked Then
-            relativestate = MsoTriState.msoTrue
-        Else
-            relativestate = MsoTriState.msoFalse
-        End If
-    End Sub
-    Private Sub num_Height_ValueChanged(sender As Object, e As EventArgs) Handles num_Height.ValueChanged
-        Try
-            selectedshape.Height = num_Height.Value * 72
-        Catch ex As Exception
-        End Try
-    End Sub
-    Private Sub num_Width_ValueChanged(sender As Object, e As EventArgs) Handles num_Width.ValueChanged
-        Try
-            selectedshape.Width = num_Width.Value * 72
-        Catch ex As Exception
-        End Try
-    End Sub
-    Private Sub num_Rot_ValueChanged(sender As Object, e As EventArgs) Handles num_Rot.ValueChanged
-        Try
-            selectedshape.Rotation = num_Rot.Value
-        Catch ex As Exception
-        End Try
-    End Sub
-    Private Sub chkbox_Scale1_CheckedChanged(sender As Object, e As EventArgs) Handles chkbox_Scale1.CheckedChanged
-        If chkbox_Scale1.Checked Then
-            selectshape()
-            selectedshape.LockAspectRatio = MsoTriState.msoTrue
-        Else
-            selectedshape.LockAspectRatio = MsoTriState.msoFalse
-        End If
-    End Sub
-    Private Sub num_ScaleHeight_ValueChanged(sender As Object, e As EventArgs) Handles num_ScaleHeight.ValueChanged
-        selectshape()
-        checkrelativestate()
-        Try
-            selectedshape.ScaleHeight(num_ScaleHeight.Value / 100, relativestate, MsoScaleFrom.msoScaleFromTopLeft)
-            getsizepage()
-        Catch ex As Exception
-        End Try
-    End Sub
-    Private Sub num_ScaleWidth_ValueChanged(sender As Object, e As EventArgs) Handles num_ScaleWidth.ValueChanged
-        selectshape()
-        checkrelativestate()
-        Try
-            selectedshape.ScaleWidth(num_ScaleWidth.Value / 100, relativestate, MsoScaleFrom.msoScaleFromTopLeft)
-            getsizepage()
-        Catch ex As Exception
-        End Try
-    End Sub
+ 
 #End Region
 
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
@@ -606,7 +543,7 @@ Public Class rightpanel
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_AlignLeft.Click
+    Private Sub btn_Alignleft_Click(sender As Object, e As EventArgs) Handles btn_AlignLeft.Click
         execute("ObjectsAlignLeftSmart")
     End Sub
     Private Sub btn_AlignTop_Click(sender As Object, e As EventArgs) Handles btn_AlignTop.Click
@@ -662,6 +599,6 @@ Public Class rightpanel
     End Sub
    
 #End Region
-    
+
     
 End Class
