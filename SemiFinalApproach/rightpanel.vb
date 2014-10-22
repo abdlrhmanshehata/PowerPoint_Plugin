@@ -120,17 +120,15 @@ Public Class rightpanel
     Sub enablenotes()
         txtNotes.Enabled = True
     End Sub
-
-
     Sub getnotespage() 'Time Function 
         Try
-            disableNotes()
+            disablenotes()
             If txtNotes.Text <> notesshape.TextFrame.TextRange.Text Then
                 gettext()
             End If
             getfont()
             getfontstyle()
-            btnRefresh_Click()
+            getalignment()
         Catch ex As Exception
         End Try
     End Sub
@@ -174,44 +172,46 @@ Public Class rightpanel
     Sub getfontstyle()
         Try
             For Each word As PowerPoint.TextRange In notesshape.TextFrame.TextRange.Words
-                If word.Text <> " " Then
-                    Dim length = word.Length
-                    Dim index As Integer = word.Start
-                    Dim theword As String = word.Text
-                    txtNotes.DeselectAll()
-                    txtNotes.Select(index - 1, length)
+                Dim length = word.Length
+                Dim index As Integer = word.Start - 1
+                Dim wheretostop As Integer
+                Dim theword As String = word.Text
+                Dim bold = word.Characters(1, 1).Font.Bold
+                Dim italic = word.Characters(1, 1).Font.Italic
+                Dim under = word.Characters(1, 1).Font.Underline
 
-                    If word.Font.Bold = True Then
-                        newfontstyle(Drawing.FontStyle.Bold)
-                    Else
-                        defaultfontstyle()
+                For Each element As TextRange In word.Characters
+                    If element.Text <> " " Then
+                        wheretostop += 1
                     End If
+                Next
+                txtNotes.Select(index, wheretostop)
 
-                    If word.Font.Italic = True Then
-                        newfontstyle(Drawing.FontStyle.Italic)
-                    Else
-                        defaultfontstyle()
-                    End If
-
-                    If word.Font.Underline = True Then
-                        newfontstyle(Drawing.FontStyle.Underline)
-                    Else
-                        defaultfontstyle()
-                    End If
-
-                    txtNotes.DeselectAll()
+                If bold = 0 And under = 0 And italic = 0 Then
+                    defaultfontstyle()
+                ElseIf bold = -1 And under = -1 And italic = -1 Then
+                    newfontstyle(FontStyle.Bold Or FontStyle.Italic Or FontStyle.Underline)
+                    '-----------------------------Singles-----------------------------------------'
+                ElseIf bold = -1 And under = 0 And italic = 0 Then
+                    newfontstyle(FontStyle.Bold)
+                ElseIf bold = 0 And under = -1 And italic = 0 Then
+                    newfontstyle(FontStyle.Underline)
+                ElseIf bold = 0 And under = 0 And italic = -1 Then
+                    newfontstyle(FontStyle.Italic)
+                    '------------------------------combinations---------------------------------'
+                ElseIf bold = -1 And under = -1 And italic = 0 Then
+                    newfontstyle(FontStyle.Bold Or FontStyle.Underline)
+                ElseIf bold = -1 And under = 0 And italic = -1 Then
+                    newfontstyle(FontStyle.Italic Or FontStyle.Bold)
+                ElseIf bold = 0 And under = -1 And italic = -1 Then
+                    newfontstyle(FontStyle.Italic Or FontStyle.Underline)
                 End If
             Next
         Catch ex As Exception
-
         End Try
     End Sub
-    Sub syncbold()
-        Dim start As Integer = txtNotes.SelectionStart
-    End Sub
-    Private Sub txtNotes_SelectionChanged(sender As Object, e As EventArgs) Handles txtNotes.SelectionChanged
-        syncbold()
-    End Sub
+    
+    
 
     Sub setnotespage()
         enablenotes()
@@ -531,7 +531,7 @@ Public Class rightpanel
         End Try
     End Sub
 
- 
+
 #End Region
 
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
@@ -597,8 +597,7 @@ Public Class rightpanel
     Private Sub btn_Paragraph_Click(sender As Object, e As EventArgs) Handles btn_Paragraph.Click
         execute("PowerPointParagraphDialog")
     End Sub
-   
+
 #End Region
 
-    
 End Class
