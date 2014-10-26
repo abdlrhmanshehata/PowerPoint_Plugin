@@ -199,6 +199,22 @@ SemiFinalApproach
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="T:SemiFinalApproach.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.

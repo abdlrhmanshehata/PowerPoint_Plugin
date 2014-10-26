@@ -88,10 +88,12 @@ Partial Class rightpanel
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.btn_Bullet = New System.Windows.Forms.CheckBox()
-        Me.btnSave = New System.Windows.Forms.Button()
         Me.cboxFontFamily = New System.Windows.Forms.ComboBox()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.cboxFontSize = New System.Windows.Forms.ComboBox()
+        Me.btn_Reset = New System.Windows.Forms.Button()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnBold = New System.Windows.Forms.CheckBox()
         Me.btnPaste = New System.Windows.Forms.Button()
         Me.btnitalic = New System.Windows.Forms.CheckBox()
         Me.btnCopy = New System.Windows.Forms.Button()
@@ -100,7 +102,6 @@ Partial Class rightpanel
         Me.btnAlignLeft = New System.Windows.Forms.Button()
         Me.btnAlignRight = New System.Windows.Forms.Button()
         Me.btnAlignCenter = New System.Windows.Forms.Button()
-        Me.btnBold = New System.Windows.Forms.CheckBox()
         Me.AutoFit.SuspendLayout()
         Me.ContentAutofit.SuspendLayout()
         Me.InternalMargin.SuspendLayout()
@@ -574,6 +575,9 @@ Partial Class rightpanel
         Me.btn_DistRows.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_DistRows.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_DistRows.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_DistRows.FlatAppearance.BorderSize = 0
+        Me.btn_DistRows.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_DistRows.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_DistRows.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_DistRows.Location = New System.Drawing.Point(216, 0)
         Me.btn_DistRows.Margin = New System.Windows.Forms.Padding(0)
@@ -589,6 +593,9 @@ Partial Class rightpanel
         Me.btn_BringForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_BringForward.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_BringForward.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_BringForward.FlatAppearance.BorderSize = 0
+        Me.btn_BringForward.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_BringForward.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_BringForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_BringForward.Location = New System.Drawing.Point(0, 0)
         Me.btn_BringForward.Margin = New System.Windows.Forms.Padding(0)
@@ -604,6 +611,9 @@ Partial Class rightpanel
         Me.btn_DistColumns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_DistColumns.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_DistColumns.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_DistColumns.FlatAppearance.BorderSize = 0
+        Me.btn_DistColumns.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_DistColumns.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_DistColumns.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_DistColumns.Location = New System.Drawing.Point(189, 0)
         Me.btn_DistColumns.Margin = New System.Windows.Forms.Padding(0)
@@ -619,6 +629,9 @@ Partial Class rightpanel
         Me.btn_SendtoBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_SendtoBack.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_SendtoBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_SendtoBack.FlatAppearance.BorderSize = 0
+        Me.btn_SendtoBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_SendtoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_SendtoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_SendtoBack.Location = New System.Drawing.Point(27, 0)
         Me.btn_SendtoBack.Margin = New System.Windows.Forms.Padding(0)
@@ -634,6 +647,9 @@ Partial Class rightpanel
         Me.btn_AlignCenter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_AlignCenter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_AlignCenter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_AlignCenter.FlatAppearance.BorderSize = 0
+        Me.btn_AlignCenter.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_AlignCenter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_AlignCenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_AlignCenter.Location = New System.Drawing.Point(0, 22)
         Me.btn_AlignCenter.Margin = New System.Windows.Forms.Padding(0)
@@ -649,6 +665,9 @@ Partial Class rightpanel
         Me.btn_BorderTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_BorderTop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_BorderTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_BorderTop.FlatAppearance.BorderSize = 0
+        Me.btn_BorderTop.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_BorderTop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_BorderTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_BorderTop.Location = New System.Drawing.Point(54, 0)
         Me.btn_BorderTop.Margin = New System.Windows.Forms.Padding(0)
@@ -664,6 +683,9 @@ Partial Class rightpanel
         Me.btn_BorderBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_BorderBottom.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_BorderBottom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_BorderBottom.FlatAppearance.BorderSize = 0
+        Me.btn_BorderBottom.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_BorderBottom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_BorderBottom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_BorderBottom.Location = New System.Drawing.Point(81, 0)
         Me.btn_BorderBottom.Margin = New System.Windows.Forms.Padding(0)
@@ -679,6 +701,9 @@ Partial Class rightpanel
         Me.btn_Borderleft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_Borderleft.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_Borderleft.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_Borderleft.FlatAppearance.BorderSize = 0
+        Me.btn_Borderleft.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_Borderleft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_Borderleft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Borderleft.Location = New System.Drawing.Point(108, 0)
         Me.btn_Borderleft.Margin = New System.Windows.Forms.Padding(0)
@@ -694,6 +719,9 @@ Partial Class rightpanel
         Me.btn_BorderRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_BorderRight.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_BorderRight.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_BorderRight.FlatAppearance.BorderSize = 0
+        Me.btn_BorderRight.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_BorderRight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_BorderRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_BorderRight.Location = New System.Drawing.Point(135, 0)
         Me.btn_BorderRight.Margin = New System.Windows.Forms.Padding(0)
@@ -709,6 +737,9 @@ Partial Class rightpanel
         Me.btn_BorderAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_BorderAll.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_BorderAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_BorderAll.FlatAppearance.BorderSize = 0
+        Me.btn_BorderAll.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_BorderAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_BorderAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_BorderAll.Location = New System.Drawing.Point(162, 0)
         Me.btn_BorderAll.Margin = New System.Windows.Forms.Padding(0)
@@ -724,6 +755,9 @@ Partial Class rightpanel
         Me.btn_PasteText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_PasteText.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_PasteText.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_PasteText.FlatAppearance.BorderSize = 0
+        Me.btn_PasteText.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_PasteText.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_PasteText.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_PasteText.Location = New System.Drawing.Point(270, 22)
         Me.btn_PasteText.Margin = New System.Windows.Forms.Padding(0)
@@ -739,6 +773,9 @@ Partial Class rightpanel
         Me.btn_Paragraph.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_Paragraph.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_Paragraph.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_Paragraph.FlatAppearance.BorderSize = 0
+        Me.btn_Paragraph.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_Paragraph.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_Paragraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Paragraph.Location = New System.Drawing.Point(243, 22)
         Me.btn_Paragraph.Margin = New System.Windows.Forms.Padding(0)
@@ -754,6 +791,9 @@ Partial Class rightpanel
         Me.btn_FormatShape.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_FormatShape.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_FormatShape.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_FormatShape.FlatAppearance.BorderSize = 0
+        Me.btn_FormatShape.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_FormatShape.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_FormatShape.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_FormatShape.Location = New System.Drawing.Point(216, 22)
         Me.btn_FormatShape.Margin = New System.Windows.Forms.Padding(0)
@@ -769,6 +809,9 @@ Partial Class rightpanel
         Me.btn_AlignBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_AlignBottom.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_AlignBottom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_AlignBottom.FlatAppearance.BorderSize = 0
+        Me.btn_AlignBottom.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_AlignBottom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_AlignBottom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_AlignBottom.ImageIndex = 0
         Me.btn_AlignBottom.Location = New System.Drawing.Point(189, 22)
@@ -785,6 +828,9 @@ Partial Class rightpanel
         Me.btn_AlignRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_AlignRight.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_AlignRight.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_AlignRight.FlatAppearance.BorderSize = 0
+        Me.btn_AlignRight.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_AlignRight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_AlignRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_AlignRight.Location = New System.Drawing.Point(162, 22)
         Me.btn_AlignRight.Margin = New System.Windows.Forms.Padding(0)
@@ -800,6 +846,9 @@ Partial Class rightpanel
         Me.btn_AlignTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_AlignTop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_AlignTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_AlignTop.FlatAppearance.BorderSize = 0
+        Me.btn_AlignTop.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_AlignTop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_AlignTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_AlignTop.Location = New System.Drawing.Point(135, 22)
         Me.btn_AlignTop.Margin = New System.Windows.Forms.Padding(0)
@@ -814,6 +863,9 @@ Partial Class rightpanel
         Me.btn_AlignLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_AlignLeft.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_AlignLeft.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_AlignLeft.FlatAppearance.BorderSize = 0
+        Me.btn_AlignLeft.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_AlignLeft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_AlignLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_AlignLeft.ImageIndex = 3
         Me.btn_AlignLeft.Location = New System.Drawing.Point(108, 22)
@@ -829,6 +881,9 @@ Partial Class rightpanel
         Me.btn_DistVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_DistVer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_DistVer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_DistVer.FlatAppearance.BorderSize = 0
+        Me.btn_DistVer.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_DistVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_DistVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_DistVer.Location = New System.Drawing.Point(81, 22)
         Me.btn_DistVer.Margin = New System.Windows.Forms.Padding(0)
@@ -844,6 +899,9 @@ Partial Class rightpanel
         Me.btn_DistHor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_DistHor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_DistHor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_DistHor.FlatAppearance.BorderSize = 0
+        Me.btn_DistHor.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_DistHor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_DistHor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_DistHor.Location = New System.Drawing.Point(54, 22)
         Me.btn_DistHor.Margin = New System.Windows.Forms.Padding(0)
@@ -859,6 +917,9 @@ Partial Class rightpanel
         Me.btn_AlignMiddle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_AlignMiddle.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_AlignMiddle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_AlignMiddle.FlatAppearance.BorderSize = 0
+        Me.btn_AlignMiddle.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_AlignMiddle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_AlignMiddle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_AlignMiddle.Location = New System.Drawing.Point(27, 22)
         Me.btn_AlignMiddle.Margin = New System.Windows.Forms.Padding(0)
@@ -966,11 +1027,13 @@ Partial Class rightpanel
         'txtNotes
         '
         Me.txtNotes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtNotes.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNotes.HideSelection = False
         Me.txtNotes.Location = New System.Drawing.Point(3, 79)
         Me.txtNotes.Name = "txtNotes"
         Me.txtNotes.Size = New System.Drawing.Size(305, 156)
         Me.txtNotes.TabIndex = 1
-        Me.txtNotes.Text = " "
+        Me.txtNotes.Text = ""
         '
         'Part1_notes
         '
@@ -1011,15 +1074,17 @@ Partial Class rightpanel
         '
         'TableLayoutPanel8
         '
-        Me.TableLayoutPanel8.ColumnCount = 4
-        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.53886!))
-        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.46114!))
+        Me.TableLayoutPanel8.ColumnCount = 5
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.02804!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.97196!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
-        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
-        Me.TableLayoutPanel8.Controls.Add(Me.btn_Bullet, 2, 0)
-        Me.TableLayoutPanel8.Controls.Add(Me.btnSave, 3, 0)
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.TableLayoutPanel8.Controls.Add(Me.btn_Bullet, 3, 0)
         Me.TableLayoutPanel8.Controls.Add(Me.cboxFontFamily, 0, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.btnSave, 4, 0)
         Me.TableLayoutPanel8.Controls.Add(Me.cboxFontSize, 1, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.btn_Reset, 2, 0)
         Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel8.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
@@ -1035,14 +1100,29 @@ Partial Class rightpanel
         Me.btn_Bullet.BackgroundImage = Global.SemiFinalApproach.My.Resources.Resources._291
         Me.btn_Bullet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btn_Bullet.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_Bullet.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_Bullet.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btn_Bullet.FlatAppearance.BorderSize = 0
+        Me.btn_Bullet.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_Bullet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_Bullet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_Bullet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_Bullet.Location = New System.Drawing.Point(196, 3)
+        Me.btn_Bullet.Location = New System.Drawing.Point(211, 3)
         Me.btn_Bullet.Name = "btn_Bullet"
         Me.btn_Bullet.Size = New System.Drawing.Size(28, 24)
         Me.btn_Bullet.TabIndex = 28
         Me.btn_Bullet.Text = " "
         Me.btn_Bullet.UseVisualStyleBackColor = True
+        '
+        'cboxFontFamily
+        '
+        Me.cboxFontFamily.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboxFontFamily.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboxFontFamily.FormattingEnabled = True
+        Me.cboxFontFamily.Items.AddRange(New Object() {"Agency FB", "Agency FB Bold", "Algerian", "Arial Narrow", "Arial Narrow Bold", "Arial Narrow Bold Italic", "Arial Narrow Italic", "Arial Rounded MT Bold", "Arial Unicode MS", "Baskerville Old Face", "Bauhaus 93", "Bell MT", "Bell MT Bold", "Bell MT Italic", "Berlin Sans FB", "Berlin Sans FB Bold", "Berlin Sans FB Demi Bold", "Bernard MT Condensed", "Blackadder ITC", "Bodoni MT", "Bodoni MT Black", "Bodoni MT Black Italic", "Bodoni MT Bold", "Bodoni MT Bold Italic", "Bodoni MT Condensed", "Bodoni MT Condensed Bold", "Bodoni MT Condensed Bold Italic", "Bodoni MT Condensed Italic", "Bodoni MT Italic", "Bodoni MT Poster Compressed", "Book Antiqua", "Book Antiqua Bold", "Book Antiqua Bold Italic", "Book Antiqua Italic", "Bookman Old Style", "Bookman Old Style Bold", "Bookman Old Style Bold Italic", "Bookman Old Style Italic", "Bradley Hand ITC", "Britannic Bold", "Broadway", "Brush Script MT Italic", "Calibri", "Calibri Bold", "Calibri Bold Italic", "Calibri Italic", "Californian FB", "Californian FB Bold", "Californian FB Italic", "Calisto MT", "Calisto MT Bold", "Calisto MT Bold Italic", "Calisto MT Italic", "Cambria & Cambria Math", "Cambria Bold", "Candara", "Candara Bold", "Candara Italic", "Candara Bold Italic", "Centaur", "Century", "Century Gothic", "Century Gothic Bold", "Century Gothic Italic", "Century Schoolbook", "Century Schoolbook Bold", "Century Schoolbook Bold Italic", "Century Schoolbook Italic", "Chiller", "Colonna MT", "Consolas", "Consolas Bold", "Consolas Bold Italic", "Consolas Italic", "Constantia", "Constantia Bold", "Constantia Bold Italic", "Constantia Italic", "Cooper Black", "Copperplate Gothic Bold", "Copperplate Gothic Light", "Corbel", "Corbel Bold", "Corbel Bold Italic", "Corbel Italic", "Curlz MT", "Edwardian Script ITC", "Elephant", "Elephant Italic", "Engraveras", "Eras Bold ITC", "Eras Demi ITC", "Eras Light ITC", "Eras Medium ITC", "Felix Titling", "Footlight MT Light", "Forte", "Franklin", "Gothic Book", "Franklin Gothic Book Italic", "Franklin Gothic Demi", "Franklin Gothic Demi Cond", "Franklin Gothic Demi Italic", "Franklin Gothic Heavy", "Franklin Gothic Heavy Italic", "Franklin Gothic Medium Cond", "Freestyle Script", "French Script MT", "Garamond", "Garamond Bold", "Garamond Italic", "Gigi", "Gill Sans MT", "Gill Sans MT Bold", "Gill Sans MT Bold Italic", "Gill Sans MT Condensed", "Gill Sans MT Ext Condensed Bold", "Gill Sans MT Italic", "Gill Sans Ultra Bold", "Gill Sans Ultra Bold Condensed", "Gloucester MT Extra Condensed", "Goudy Old Style", "Goudy Old Style Bold", "Goudy Old Style Italic", "Goudy Stout", "Haettenschweiler", "Harlow Solid Italic", "Harrington", "High Tower Text", "High Tower Text Italic", "Imprint MT Shadow", "Informal Roman", "Jokerman", "Juice ITC", "Kristen ITC", "Kunstler Script", "Lucida Bright", "Lucida Bright Demibold", "Lucida Bright Demibold Italic", "Lucida Bright Italic", "Lucida Calligraphy Italic", "Lucida Fax Demibold", "Lucida Fax Demibold Italic", "Lucida Fax Italic", "Lucida Fax Regular", "Lucida Handwriting Italic", "Lucida Sans Demibold Italic", "Lucida Sans Demibold Roman", "Lucida Sans Italic", "Lucida Sans Regular", "Lucida Sans Typewriter Bold", "Lucida Sans Typewriter Bold Oblique", "Lucida Sans Typewriter Oblique", "Lucida Sans Typewriter Regular", "Magneto Bold", "Maiandra GD", "Matura MT Script Capitals", "Mistral", "Modern No. 20", "Monotype Corsiva", "MS Mincho", "MS Outlook", "MS Reference Sans Serif", "MS Reference Specialty", "MT Extra", "Niagara Engraved", "Niagara Solid", "OCR A Extended", "Old English Text MT", "Onyx", "Palace Script MT", "Palatino Linotype", "Palatino Linotype Bold", "Palatino Linotype Bold Italic", "Palatino Linotype Italic", "Papyrus", "Parchment", "Perpetua", "Perpetua Bold", "Perpetua Bold Italic", "Perpetua Italic", "Perpetua Titling MT Bold", "Perpetua Titling MT Light", "Playbill", "Poor Richard", "Pristina", "Rage Italic", "Ravie Rockwell", "Rockwell Bold", "Rockwell Bold Italic", "Rockwell Condensed", "Rockwell Condensed Bold", "Rockwell Extra Bold", "Rockwell Italic", "Script MT Bold", "Segoe UI*", "Segoe UI Bold*", "Segoe UI Bold Italic*", "Segoe UI Italic*", "Showcard Gothic", "Snap ITC", "Stencil", "Tempus Sans ITC", "Tw Cen MT", "Tw Cen MT Bold", "Tw Cen MT Bold Italic", "Tw Cen MT Condensed", "Tw Cen MT Condensed Bold", "Tw Cen MT Condensed Extra Bold", "Tw Cen MT Italic", "Viner Hand ITC", "Vivaldi Italic", "Vladimir Script", "Wide Latin", "Wingdings 2", "Wingdings 3"})
+        Me.cboxFontFamily.Location = New System.Drawing.Point(3, 3)
+        Me.cboxFontFamily.Name = "cboxFontFamily"
+        Me.cboxFontFamily.Size = New System.Drawing.Size(117, 24)
+        Me.cboxFontFamily.TabIndex = 15
         '
         'btnSave
         '
@@ -1051,50 +1131,59 @@ Partial Class rightpanel
         Me.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnSave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnSave.FlatAppearance.BorderSize = 0
+        Me.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.ImageIndex = 4
-        Me.btnSave.Location = New System.Drawing.Point(229, 2)
+        Me.btnSave.Location = New System.Drawing.Point(244, 2)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(62, 26)
+        Me.btnSave.Size = New System.Drawing.Size(47, 26)
         Me.btnSave.TabIndex = 19
         Me.btnSave.Text = " "
-        Me.btnSave.UseVisualStyleBackColor = False
-        '
-        'cboxFontFamily
-        '
-        Me.cboxFontFamily.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cboxFontFamily.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboxFontFamily.FormattingEnabled = True
-        Me.cboxFontFamily.Items.AddRange(New Object() {"Abadi MT Condensed", "Adobe Minion Web", "Agency FB", "Aharoni", "Aldhabi", "Algerian", "Almanac MT", "American Uncial", "Andale Mono", "Andalus", "Andy", "Angsana New", "AngsanaUPC", "Aparajita", "Arabic Transparent", "Arabic Typesetting", "Arial", "Arial Black", "Arial Narrow", "Arial Narrow Special", "Arial Rounded MT", "Arial Special", "Arial Unicode MS", "Augsburger Initials", "Baskerville Old Face", "Batang", "BatangChe", "Bauhaus 93", "Beesknees ITC", "Bell MT", "Berlin Sans FB", "Bernard MT Condensed", "Bickley Script", "Blackadder ITC", "Bodoni MT", "Bodoni MT Condensed", "Bon Apetit MT", "Book Antiqua", "Bookman Old Style", "Bookshelf Symbol", "Bradley Hand ITC", "Braggadocio", "BriemScript", "Britannic", "Britannic Bold", "Broadway", "Browallia New", "BrowalliaUPC", "Brush Script MT", "Calibri", "Californian FB", "Calisto MT", "Cambria", "Cambria Math", "Candara", "Cariadings", "Castellar", "Centaur", "Century", "Century Gothic", "Century Schoolbook", "Chiller", "Colonna MT", "Comic Sans MS", "Consolas", "Constantia", "Contemporary Brush", "Cooper Black", "Copperplate Gothic", "Corbel", "Cordia New", "CordiaUPC", "Courier New", "Curlz MT", "DaunPenh", "David", "Desdemona", "DFKai-SB", "DilleniaUPC", "Directions MT", "DokChampa", "Dotum", "DotumChe", "Ebrima", "Eckmann", "Edda", "Edwardian Script ITC", "Elephant", "Engravers MT", "Enviro", "Eras ITC", "Estrangelo Edessa", "EucrosiaUPC", "Euphemia", "Eurostile", "FangSong", "Felix Titling", "Fine Hand", "Fixed Miriam Transparent", "Flexure", "Footlight MT", "Forte", "Franklin Gothic", "Franklin Gothic Medium", "FrankRuehl", "FreesiaUPC", "Freestyle Script", "French Script MT", "Futura", "Gabriola", "Gadugi", "Garamond", "Garamond MT", "Gautami", "Georgia", "Georgia Ref", "Gigi", "Gill Sans MT", "Gill Sans MT Condensed", "Gisha", "Gloucester", "Goudy Old Style", "Goudy Stout", "Gradl", "Gulim", "GulimChe", "Gungsuh", "GungsuhChe", "Haettenschweiler", "Harlow Solid Italic", "Harrington", "High Tower Text", "Holidays MT", "Impact", "Imprint MT Shadow", "Informal Roman", "IrisUPC", "Iskoola Pota", "JasmineUPC", "Jokerman", "Juice ITC", "KaiTi", "Kalinga", "Kartika", "Keystrokes MT", "Khmer UI", "Kino MT", "KodchiangUPC", "Kokila", "Kristen ITC", "Kunstler Script", "Lao UI", "Latha", "LCD", "Leelawadee", "Levenim MT", "LilyUPC", "Lucida Blackletter", "Lucida Bright", "Lucida Bright Math", "Lucida Calligraphy", "Lucida Console", "Lucida Fax", "Lucida Handwriting", "Lucida Sans", "Lucida Sans Typewriter", "Lucida Sans Unicode", "Magneto", "Maiandra GD", "Malgun Gothic", "Mangal", "Map Symbols", "Marlett", "Matisse ITC", "Matura MT Script Capitals", "McZee", "Mead Bold", "Meiryo", "Meiryo UI", "Mercurius Script MT Bold", "Microsoft Himalaya", "Microsoft JhengHei", "Microsoft JhengHei UI", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Sans Serif", "Microsoft Tai Le", "Microsoft Uighur", "Microsoft YaHei", "Microsoft YaHei UI", "Microsoft Yi Baiti", "MingLiU", "MingLiU_HKSCS", "MingLiU_HKSCS-ExtB", "MingLiU-ExtB", "Minion Web", "Miriam", "Miriam Fixed", "Mistral", "Modern No. 20", "Mongolian Baiti", "Monotype Corsiva", "Monotype Sorts", "Monotype.com", "MoolBoran", "MS Gothic", "MS LineDraw", "MS Mincho", "MS Outlook", "MS PGothic", "MS PMincho", "MS Reference", "MS UI Gothic", "MT Extra", "MV Boli", "Myanmar Text", "Narkisim", "New Caledonia", "News Gothic MT", "Niagara", "Nirmala UI", "NSimSun", "Nyala", "OCR A Extended", "OCRB", "OCR-B-Digits", "Old English Text MT", "Onyx", "Palace Script MT", "Palatino Linotype", "Papyrus", "Parade", "Parchment", "Parties MT", "Peignot Medium", "Pepita MT", "Perpetua", "Perpetua Titling MT", "Placard Condensed", "Plantagenet Cherokee", "Playbill", "PMingLiU", "PMingLiU-ExtB", "Poor Richard", "Pristina", "Raavi", "Rage Italic", "Ransom", "Ravie", "RefSpecialty", "Rockwell", "Rockwell Condensed", "Rockwell Extra Bold", "Rod", "Runic MT Condensed", "Sakkal Majalla", "Script MT Bold", "Segoe Chess", "Segoe Print", "Segoe Pseudo", "Segoe Script", "Segoe UI", "Segoe UI Symbol", "Shonar Bangla", "Showcard Gothic", "Shruti", "Signs MT", "SimHei", "Simplified Arabic", "Simplified Arabic Fixed", "SimSun", "SimSun-ExtB", "Snap ITC", "Sports MT", "Stencil", "Stop", "Sylfaen", "Symbol", "Tahoma", "Temp Installer Font", "Tempo Grunge", "Tempus Sans ITC", "Times New Roman", "Times New Roman Special", "Traditional Arabic", "Transport MT", "Trebuchet MS", "Tunga", "Tw Cen MT", "Tw Cen MT Condensed", "Urdu Typesetting", "Utsaah", "Vacation MT", "Vani", "Verdana", "Verdana Ref", "Vijaya", "Viner Hand ITC", "Vivaldi", "Vixar ASCI", "Vladimir Script", "Vrinda", "Webdings", "Westminster", "Wide Latin", "Wingdings"})
-        Me.cboxFontFamily.Location = New System.Drawing.Point(3, 3)
-        Me.cboxFontFamily.Name = "cboxFontFamily"
-        Me.cboxFontFamily.Size = New System.Drawing.Size(134, 24)
-        Me.cboxFontFamily.TabIndex = 15
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'cboxFontSize
         '
         Me.cboxFontSize.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboxFontSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxFontSize.FormattingEnabled = True
-        Me.cboxFontSize.Items.AddRange(New Object() {"8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "24", "28", "32", "36", "40", "44", "48", "54", "60", "66", "72", "80", "88", "96", "", "", ""})
-        Me.cboxFontSize.Location = New System.Drawing.Point(143, 3)
+        Me.cboxFontSize.Items.AddRange(New Object() {"8", "8.25", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "24", "28", "32", "36", "40", "44", "48", "54", "60", "66", "72", "80", "88", "96", "", ""})
+        Me.cboxFontSize.Location = New System.Drawing.Point(126, 3)
         Me.cboxFontSize.Name = "cboxFontSize"
-        Me.cboxFontSize.Size = New System.Drawing.Size(47, 24)
+        Me.cboxFontSize.Size = New System.Drawing.Size(44, 24)
         Me.cboxFontSize.TabIndex = 14
+        '
+        'btn_Reset
+        '
+        Me.btn_Reset.BackgroundImage = Global.SemiFinalApproach.My.Resources.Resources.refresh3
+        Me.btn_Reset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_Reset.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_Reset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_Reset.FlatAppearance.BorderSize = 0
+        Me.btn_Reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_Reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_Reset.Location = New System.Drawing.Point(176, 3)
+        Me.btn_Reset.Name = "btn_Reset"
+        Me.btn_Reset.Size = New System.Drawing.Size(29, 24)
+        Me.btn_Reset.TabIndex = 29
+        Me.btn_Reset.Text = " "
+        Me.btn_Reset.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel7
         '
         Me.TableLayoutPanel7.ColumnCount = 9
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel7.Controls.Add(Me.btnBold, 0, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.btnPaste, 8, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.btnitalic, 1, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.btnCopy, 7, 0)
@@ -1103,7 +1192,6 @@ Partial Class rightpanel
         Me.TableLayoutPanel7.Controls.Add(Me.btnAlignLeft, 3, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.btnAlignRight, 5, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.btnAlignCenter, 4, 0)
-        Me.TableLayoutPanel7.Controls.Add(Me.btnBold, 0, 0)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(3, 39)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
@@ -1112,12 +1200,37 @@ Partial Class rightpanel
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(293, 22)
         Me.TableLayoutPanel7.TabIndex = 0
         '
+        'btnBold
+        '
+        Me.btnBold.Appearance = System.Windows.Forms.Appearance.Button
+        Me.btnBold.BackgroundImage = Global.SemiFinalApproach.My.Resources.Resources._23_g
+        Me.btnBold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBold.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnBold.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBold.FlatAppearance.BorderSize = 0
+        Me.btnBold.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnBold.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnBold.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnBold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBold.ImageKey = "Italic.jpg"
+        Me.btnBold.Location = New System.Drawing.Point(0, 0)
+        Me.btnBold.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnBold.Name = "btnBold"
+        Me.btnBold.Size = New System.Drawing.Size(32, 22)
+        Me.btnBold.TabIndex = 19
+        Me.btnBold.Text = " "
+        Me.btnBold.UseVisualStyleBackColor = True
+        '
         'btnPaste
         '
         Me.btnPaste.BackgroundImage = Global.SemiFinalApproach.My.Resources.Resources._201
         Me.btnPaste.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnPaste.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnPaste.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnPaste.FlatAppearance.BorderSize = 0
+        Me.btnPaste.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnPaste.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnPaste.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnPaste.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPaste.ImageIndex = 6
         Me.btnPaste.Location = New System.Drawing.Point(256, 0)
@@ -1131,12 +1244,14 @@ Partial Class rightpanel
         'btnitalic
         '
         Me.btnitalic.Appearance = System.Windows.Forms.Appearance.Button
-        Me.btnitalic.AutoCheck = False
         Me.btnitalic.BackgroundImage = Global.SemiFinalApproach.My.Resources.Resources._24_g
         Me.btnitalic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnitalic.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnitalic.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnitalic.FlatAppearance.CheckedBackColor = System.Drawing.Color.White
+        Me.btnitalic.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnitalic.FlatAppearance.BorderSize = 0
+        Me.btnitalic.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnitalic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnitalic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnitalic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnitalic.ImageKey = "Italic.jpg"
         Me.btnitalic.Location = New System.Drawing.Point(32, 0)
@@ -1153,6 +1268,10 @@ Partial Class rightpanel
         Me.btnCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnCopy.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCopy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnCopy.FlatAppearance.BorderSize = 0
+        Me.btnCopy.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCopy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCopy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCopy.ImageIndex = 2
         Me.btnCopy.Location = New System.Drawing.Point(224, 0)
@@ -1169,6 +1288,10 @@ Partial Class rightpanel
         Me.btnCut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnCut.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnCut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnCut.FlatAppearance.BorderSize = 0
+        Me.btnCut.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnCut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCut.ImageIndex = 1
         Me.btnCut.Location = New System.Drawing.Point(192, 0)
@@ -1182,12 +1305,14 @@ Partial Class rightpanel
         'btnunderline
         '
         Me.btnunderline.Appearance = System.Windows.Forms.Appearance.Button
-        Me.btnunderline.AutoCheck = False
         Me.btnunderline.BackgroundImage = Global.SemiFinalApproach.My.Resources.Resources._22_g
         Me.btnunderline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnunderline.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnunderline.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnunderline.FlatAppearance.CheckedBackColor = System.Drawing.Color.White
+        Me.btnunderline.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnunderline.FlatAppearance.BorderSize = 0
+        Me.btnunderline.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnunderline.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnunderline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnunderline.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnunderline.ImageKey = "Underline.jpg"
         Me.btnunderline.Location = New System.Drawing.Point(64, 0)
@@ -1204,6 +1329,10 @@ Partial Class rightpanel
         Me.btnAlignLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnAlignLeft.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAlignLeft.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnAlignLeft.FlatAppearance.BorderSize = 0
+        Me.btnAlignLeft.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlignLeft.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlignLeft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnAlignLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlignLeft.Location = New System.Drawing.Point(96, 0)
         Me.btnAlignLeft.Margin = New System.Windows.Forms.Padding(0)
@@ -1219,6 +1348,10 @@ Partial Class rightpanel
         Me.btnAlignRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnAlignRight.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAlignRight.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnAlignRight.FlatAppearance.BorderSize = 0
+        Me.btnAlignRight.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlignRight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlignRight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnAlignRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlignRight.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnAlignRight.ImageIndex = 9
@@ -1236,6 +1369,10 @@ Partial Class rightpanel
         Me.btnAlignCenter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnAlignCenter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAlignCenter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnAlignCenter.FlatAppearance.BorderSize = 0
+        Me.btnAlignCenter.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlignCenter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAlignCenter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnAlignCenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlignCenter.Location = New System.Drawing.Point(128, 0)
         Me.btnAlignCenter.Margin = New System.Windows.Forms.Padding(0)
@@ -1244,25 +1381,6 @@ Partial Class rightpanel
         Me.btnAlignCenter.TabIndex = 4
         Me.btnAlignCenter.Text = " "
         Me.btnAlignCenter.UseVisualStyleBackColor = True
-        '
-        'btnBold
-        '
-        Me.btnBold.Appearance = System.Windows.Forms.Appearance.Button
-        Me.btnBold.AutoCheck = False
-        Me.btnBold.BackColor = System.Drawing.SystemColors.Control
-        Me.btnBold.BackgroundImage = Global.SemiFinalApproach.My.Resources.Resources._23_g
-        Me.btnBold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnBold.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnBold.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnBold.FlatAppearance.CheckedBackColor = System.Drawing.Color.White
-        Me.btnBold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBold.ImageIndex = 0
-        Me.btnBold.Location = New System.Drawing.Point(0, 0)
-        Me.btnBold.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnBold.Name = "btnBold"
-        Me.btnBold.Size = New System.Drawing.Size(32, 22)
-        Me.btnBold.TabIndex = 2
-        Me.btnBold.UseVisualStyleBackColor = False
         '
         'rightpanel
         '
@@ -1384,11 +1502,12 @@ Partial Class rightpanel
     Friend WithEvents btnitalic As System.Windows.Forms.CheckBox
     Friend WithEvents btnPaste As System.Windows.Forms.Button
     Friend WithEvents btnunderline As System.Windows.Forms.CheckBox
-    Friend WithEvents btnBold As System.Windows.Forms.CheckBox
     Friend WithEvents TableLayoutPanel8 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents cboxFontFamily As System.Windows.Forms.ComboBox
     Friend WithEvents cboxFontSize As System.Windows.Forms.ComboBox
     Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btn_Bullet As System.Windows.Forms.CheckBox
+    Friend WithEvents btnBold As System.Windows.Forms.CheckBox
+    Friend WithEvents btn_Reset As System.Windows.Forms.Button
 
 End Class

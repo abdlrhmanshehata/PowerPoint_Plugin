@@ -63,12 +63,13 @@ Public Class rightpanel
         Else
             gettextpage()
             getnotespage()
+
         End If
         If Globals.ThisAddIn.CustomTaskPanes.Item(0).Visible = False Then
             Globals.Ribbons.Ribbon1.ToggleButton1.Checked = False
         End If
     End Sub
-
+    
     Private Sub vscroll_Scroll(sender As Object, e As ScrollEventArgs) Handles vscroll.Scroll
         Select Case vscroll.Value
             Case 0
@@ -97,6 +98,7 @@ Public Class rightpanel
     Private Sub rightpanel_Load(sender As Object, e As EventArgs) Handles Me.Load
         cboxFormatShape.SelectedIndex = 0
     End Sub
+
     Private Sub rightpanel_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
         TextBoxPage.Width = Me.Width - 28
         SCont_A.Height = Me.Height - 12
@@ -113,72 +115,31 @@ Public Class rightpanel
     '=======================================NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES============================================='
 #Region "Notes"
 
-#Region "Subs"
-    Sub disablenotes()
-        txtNotes.Enabled = False
-    End Sub
-    Sub enablenotes()
-        txtNotes.Enabled = True
-    End Sub
-    Sub getnotespage() 'Time Function 
-        Try
-            disablenotes()
-            If txtNotes.Text <> notesshape.TextFrame.TextRange.Text Then
-                gettext()
-            End If
-            getfont()
-            getfontstyle()
-            getalignment()
-        Catch ex As Exception
-        End Try
-    End Sub
-    Sub getalignment()
-
-        Dim alignment As Integer = notesshape.TextFrame.TextRange.ParagraphFormat.Alignment
-        Dim txtnotesalignment As Integer = txtNotes.SelectionAlignment
-
-        If txtnotesalignment <> alignment Then
-            Select Case alignment
-                Case 1
-                    txtNotes.SelectionAlignment = HorizontalAlignment.Left
-                Case 2
-                    txtNotes.SelectionAlignment = HorizontalAlignment.Center
-                Case 3
-                    txtNotes.SelectionAlignment = HorizontalAlignment.Right
-            End Select
-        End If
-
+#Region "Methods"
+    '--------------------------------------------------------Get methods-------------------------------------------------'
+    Sub getnotespage()
+        gettext()
+        getfont()
+        disable()
     End Sub
     Sub gettext()
-        Try
+        If txtNotes.Text <> notesshape.TextFrame.TextRange.Text Then
             txtNotes.Text = notesshape.TextFrame.TextRange.Text
-        Catch ex As Exception
-        End Try
-    End Sub
-    Sub getfont()
-        Dim notesfontname As String = notesshape.TextFrame.TextRange.Font.Name
-        Dim notesfontsize As Integer = notesshape.TextFrame.TextRange.Font.Size
-        Dim myfont As System.Drawing.Font = New Drawing.Font(notesfontname, notesfontsize)
-
-        If txtNotes.Font.Name <> notesfontname Or txtNotes.Font.Size <> notesfontsize Then
-            txtNotes.Font = myfont
-            Try
-                cboxFontFamily.SelectedIndex = cboxFontFamily.Items.IndexOf(notesfontname)
-                cboxFontSize.SelectedIndex = cboxFontSize.Items.IndexOf(CStr(notesfontsize))
-            Catch ex As Exception
-            End Try
         End If
     End Sub
-    Sub getfontstyle()
+    Sub getfont()
         Try
-            For Each word As PowerPoint.TextRange In notesshape.TextFrame.TextRange.Words
-                Dim length = word.Length
+            For Each word As TextRange In notesshape.TextFrame.TextRange.Words
                 Dim index As Integer = word.Start - 1
                 Dim wheretostop As Integer
-                Dim theword As String = word.Text
-                Dim bold = word.Characters(1, 1).Font.Bold
-                Dim italic = word.Characters(1, 1).Font.Italic
-                Dim under = word.Characters(1, 1).Font.Underline
+                Dim bold, italic, underline As MsoTriState
+                Dim fontname As String
+                Dim fontsize As Single
+                Dim style As FontStyle = FontStyle.Regular
+
+                wheretostop = 0
+                fontname = word.Font.Name
+                fontsize = word.Font.Size
 
                 For Each element As TextRange In word.Characters
                     If element.Text <> " " Then
@@ -186,155 +147,226 @@ Public Class rightpanel
                     End If
                 Next
                 txtNotes.Select(index, wheretostop)
+                With word.Characters(1, 1).Font
+                    bold = .Bold
+                    italic = .Italic
+                    underline = .Underline
+                End With
 
-                If bold = 0 And under = 0 And italic = 0 Then
-                    defaultfontstyle()
-                ElseIf bold = -1 And under = -1 And italic = -1 Then
-                    newfontstyle(FontStyle.Bold Or FontStyle.Italic Or FontStyle.Underline)
-                    '-----------------------------Singles-----------------------------------------'
-                ElseIf bold = -1 And under = 0 And italic = 0 Then
-                    newfontstyle(FontStyle.Bold)
-                ElseIf bold = 0 And under = -1 And italic = 0 Then
-                    newfontstyle(FontStyle.Underline)
-                ElseIf bold = 0 And under = 0 And italic = -1 Then
-                    newfontstyle(FontStyle.Italic)
-                    '------------------------------combinations---------------------------------'
-                ElseIf bold = -1 And under = -1 And italic = 0 Then
-                    newfontstyle(FontStyle.Bold Or FontStyle.Underline)
-                ElseIf bold = -1 And under = 0 And italic = -1 Then
-                    newfontstyle(FontStyle.Italic Or FontStyle.Bold)
-                ElseIf bold = 0 And under = -1 And italic = -1 Then
-                    newfontstyle(FontStyle.Italic Or FontStyle.Underline)
+                If bold = 0 And italic = 0 And underline = 0 Then
+                    style = FontStyle.Regular
+                ElseIf bold = -1 And italic = -1 And underline = -1 Then
+                    style = FontStyle.Bold Or FontStyle.Italic Or FontStyle.Underline
+                ElseIf bold = -1 And italic = 0 And underline = 0 Then
+                    style = FontStyle.Bold
+                ElseIf bold = 0 And italic = -1 And underline = 0 Then
+                    style = FontStyle.Italic
+                ElseIf bold = 0 And italic = 0 And underline = -1 Then
+                    style = FontStyle.Underline
+                ElseIf bold = -1 And italic = -1 And underline = 0 Then
+                    style = FontStyle.Bold Or FontStyle.Italic
+                ElseIf bold = -1 And italic = 0 And underline = -1 Then
+                    style = FontStyle.Bold Or FontStyle.Underline
+                ElseIf bold = 0 And italic = -1 And underline = -1 Then
+                    style = FontStyle.Underline Or FontStyle.Italic
                 End If
+                txtNotes.SelectionFont = New Drawing.Font(fontname, fontsize, style)
+                txtNotes.Select(1, 1)
+                txtNotes.HideSelection = True
             Next
         Catch ex As Exception
         End Try
     End Sub
-    
-    
-
+    Sub disable()
+        txtNotes.Enabled = False
+        cboxFontFamily.Enabled = False
+        cboxFontSize.Enabled = False
+        btnBold.Enabled = False
+        btnitalic.Enabled = False
+        btnunderline.Enabled = False
+    End Sub
+    '--------------------------------------------------------Set methods-------------------------------------------------'
     Sub setnotespage()
-        enablenotes()
-        settext()
-    End Sub
-    Sub setfontstyle()
-        For j = 1 To txtNotes.Text.Count
-            Dim letter As TextRange = notesshape.TextFrame.TextRange.Characters(j, 1)
-            Dim ifbold As Boolean = letter.Font.Bold
-            Dim ifitalic As Boolean = letter.Font.Italic
-            Dim ifunderline As Boolean = letter.Font.Underline
-            Dim text As String = letter.Text
-            If text <> " " Then
-
-                txtNotes.Select(j - 1, 1)
-                If ifbold <> txtNotes.SelectionFont.Bold Then
-                    letter.Font.Bold = MsoTriState.msoCTrue
-                End If
-                If ifitalic <> txtNotes.SelectionFont.Italic Then
-                    letter.Font.Italic = MsoTriState.msoCTrue
-                End If
-                If ifunderline <> txtNotes.SelectionFont.Underline Then
-                    letter.Font.Underline = MsoTriState.msoCTrue
-                End If
-
-            End If
-        Next
-    End Sub
-    Sub setalignment()
-        Dim alignment As Integer
-        alignment = txtNotes.SelectionAlignment
-        Select Case alignment
-            Case 0
-                notesshape.TextFrame.TextRange.ParagraphFormat.Alignment = PpParagraphAlignment.ppAlignLeft
-            Case 2
-                notesshape.TextFrame.TextRange.ParagraphFormat.Alignment = PpParagraphAlignment.ppAlignCenter
-            Case 1
-                notesshape.TextFrame.TextRange.ParagraphFormat.Alignment = PpParagraphAlignment.ppAlignRight
-        End Select
+        enable()
     End Sub
     Sub settext()
-        Dim mytext As String = txtNotes.Text
-        Dim notestext As String = notesshape.TextFrame.TextRange.Text
-        If notestext <> mytext Then
+
+        If notesshape.TextFrame.TextRange.Text <> txtNotes.Text Then
             notesshape.TextFrame.TextRange.Text = txtNotes.Text
         End If
     End Sub
-    Sub setfont()
-        notesshape.TextFrame.TextRange.Font.Name = cboxFontFamily.SelectedItem.ToString
-        notesshape.TextFrame.TextRange.Font.Size = CInt(cboxFontSize.SelectedItem.ToString)
+    Sub setalignment()
+        Try
+            With notesshape.TextFrame.TextRange.ParagraphFormat
+                If txtNotes.SelectionAlignment = HorizontalAlignment.Center Then
+                    .Alignment = PpParagraphAlignment.ppAlignCenter
+                ElseIf txtNotes.SelectionAlignment = HorizontalAlignment.Left Then
+                    .Alignment = PpParagraphAlignment.ppAlignLeft
+                ElseIf txtNotes.SelectionAlignment = HorizontalAlignment.Right Then
+                    .Alignment = PpParagraphAlignment.ppAlignRight
+                End If
+            End With
+        Catch ex As Exception
+        End Try
     End Sub
-    Sub defaultfontstyle()
-        txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size, FontStyle.Regular)
+    Sub setfont() ' checks that each word in notes are exactly like the word in PowerPlug
+        Try
+            For Each word As TextRange In notesshape.TextFrame.TextRange.Words
+                Dim index As Integer = word.Start - 1
+                Dim wheretostop As Integer
+                Dim bold, italic, underline As Boolean
+                Dim fontname As String
+                Dim fontsize As Single
+                Dim selectionstart As Integer = txtNotes.SelectionStart
+                Dim selectionlength As Integer = txtNotes.SelectedText.Length
+                wheretostop = 0
+                For Each element As TextRange In word.Characters
+                    If element.Text <> " " Then
+                        wheretostop += 1
+                    End If
+                Next
+                txtNotes.Select(index, wheretostop)
+
+                With txtNotes.SelectionFont
+                    bold = .Bold
+                    italic = .Italic
+                    underline = .Underline
+                    fontname = .Name
+                    fontsize = .Size
+                End With
+
+                With word.Font
+                    .Bold = MsoTriState.msoFalse
+                    .Italic = MsoTriState.msoFalse
+                    .Underline = MsoTriState.msoFalse
+                    If bold = True And italic = True And underline = True Then
+                        .Bold = MsoTriState.msoTrue
+                        .Italic = MsoTriState.msoTrue
+                        .Underline = MsoTriState.msoTrue
+                    ElseIf bold = True And italic = False And underline = False Then
+                        .Bold = MsoTriState.msoTrue
+                    ElseIf bold = False And italic = True And underline = False Then
+                        .Italic = MsoTriState.msoTrue
+                    ElseIf bold = False And italic = False And underline = True Then
+                        .Underline = MsoTriState.msoTrue
+                    ElseIf bold = True And italic = True And underline = False Then
+                        .Bold = MsoTriState.msoTrue
+                        .Italic = MsoTriState.msoTrue
+                    ElseIf bold = True And italic = False And underline = True Then
+                        .Bold = MsoTriState.msoTrue
+                        .Underline = MsoTriState.msoTrue
+                    ElseIf bold = False And italic = True And underline = True Then
+                        .Italic = MsoTriState.msoTrue
+                        .Underline = MsoTriState.msoTrue
+                    End If
+                End With
+                word.Font.Name = fontname
+                word.Font.Size = fontsize
+                txtNotes.Select(selectionstart, selectionlength)
+
+            Next
+        Catch ex As Exception
+        End Try
     End Sub
-    Sub newfontstyle(ByVal style As System.Drawing.FontStyle)
-        txtNotes.SelectionFont = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size, style)
+    Sub enable()
+        txtNotes.Enabled = True
+        cboxFontFamily.Enabled = True
+        cboxFontSize.Enabled = True
+        btnBold.Enabled = True
+        btnitalic.Enabled = True
+        btnunderline.Enabled = True
+    End Sub
+    '--------------------------------------------------------General methods-------------------------------------------------'
+    Sub B_I_U() 'controls PowerPlug Font_Style
+        Try
+            Dim bold, italic, underline As Boolean
+            Dim fontname As String = txtNotes.SelectionFont.Name
+            Dim fontsize As Single = txtNotes.SelectionFont.Size
+            Dim style As FontStyle = FontStyle.Regular
+            bold = btnBold.Checked
+            italic = btnitalic.Checked
+            underline = btnunderline.Checked
+
+            If bold = False And italic = False And underline = False Then
+                style = FontStyle.Regular
+            ElseIf bold = True And italic = True And underline = True Then
+                style = FontStyle.Bold Or FontStyle.Italic Or FontStyle.Underline
+            ElseIf bold = True And italic = False And underline = False Then
+                style = FontStyle.Bold
+            ElseIf bold = False And italic = True And underline = False Then
+                style = FontStyle.Italic
+            ElseIf bold = False And italic = False And underline = True Then
+                style = FontStyle.Underline
+            ElseIf bold = True And italic = True And underline = False Then
+                style = FontStyle.Bold Or FontStyle.Italic
+            ElseIf bold = True And italic = False And underline = True Then
+                style = FontStyle.Bold Or FontStyle.Underline
+            ElseIf bold = False And italic = True And underline = True Then
+                style = FontStyle.Italic Or FontStyle.Underline
+            End If
+
+            txtNotes.SelectionFont = New Drawing.Font(fontname, fontsize, style)
+        Catch ex As Exception
+        End Try
+    End Sub
+    Sub check_B_I_U()
+        Try
+            If txtNotes.SelectionFont.Bold = True Then
+                btnBold.Checked = True
+            Else
+                btnBold.Checked = False
+            End If
+
+            If txtNotes.SelectionFont.Italic = True Then
+                btnitalic.Checked = True
+            Else
+                btnitalic.Checked = False
+            End If
+
+            If txtNotes.SelectionFont.Underline = True Then
+                btnunderline.Checked = True
+            Else
+                btnunderline.Checked = False
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+    Sub check_name_size()
+        Try
+            cboxFontFamily.SelectedItem = txtNotes.SelectionFont.Name
+            cboxFontSize.SelectedItem = CStr(txtNotes.SelectionFont.Size)
+        Catch ex As Exception
+        End Try
     End Sub
 
-    Sub makenewfont(ByVal choosestyle As Drawing.FontStyle)
-        txtNotes.Font = New Drawing.Font(notesshape.TextFrame.TextRange.Font.Name, notesshape.TextFrame.TextRange.Font.Size, choosestyle)
-    End Sub
 #End Region
 
-#Region "Control_Buttons"
+#Region "Event Handlers"
+    'controls Font 
     Private Sub cboxFontSize_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboxFontSize.SelectionChangeCommitted
-        txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, CInt(cboxFontSize.SelectedItem.ToString))
-        setfont()
+        Try
+            txtNotes.SelectionFont = New Drawing.Font(txtNotes.SelectionFont.Name, CInt(cboxFontSize.SelectedItem.ToString))
+            B_I_U()
+
+        Catch ex As Exception
+        End Try
     End Sub
     Private Sub cboxFontFamily_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboxFontFamily.SelectionChangeCommitted
-        txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, CInt(cboxFontSize.SelectedItem.ToString))
-        setfont()
+        txtNotes.SelectionFont = New Drawing.Font(cboxFontFamily.SelectedItem.ToString, txtNotes.SelectionFont.Size)
+        B_I_U()
+
     End Sub
 
-    Private Sub btnAlignLeft_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignLeft.Click
-        txtNotes.SelectionAlignment = HorizontalAlignment.Left
-
-        setalignment()
+    Private Sub btnunderline_Click(sender As Object, e As EventArgs) Handles btnunderline.Click
+        B_I_U()
     End Sub
-    Private Sub btnAlignCenter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignCenter.Click
-        txtNotes.SelectionAlignment = HorizontalAlignment.Center
-        setalignment()
+    Private Sub btnitalic_Click(sender As Object, e As EventArgs) Handles btnitalic.Click
+        B_I_U()
     End Sub
-    Private Sub btnAlignRight_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlignRight.Click
-        txtNotes.SelectionAlignment = HorizontalAlignment.Right
-        setalignment()
+    Private Sub btnBold_Click(sender As Object, e As EventArgs) Handles btnBold.Click
+        B_I_U()
     End Sub
-
-    Private Sub btnitalic_CheckedChanged(sender As Object, e As EventArgs) Handles btnitalic.CheckedChanged
-        If txtNotes.SelectedText.Length <> 0 Then
-            If btnitalic.Checked = True Then
-                newfontstyle(FontStyle.Italic)
-            Else
-                defaultfontstyle()
-            End If
-        Else
-            btnitalic.Checked = False
-            MsgBox(" please select text")
-        End If
-    End Sub
-    Private Sub btnBold_CheckedChanged(sender As Object, e As EventArgs) Handles btnBold.CheckedChanged
-        If txtNotes.SelectedText.Length <> 0 Then
-            If btnBold.Checked = True Then
-                newfontstyle(FontStyle.Bold)
-            Else
-                defaultfontstyle()
-            End If
-        Else
-            btnBold.Checked = False
-            MsgBox(" please select text")
-        End If
-    End Sub
-    Private Sub btnunderline_CheckedChanged(sender As Object, e As EventArgs) Handles btnunderline.CheckedChanged
-        If txtNotes.SelectedText.Length <> 0 Then
-            If btnunderline.Checked = True Then
-                newfontstyle(FontStyle.Underline)
-            Else
-                defaultfontstyle()
-            End If
-        Else
-            btnunderline.Checked = False
-            MsgBox(" please select text")
-        End If
-    End Sub
+    'Bullet
     Private Sub btn_Bullet_CheckedChanged(sender As Object, e As EventArgs) Handles btn_Bullet.CheckedChanged
         If btn_Bullet.Checked Then
             txtNotes.SelectionBullet = True
@@ -342,10 +374,15 @@ Public Class rightpanel
             txtNotes.SelectionBullet = False
         End If
     End Sub
-    Private Sub btnRefresh_Click()
-        setfontstyle()
+    Private Sub btn_Bullet_Click(sender As Object, e As EventArgs) Handles btn_Bullet.Click
+        If txtNotes.Text.Length <> 0 Then
+            execute("BulletsGallery")
+        Else
+            MsgBox(" Please Write Something")
+        End If
+       
     End Sub
-
+    'save & cut & ...
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             objapp.CommandBars("standard").Controls(3).Execute()
@@ -382,10 +419,38 @@ Public Class rightpanel
         Catch ex As Exception
         End Try
     End Sub
+    'alignment
+    Private Sub btnAlignLeft_Click(sender As Object, e As EventArgs) Handles btnAlignLeft.Click
+        txtNotes.SelectionAlignment = HorizontalAlignment.Left
+        setalignment()
+    End Sub
+    Private Sub btnAlignRight_Click(sender As Object, e As EventArgs) Handles btnAlignRight.Click
+        txtNotes.SelectionAlignment = HorizontalAlignment.Right
+        setalignment()
+    End Sub
+    Private Sub btnAlignCenter_Click(sender As Object, e As EventArgs) Handles btnAlignCenter.Click
+        txtNotes.SelectionAlignment = HorizontalAlignment.Center
+        setalignment()
+    End Sub
+    'general
+    Private Sub txtNotes_SelectionChanged(sender As Object, e As EventArgs) Handles txtNotes.SelectionChanged
+        check_B_I_U()
+        check_name_size()
+    End Sub
+    Private Sub txtNotes_TextChanged(sender As Object, e As EventArgs) Handles txtNotes.TextChanged
+        settext()
+    End Sub
+    Private Sub btn_Reset_Click(sender As Object, e As EventArgs) Handles btn_Reset.Click
+        txtNotes.SelectionFont = New Drawing.Font("Calibri", 12, FontStyle.Regular)
+    End Sub
+    Private Sub txtNotes_MouseLeave(sender As Object, e As EventArgs) Handles txtNotes.MouseLeave
+        B_I_U()
+        setfont()
+    End Sub
+    
 #End Region
 
 #End Region
-
     '=======================================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================================='
     '=======================================FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE FORMAT SHAPE ====================================='
 #Region "Format Shape"
@@ -533,7 +598,6 @@ Public Class rightpanel
 
 
 #End Region
-
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
 #Region " Alignment"
@@ -597,7 +661,7 @@ Public Class rightpanel
     Private Sub btn_Paragraph_Click(sender As Object, e As EventArgs) Handles btn_Paragraph.Click
         execute("PowerPointParagraphDialog")
     End Sub
-
 #End Region
+
 
 End Class
