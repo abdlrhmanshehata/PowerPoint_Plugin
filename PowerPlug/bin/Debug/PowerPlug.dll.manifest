@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PowerPlug.dll" version="1.0.0.9" publicKeyToken="ea936c2957ed9307" language="neutral" processorArchitecture="msil" type="win32" />
+  <description xmlns="urn:schemas-microsoft-com:asm.v1">PowerPlug</description>
+  <application />
+  <entryPoint>
+    <co.v1:customHostSpecified />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Office.Tools.v4.0.Framework" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.VisualStudio.Tools.Applications.Runtime" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" size="32664">
+      <assemblyIdentity name="Microsoft.Office.Tools.Common.v4.0.Utilities" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>CtnCtseaMyfROIGe0ENdGO6arHg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PowerPlug.dll" size="348672">
+      <assemblyIdentity name="PowerPlug" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>JNyTNfx8GX5Fry2YkcGbGx2P78M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="icons_Alignment\2.PNG" size="2877">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bCsPaCyELBmFyLzhU1JAlBgMCcw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icons_Alignment\3.PNG" size="2897">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IZbEnEcXq6GEPu/YaS17+oJ7/Ck=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icons_Alignment\4.PNG" size="2917">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>KEDDzWMEqZ5wRCRwRM3kC/xMZQg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <vstav3:addIn xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">
+    <vstav3:entryPointsCollection>
+      <vstav3:entryPoints>
+        <vstav3:entryPoint class="SemiFinalApproach.ThisAddIn">
+          <assemblyIdentity name="PowerPlug" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+        </vstav3:entryPoint>
+      </vstav3:entryPoints>
+    </vstav3:entryPointsCollection>
+    <vstav3:update enabled="true">
+      <vstav3:expiration maximumAge="7" unit="days" />
+    </vstav3:update>
+    <vstav3:application>
+      <vstov4:customizations xmlns:vstov4="urn:schemas-microsoft-com:vsto.v4">
+        <vstov4:customization>
+          <vstov4:appAddIn application="PowerPoint" loadBehavior="3" keyName="PowerPlug">
+            <vstov4:friendlyName>PowerPlug</vstov4:friendlyName>
+            <vstov4:description>PowerPlug</vstov4:description>
+            <vstov4.1:ribbonTypes xmlns:vstov4.1="urn:schemas-microsoft-com:vsto.v4.1">
+              <vstov4.1:ribbonType name="SemiFinalApproach.Ribbon1, PowerPlug, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+            </vstov4.1:ribbonTypes>
+          </vstov4:appAddIn>
+        </vstov4:customization>
+      </vstov4:customizations>
+    </vstav3:application>
+  </vstav3:addIn>
+<publisherIdentity name="CN=ABDLRHMAN\Abdlrhman Shehata" issuerKeyHash="ae07010474bfa51887732aa4e9d013078811e6bb" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>0sSz9ClFdsXzbISQ6GnvsJ6phaM=</DigestValue></Reference></SignedInfo><SignatureValue>S8lP8kISrpCH9ZfzB7Z3tZIyKETx3E/U3227z//PfGafn4wFKrkdwq6yQa78l8FL/DdRyBkXBIl7qAJ6KFKn4Hr1CaWahHfoJ8Hgqbu8Ek/2g8+XV6cAO7OY/9ktu06ZMfZixICHMSL6m6BFtOh7BeevayJE07Ot3zipPZVWtnE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>vGYT39UCbr6isVflmBJ+3zhKNVWDUzUKlZt+530SaXGvw+QlgJQByVsZnEFlRwEaMxxkG0qdUHz920OF9ZaqlxQeprDiKkcxEswN7bbVMb7CQHGRE0VPlJJwCs3AVAEK69ekgkfyCl1FFD9Ec2QihzXyWnq2eZUtcxs+6a+3PcU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a385a99eb0ef69e890846cf3c5764529f4b3c4d2" Description="" Url=""><as:assemblyIdentity name="PowerPlug.dll" version="1.0.0.9" publicKeyToken="ea936c2957ed9307" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ABDLRHMAN\Abdlrhman Shehata</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>jfHJ/NKHyzfZbN88sU8Ds8sE25Q=</DigestValue></Reference></SignedInfo><SignatureValue>pUajDELj23ZmKi7q44AcLmIbr2596wP8bDpXLZYNLvf0yYMpqPv1ils/n7klvfIGmwSokq0pQ/jgArkQif56yoZm3kwRHbPVOnkdY6+q7T+i/HoAMioWQLlbBBX1qvWVJWwobBMqFT4xAVHNcdOzqYBqb06UGTtIJ4+RZUCNraI=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>vGYT39UCbr6isVflmBJ+3zhKNVWDUzUKlZt+530SaXGvw+QlgJQByVsZnEFlRwEaMxxkG0qdUHz920OF9ZaqlxQeprDiKkcxEswN7bbVMb7CQHGRE0VPlJJwCs3AVAEK69ekgkfyCl1FFD9Ec2QihzXyWnq2eZUtcxs+6a+3PcU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICBTCCAW6gAwIBAgIQIqF707Km4bJLyIdZp5JgJDANBgkqhkiG9w0BAQUFADBBMT8wPQYDVQQDHjYAQQBCAEQATABSAEgATQBBAE4AXABBAGIAZABsAHIAaABtAGEAbgAgAFMAaABlAGgAYQB0AGEwHhcNMTQwOTEyMTQ0ODE2WhcNMTUwOTEyMjA0ODE2WjBBMT8wPQYDVQQDHjYAQQBCAEQATABSAEgATQBBAE4AXABBAGIAZABsAHIAaABtAGEAbgAgAFMAaABlAGgAYQB0AGEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALxmE9/VAm6+orFX5ZgSft84SjVVg1M1CpWbfud9Emlxr8PkJYCUAclbGZxBZUcBGjMcZBtKnVB8/dtDhfWWqpcUHqaw4ipHMRLMDe221TG+wkBxkRNFT5SScArNwFQBCuvXpIJH8gpdRRQ/RHNkIoc18lp6tnmVLXMbPumvtz3FAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEArgSgxbXn7IuWWW13mJE4LOk9uvEGtthHaFb9CyuYW5VWjY3jEiDcBGLAP54XDqGqh6+sgjudGUcIjaMZykgWAQT39SGpChulvF957Gzzy3L5oMcllntuWuG3mdRShmEN/+TGkXdi/gQdwoWmbwvXEmPLZMH1/BGCbBp0YGGPF1s=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

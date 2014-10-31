@@ -1,0 +1,257 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PowerPlug
+</name>
+</assembly>
+<members>
+<member name="M:SemiFinalApproach.ThisAddIn.#ctor(Microsoft.Office.Tools.Factory,System.IServiceProvider)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.Initialize">
+</member><member name="M:SemiFinalApproach.ThisAddIn.FinishInitialization">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeDataBindings">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeCachedData">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeData">
+</member><member name="M:SemiFinalApproach.ThisAddIn.BindToData">
+</member><member name="M:SemiFinalApproach.ThisAddIn.StartCaching(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.StopCaching(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.IsCached(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.BeginInitialization">
+</member><member name="M:SemiFinalApproach.ThisAddIn.EndInitialization">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeControls">
+</member><member name="M:SemiFinalApproach.ThisAddIn.InitializeComponents">
+</member><member name="M:SemiFinalApproach.ThisAddIn.NeedsFill(System.String)">
+</member><member name="M:SemiFinalApproach.ThisAddIn.OnShutdown">
+</member><member name="T:SemiFinalApproach.ThisAddIn">
+</member><member name="M:SemiFinalApproach.Globals.#ctor">
+</member><member name="T:SemiFinalApproach.Globals">
+</member><member name="M:SemiFinalApproach.ThisRibbonCollection.#ctor(Microsoft.Office.Tools.Ribbon.RibbonFactory)">
+</member><member name="T:SemiFinalApproach.ThisRibbonCollection">
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._10">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._101">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._11_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._12">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._121">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._13">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._14">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._15">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._16">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._17">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._18">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._181">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._182">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._19">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._20">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._201">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._21">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._210">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._211">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._22">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._22_g">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._23">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._23_g">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._231">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._24">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._24_g">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._25">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._26">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._27">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._28">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._29">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._291">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._30">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._30__">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._30__1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._31__">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._32">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._33">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._34">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._35">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._4">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._5">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._6">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._7">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._8">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources._9">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.Other_office_icon">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:SemiFinalApproach.My.Resources.Resources.refresh3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:SemiFinalApproach.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

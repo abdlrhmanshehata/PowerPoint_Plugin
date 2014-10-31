@@ -1,0 +1,42 @@
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.pdb
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.xml
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll.manifest
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.vsto
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Ribbon1.resources
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.rightpanel.resources
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Resources.resources
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\d.vbproj.GenerateResource.Cache
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.dll
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.xml
+F:\Visual Studio 2010\Projects\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.pdb
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.pdb
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.xml
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll.manifest
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.vsto
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Ribbon1.resources
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.rightpanel.resources
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Resources.resources
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\d.vbproj.GenerateResource.Cache
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.dll
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.xml
+F:\Projects\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.pdb
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.pdb
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.xml
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.dll.manifest
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\SemiFinalApproach.vsto
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Ribbon1.resources
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.rightpanel.resources
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.Resources.resources
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\d.vbproj.GenerateResource.Cache
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.dll
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.xml
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\SemiFinalApproach\SemiFinalApproach\obj\Debug\SemiFinalApproach.pdb
