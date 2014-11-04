@@ -83,8 +83,8 @@ Public Class rightpanel
 
     End Sub
     
-    Private Sub vscroll_Scroll(sender As Object, e As ScrollEventArgs) Handles vscroll.Scroll
-        Select Case vscroll.Value
+    Private Sub generalscroll(sender As Object, e As ScrollEventArgs) Handles Scroll_General.Scroll
+        Select Case Scroll_General.Value
             Case 0
                 setloc(TextBoxPage, 3, TopPanel.Height, 0)
             Case 10
@@ -127,9 +127,9 @@ Public Class rightpanel
     End Sub
     Private Sub TopPanel_SizeChanged(sender As Object, e As EventArgs) Handles TopPanel.SizeChanged
         If TopPanel.Height > TextBoxPage.Height Then
-            vscroll.Enabled = False
+            Scroll_General.Enabled = False
         Else
-            vscroll.Enabled = True
+            Scroll_General.Enabled = True
         End If
     End Sub
 #End Region
@@ -141,8 +141,7 @@ Public Class rightpanel
     '--------------------------------------------------------Get methods-------------------------------------------------'
     Sub getnotespage()
         gettext()
-        'getfont()
-        disable()
+        getfont()
     End Sub
     Sub gettext()
         Try
@@ -192,21 +191,12 @@ Public Class rightpanel
                     style = FontStyle.Underline Or FontStyle.Italic
                 End If
                 txtNotes.SelectionFont = New Drawing.Font(fontname, fontsize, style)
-                txtNotes.Select(1, 1)
-                txtNotes.HideSelection = True
+                txtNotes.Select(0, 1)
+
             Next
         Catch ex As Exception
         End Try
     End Sub
-    Sub getbullets()
-        If notesshape.TextFrame.TextRange.ParagraphFormat.Bullet.Type = PpBulletType.ppBulletNone Then
-            txtNotes.SelectionBullet = False
-        ElseIf notesshape.TextFrame.TextRange.ParagraphFormat.Bullet.Type = PpBulletType.ppBulletUnnumbered Then
-            txtNotes.SelectionBullet = True
-            txtNotes.SelectionIndent = (notesshape.TextFrame.TextRange.IndentLevel - 1) * 35
-        End If
-    End Sub
-
     Sub disable()
         txtNotes.Enabled = False
         cboxFontFamily.Enabled = False
@@ -218,13 +208,8 @@ Public Class rightpanel
     '--------------------------------------------------------Set methods-------------------------------------------------'
     Sub setnotespage()
         enable()
-        setbullets()
-    End Sub
-    Sub setbullets()
-
     End Sub
     Sub settext()
-
         If notesshape.TextFrame.TextRange.Text <> txtNotes.Text Then
             notesshape.TextFrame.TextRange.Text = txtNotes.Text
         End If
@@ -308,7 +293,6 @@ Public Class rightpanel
         Catch ex As Exception
         End Try
     End Sub
-   
     Sub enable()
         txtNotes.Enabled = True
         cboxFontFamily.Enabled = True
@@ -501,12 +485,14 @@ Public Class rightpanel
     End Sub
     Private Sub txtNotes_TextChanged(sender As Object, e As EventArgs) Handles txtNotes.TextChanged
         settext()
+        B_I_U()
+        setfont()
     End Sub
     Private Sub btn_Reset_Click(sender As Object, e As EventArgs) Handles btn_Reset.Click
         txtNotes.SelectionFont = New Drawing.Font("Calibri", 12, FontStyle.Regular)
     End Sub
-    
-    
+
+
 #End Region
 
 #End Region
@@ -531,10 +517,10 @@ Public Class rightpanel
         Select Case cboxFormatShape.SelectedIndex
             Case 0
                 adjustpage(TextBoxPage, 330)
-                vscroll.Value = 0
+                Scroll_General.Value = 0
             Case 1
                 adjustpage(SizePage, 337)
-                vscroll.Value = 0
+                Scroll_General.Value = 0
         End Select
     End Sub
 
@@ -661,7 +647,7 @@ Public Class rightpanel
     '----------------------------------SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE ---------------------------------------'
     Sub getsizepage()
         Try
-           
+
             If selectedshape.LockAspectRatio = MsoTriState.msoTrue Then
                 chkbox_Scale1.Checked = True
             Else
@@ -670,7 +656,7 @@ Public Class rightpanel
             num_Height.Value = selectedshape.Height / 72
             num_Width.Value = selectedshape.Width / 72
             num_Rot.Value = selectedshape.Rotation
-            If selectedshape.Type.ToString = "msoPicture" Then        
+            If selectedshape.Type.ToString = "msoPicture" Then
                 If chkbox_Scale2.Checked Then
                     num_ScaleHeight.Value = (selectedshape.Height * 100) / (lbl_OriginalSizeHeight.Text * 72)
                     num_ScaleWidth.Value = (selectedshape.Width * 100) / (lbl_OriginalSizeWidth.Text * 72)
@@ -768,7 +754,7 @@ Public Class rightpanel
                 selectedshape.Height = (num_ScaleHeight.Value / 100) * originallength
                 getsizepage()
             End If
-            
+
         Catch ex As Exception
         End Try
     End Sub
@@ -795,6 +781,9 @@ Public Class rightpanel
     Private Sub cbox_Resolution_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbox_Resolution.SelectedIndexChanged
         resolutioncontrol()
     End Sub
+
+    '----------------------------------LINE LINE LINE LINE LINE LINE LINE LINE LINE LINE LINE  ---------------------------------------'
+
 #End Region
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
@@ -860,13 +849,6 @@ Public Class rightpanel
         execute("PowerPointParagraphDialog")
     End Sub
 #End Region
- 
+  
     
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Fixedtimer.Enabled = False
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Fixedtimer.Enabled = True
-    End Sub
 End Class

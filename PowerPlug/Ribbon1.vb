@@ -10,7 +10,7 @@ Public Class Ribbon1
     Sub removetaskpane()
         Globals.ThisAddIn.CustomTaskPanes.Remove(ctp)
     End Sub
-    Private Sub ShowPlug_Click(sender As Object, e As RibbonControlEventArgs) Handles ShowPlug.Click
+    Public Sub ShowPlug_Click() Handles ShowPlug.Click
         If Globals.ThisAddIn.Application.Presentations.Count <> 0 Then
             If ShowPlug.Checked Then
                 addtaskpane()
@@ -20,7 +20,7 @@ Public Class Ribbon1
         Else
             MsgBox(" Please Open at least one presentation ")
         End If
-       
+
     End Sub
     
     Private Sub timer_Tick(sender As Object, e As EventArgs) Handles timer.Tick
