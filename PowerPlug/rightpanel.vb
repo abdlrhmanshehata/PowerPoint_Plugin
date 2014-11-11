@@ -102,13 +102,20 @@ Public Class rightpanel
     Sub setloc(ByVal page As TableLayoutPanel, ByVal start As Integer, ByVal contOutside As Integer, ByVal caseindex As Integer)
         Dim y, portion As Integer
         Dim contInside As Integer
-
-        If TextBoxPage.Visible = True Then
+        Dim text As Boolean = TextBoxPage.Visible
+        Dim size As Boolean = SizePage.Visible
+        Dim line As Boolean = LinePage.Visible
+        If text = True Then
             page = TextBoxPage
             contInside = TextBoxPage.Height
-        ElseIf SizePage.Visible = True Then
+        End If
+        If size = True Then
             page = SizePage
             contInside = SizePage.Height
+        End If
+        If line = True Then
+            page = LinePage
+            contInside = LinePage.Height
         End If
 
         portion = (contInside - contOutside) / 4.9
@@ -501,13 +508,14 @@ Public Class rightpanel
 #Region "Format Shape"
     Sub resetall()
         TextBoxPage.Visible = False
-
+        SizePage.Visible = False
+        LinePage.Visible = False
     End Sub
     Sub adjustpage(ByVal control As TableLayoutPanel, ByVal length As Integer)    ' width : 288 , height :315    X:4 , Y:3
         Try
             resetall()
             control.Location = New Drawing.Point(4, 3)
-            control.Size = New Drawing.Size(Me.Width - 28, length)
+            control.Size = New Drawing.Size(TopPanel.Width - 8, length)
             control.BringToFront()
             control.Visible = True
         Catch ex As Exception
@@ -520,6 +528,9 @@ Public Class rightpanel
                 Scroll_General.Value = 0
             Case 1
                 adjustpage(SizePage, 337)
+                Scroll_General.Value = 0
+            Case 2
+                adjustpage(LinePage, 390)
                 Scroll_General.Value = 0
         End Select
     End Sub
@@ -783,7 +794,101 @@ Public Class rightpanel
     End Sub
 
     '----------------------------------LINE LINE LINE LINE LINE LINE LINE LINE LINE LINE LINE  ---------------------------------------'
+    'Methods
+    'Event Handlers
+    Private Sub RadBtn_nocolor_CheckedChanged(sender As Object, e As EventArgs) Handles RadBtn_nocolor.CheckedChanged
+        If RadBtn_nocolor.Checked = True Then
+            Panel_SolidLine.Visible = False
+            Scroll_Line.Enabled = False
+        End If
+    End Sub
+    Private Sub RadBtn_Solid_CheckedChanged(sender As Object, e As EventArgs) Handles RadBtn_Solid.CheckedChanged
+        If RadBtn_Solid.Checked = True Then
+            Panel_SolidLine.Visible = True
+            Panel_SolidLine.Location = New Drawing.Point(3, 3)
+            Panel_SolidLine.Dock = DockStyle.Fill
+            Scroll_Line.Enabled = True
+        End If
+    End Sub
+    Private Sub RadBtn_Grad_CheckedChanged(sender As Object, e As EventArgs) Handles RadBtn_Grad.CheckedChanged
+        If RadBtn_Solid.Checked = True Then
+            Panel_SolidLine.Visible = True
+        End If
+    End Sub
+    Private Sub btn_colordlg_Click(sender As Object, e As EventArgs) Handles btn_colordlg.Click
+        Color_Solidline.ShowDialog()
+    End Sub
+    Sub setscroll(inner As TableLayoutPanel, outer As Panel, scroll As VScrollBar)
+        Dim portion As Integer
+        portion = (inner.Height - outer.Height) / 4.8
+        Select Case scroll.Value
+            Case 0
+                inner.Location = New Drawing.Point(3, 3 - portion * 0)
+            Case 10
+                inner.Location = New Drawing.Point(3, 3 - portion * 1)
+            Case 20
+                inner.Location = New Drawing.Point(3, 3 - portion * 2)
+            Case 30
+                inner.Location = New Drawing.Point(3, 3 - portion * 3)
+            Case 40
+                inner.Location = New Drawing.Point(3, 3 - portion * 4)
+            Case 50
+                inner.Location = New Drawing.Point(3, 3 - portion * 5)
+        End Select
+    End Sub
+    Private Sub Scroll_Line_Scroll(sender As Object, e As EventArgs) Handles Scroll_Line.Scroll
+        setscroll(tlp_SolidlineInner, Panel_SolidLine, Scroll_Line)
+    End Sub
+    Private Sub numeric_Transp_ValueChanged(sender As Object, e As EventArgs) Handles numeric_Transp.ValueChanged
+        TrackBar_Transp.Value = numeric_Transp.Value / 10
+    End Sub
+    Sub resizelist(ByVal listview As ListView, width As Integer, height As Integer)
+        listview.Size = New Drawing.Size(width, height)
+    End Sub
+    Sub showlstvw(ByVal btn As CheckBox, list As ListView)
+        Dim location, delta As Drawing.Point
+        delta.X = 5
+        delta.Y = 27
+        location = MousePosition - Me.Location - delta
 
+        If btn.Checked Then
+            list.Show()
+            list.BringToFront()
+            list.Location = location
+        Else
+            list.Hide()
+        End If
+    End Sub
+    Private Sub btn_DashType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_DashType.CheckedChanged
+        showlstvw(btn_DashType, lstvw_DashType)
+        resizelist(lstvw_DashType, 102, 120)
+    End Sub
+    Private Sub btn_BegArrowType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_BegArrowType.CheckedChanged
+        showlstvw(btn_BegArrowType, lstvw_ArrowType)
+        resizelist(lstvw_ArrowType, 113, 48)
+    End Sub
+    Private Sub btn_BegArrowSize_CheckedChanged(sender As Object, e As EventArgs) Handles btn_BegArrowSize.CheckedChanged
+        showlstvw(btn_BegArrowSize, lstvw_ArrowSize)
+        resizelist(lstvw_ArrowSize, 154, 78)
+    End Sub
+    Private Sub btn_EndArrowType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_EndArrowType.CheckedChanged
+        showlstvw(btn_EndArrowType, lstvw_ArrowType)
+        resizelist(lstvw_ArrowType, 113, 48)
+    End Sub
+    Private Sub btn_EndArrowSize_CheckedChanged(sender As Object, e As EventArgs) Handles btn_EndArrowSize.CheckedChanged
+        showlstvw(btn_EndArrowSize, lstvw_ArrowSize)
+        resizelist(lstvw_ArrowSize, 154, 78)
+    End Sub
+
+    Private Sub btn_Compound_CheckedChanged(sender As Object, e As EventArgs) Handles btn_Compound.CheckedChanged
+        showlstvw(btn_Compound, lstvw_Compound)
+        resizelist(lstvw_Compound, 90, 91)
+    End Sub
+
+    ' lstvw_dashtype >>>> 102,188
+    ' lstvw_arrowtype >>>> 113,48
+    ' lstvw_Compound >>>> 90,91
+    ' lstvw_Size >>>> 154,78
 #End Region
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
     '=======================================ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ALIGNMENT ==================================='
