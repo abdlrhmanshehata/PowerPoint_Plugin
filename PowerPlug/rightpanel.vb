@@ -79,10 +79,10 @@ Public Class rightpanel
             getsizepage()
             getnotespage()
         End If
-        
+
 
     End Sub
-    
+
     Private Sub generalscroll(sender As Object, e As ScrollEventArgs) Handles Scroll_General.Scroll
         Select Case Scroll_General.Value
             Case 0
@@ -531,6 +531,7 @@ Public Class rightpanel
                 Scroll_General.Value = 0
             Case 2
                 adjustpage(LinePage, 390)
+                RadBtn_nocolor.Select()
                 Scroll_General.Value = 0
         End Select
     End Sub
@@ -795,6 +796,41 @@ Public Class rightpanel
 
     '----------------------------------LINE LINE LINE LINE LINE LINE LINE LINE LINE LINE LINE  ---------------------------------------'
     'Methods
+    Sub setscroll(inner As TableLayoutPanel, outer As Panel, scroll As VScrollBar)
+        Dim portion As Integer
+        portion = (inner.Height - outer.Height) / 4.8
+        Select Case scroll.Value
+            Case 0
+                inner.Location = New Drawing.Point(3, 3 - portion * 0)
+            Case 10
+                inner.Location = New Drawing.Point(3, 3 - portion * 1)
+            Case 20
+                inner.Location = New Drawing.Point(3, 3 - portion * 2)
+            Case 30
+                inner.Location = New Drawing.Point(3, 3 - portion * 3)
+            Case 40
+                inner.Location = New Drawing.Point(3, 3 - portion * 4)
+            Case 50
+                inner.Location = New Drawing.Point(3, 3 - portion * 5)
+        End Select
+    End Sub
+    Sub resizelist(ByVal listview As ListView, width As Integer, height As Integer)
+        listview.Size = New Drawing.Size(width, height)
+    End Sub
+    Sub showlstvw(ByVal btn As CheckBox, list As ListView)
+        Dim location, delta As Drawing.Point
+        delta.X = 5
+        delta.Y = 27
+        location = MousePosition - Me.Location - delta
+
+        If btn.Checked Then
+            list.Show()
+            list.BringToFront()
+            list.Location = location
+        Else
+            list.Hide()
+        End If
+    End Sub
     'Event Handlers
     Private Sub RadBtn_nocolor_CheckedChanged(sender As Object, e As EventArgs) Handles RadBtn_nocolor.CheckedChanged
         If RadBtn_nocolor.Checked = True Then
@@ -818,47 +854,15 @@ Public Class rightpanel
     Private Sub btn_colordlg_Click(sender As Object, e As EventArgs) Handles btn_colordlg.Click
         Color_Solidline.ShowDialog()
     End Sub
-    Sub setscroll(inner As TableLayoutPanel, outer As Panel, scroll As VScrollBar)
-        Dim portion As Integer
-        portion = (inner.Height - outer.Height) / 4.8
-        Select Case scroll.Value
-            Case 0
-                inner.Location = New Drawing.Point(3, 3 - portion * 0)
-            Case 10
-                inner.Location = New Drawing.Point(3, 3 - portion * 1)
-            Case 20
-                inner.Location = New Drawing.Point(3, 3 - portion * 2)
-            Case 30
-                inner.Location = New Drawing.Point(3, 3 - portion * 3)
-            Case 40
-                inner.Location = New Drawing.Point(3, 3 - portion * 4)
-            Case 50
-                inner.Location = New Drawing.Point(3, 3 - portion * 5)
-        End Select
-    End Sub
+
     Private Sub Scroll_Line_Scroll(sender As Object, e As EventArgs) Handles Scroll_Line.Scroll
         setscroll(tlp_SolidlineInner, Panel_SolidLine, Scroll_Line)
     End Sub
     Private Sub numeric_Transp_ValueChanged(sender As Object, e As EventArgs) Handles numeric_Transp.ValueChanged
         TrackBar_Transp.Value = numeric_Transp.Value / 10
     End Sub
-    Sub resizelist(ByVal listview As ListView, width As Integer, height As Integer)
-        listview.Size = New Drawing.Size(width, height)
-    End Sub
-    Sub showlstvw(ByVal btn As CheckBox, list As ListView)
-        Dim location, delta As Drawing.Point
-        delta.X = 5
-        delta.Y = 27
-        location = MousePosition - Me.Location - delta
 
-        If btn.Checked Then
-            list.Show()
-            list.BringToFront()
-            list.Location = location
-        Else
-            list.Hide()
-        End If
-    End Sub
+
     Private Sub btn_DashType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_DashType.CheckedChanged
         showlstvw(btn_DashType, lstvw_DashType)
         resizelist(lstvw_DashType, 102, 120)
@@ -954,6 +958,6 @@ Public Class rightpanel
         execute("PowerPointParagraphDialog")
     End Sub
 #End Region
-  
-    
+
+
 End Class
