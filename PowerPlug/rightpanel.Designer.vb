@@ -23,34 +23,34 @@ Partial Class rightpanel
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rightpanel))
-        Dim ListViewItem28 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 0)
-        Dim ListViewItem29 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 1)
-        Dim ListViewItem30 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 2)
-        Dim ListViewItem31 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 3)
-        Dim ListViewItem32 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 4)
         Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 0)
         Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 1)
         Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 2)
         Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 3)
         Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 4)
-        Dim ListViewItem33 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 5)
-        Dim ListViewItem34 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 6)
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rightpanel))
+        Dim ListViewItem12 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 0)
+        Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 1)
+        Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 2)
+        Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 3)
+        Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 4)
+        Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 5)
+        Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 6)
+        Dim ListViewItem19 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 7)
+        Dim ListViewItem20 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 8)
         Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 0)
         Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 1)
         Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 2)
-        Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 3)
-        Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 4)
-        Dim ListViewItem11 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 5)
-        Dim ListViewItem12 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 6)
-        Dim ListViewItem35 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 7)
-        Dim ListViewItem36 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 8)
-        Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 0)
-        Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 1)
-        Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 2)
-        Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 5)
-        Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 3)
-        Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 4)
+        Dim ListViewItem9 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 5)
+        Dim ListViewItem10 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 3)
+        Dim ListViewItem11 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 4)
+        Dim ListViewItem21 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 0)
+        Dim ListViewItem22 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 1)
+        Dim ListViewItem23 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 2)
+        Dim ListViewItem24 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 3)
+        Dim ListViewItem25 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 4)
+        Dim ListViewItem26 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 5)
+        Dim ListViewItem27 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("", 6)
         Me.Fixedtimer = New System.Windows.Forms.Timer(Me.components)
         Me.cboxFormatShape = New System.Windows.Forms.ComboBox()
         Me.AutoFit = New System.Windows.Forms.GroupBox()
@@ -82,7 +82,10 @@ Partial Class rightpanel
         Me.Scroll_General = New System.Windows.Forms.VScrollBar()
         Me.TextBoxPage = New System.Windows.Forms.TableLayoutPanel()
         Me.ChoosePanel = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TopPanel = New System.Windows.Forms.Panel()
+        Me.lstvw_Compound = New System.Windows.Forms.ListView()
+        Me.imglst_Compund = New System.Windows.Forms.ImageList(Me.components)
         Me.SizePage = New System.Windows.Forms.TableLayoutPanel()
         Me.Gbox_Scale = New System.Windows.Forms.GroupBox()
         Me.TLP_Scale = New System.Windows.Forms.TableLayoutPanel()
@@ -128,6 +131,10 @@ Partial Class rightpanel
         Me.lbl_height = New System.Windows.Forms.Label()
         Me.lbl_OriginalSizeHeight = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.lstvw_ArrowSize = New System.Windows.Forms.ListView()
+        Me.imglst_ArrowSize = New System.Windows.Forms.ImageList(Me.components)
+        Me.lstvw_ArrowType = New System.Windows.Forms.ListView()
+        Me.imglst_ArrowType = New System.Windows.Forms.ImageList(Me.components)
         Me.LinePage = New System.Windows.Forms.TableLayoutPanel()
         Me.gbox_LinePage = New System.Windows.Forms.GroupBox()
         Me.tlp_LinePage = New System.Windows.Forms.TableLayoutPanel()
@@ -214,16 +221,11 @@ Partial Class rightpanel
         Me.btnAlignCenter = New System.Windows.Forms.Button()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.EventsTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.imglst_Compund = New System.Windows.Forms.ImageList(Me.components)
         Me.Color_Solidline = New System.Windows.Forms.ColorDialog()
         Me.imglst_Buttons = New System.Windows.Forms.ImageList(Me.components)
         Me.imglst_DashType = New System.Windows.Forms.ImageList(Me.components)
-        Me.imglst_ArrowType = New System.Windows.Forms.ImageList(Me.components)
-        Me.imglst_ArrowSize = New System.Windows.Forms.ImageList(Me.components)
-        Me.lstvw_Compound = New System.Windows.Forms.ListView()
         Me.lstvw_DashType = New System.Windows.Forms.ListView()
-        Me.lstvw_ArrowSize = New System.Windows.Forms.ListView()
-        Me.lstvw_ArrowType = New System.Windows.Forms.ListView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.AutoFit.SuspendLayout()
         Me.ContentAutofit.SuspendLayout()
         Me.InternalMargin.SuspendLayout()
@@ -294,6 +296,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel8.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Fixedtimer
@@ -319,7 +322,7 @@ Partial Class rightpanel
         Me.AutoFit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AutoFit.Location = New System.Drawing.Point(3, 13)
         Me.AutoFit.Name = "AutoFit"
-        Me.AutoFit.Size = New System.Drawing.Size(72, 8)
+        Me.AutoFit.Size = New System.Drawing.Size(65, 8)
         Me.AutoFit.TabIndex = 0
         Me.AutoFit.TabStop = False
         Me.AutoFit.Text = "AutoFit"
@@ -338,7 +341,7 @@ Partial Class rightpanel
         Me.ContentAutofit.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.ContentAutofit.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.ContentAutofit.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.ContentAutofit.Size = New System.Drawing.Size(66, 0)
+        Me.ContentAutofit.Size = New System.Drawing.Size(59, 0)
         Me.ContentAutofit.TabIndex = 0
         '
         'Donnotautofit
@@ -346,7 +349,7 @@ Partial Class rightpanel
         Me.Donnotautofit.AutoSize = True
         Me.Donnotautofit.Location = New System.Drawing.Point(3, 3)
         Me.Donnotautofit.Name = "Donnotautofit"
-        Me.Donnotautofit.Size = New System.Drawing.Size(60, 1)
+        Me.Donnotautofit.Size = New System.Drawing.Size(53, 1)
         Me.Donnotautofit.TabIndex = 0
         Me.Donnotautofit.TabStop = True
         Me.Donnotautofit.Text = "&Do not Autofit"
@@ -357,7 +360,7 @@ Partial Class rightpanel
         Me.Shrinktext.AutoSize = True
         Me.Shrinktext.Location = New System.Drawing.Point(3, 3)
         Me.Shrinktext.Name = "Shrinktext"
-        Me.Shrinktext.Size = New System.Drawing.Size(60, 1)
+        Me.Shrinktext.Size = New System.Drawing.Size(53, 1)
         Me.Shrinktext.TabIndex = 1
         Me.Shrinktext.TabStop = True
         Me.Shrinktext.Text = "&Shrink text on overflow"
@@ -368,7 +371,7 @@ Partial Class rightpanel
         Me.ResizeShape.AutoSize = True
         Me.ResizeShape.Location = New System.Drawing.Point(3, 3)
         Me.ResizeShape.Name = "ResizeShape"
-        Me.ResizeShape.Size = New System.Drawing.Size(60, 1)
+        Me.ResizeShape.Size = New System.Drawing.Size(53, 1)
         Me.ResizeShape.TabIndex = 2
         Me.ResizeShape.TabStop = True
         Me.ResizeShape.Text = "&Resize Shape to fit text"
@@ -380,7 +383,7 @@ Partial Class rightpanel
         Me.InternalMargin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InternalMargin.Location = New System.Drawing.Point(3, 27)
         Me.InternalMargin.Name = "InternalMargin"
-        Me.InternalMargin.Size = New System.Drawing.Size(72, 4)
+        Me.InternalMargin.Size = New System.Drawing.Size(65, 4)
         Me.InternalMargin.TabIndex = 0
         Me.InternalMargin.TabStop = False
         Me.InternalMargin.Text = "InternalMargin"
@@ -400,7 +403,7 @@ Partial Class rightpanel
         Me.contentInternalMargin.RowCount = 2
         Me.contentInternalMargin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.contentInternalMargin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.contentInternalMargin.Size = New System.Drawing.Size(66, 0)
+        Me.contentInternalMargin.Size = New System.Drawing.Size(59, 0)
         Me.contentInternalMargin.TabIndex = 2
         '
         'paneltopmargin
@@ -415,7 +418,7 @@ Partial Class rightpanel
         Me.paneltopmargin.Name = "paneltopmargin"
         Me.paneltopmargin.RowCount = 1
         Me.paneltopmargin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.paneltopmargin.Size = New System.Drawing.Size(27, 1)
+        Me.paneltopmargin.Size = New System.Drawing.Size(23, 1)
         Me.paneltopmargin.TabIndex = 2
         '
         'txttopmargin
@@ -423,9 +426,9 @@ Partial Class rightpanel
         Me.txttopmargin.DecimalPlaces = 2
         Me.txttopmargin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txttopmargin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.txttopmargin.Location = New System.Drawing.Point(13, 3)
+        Me.txttopmargin.Location = New System.Drawing.Point(12, 3)
         Me.txttopmargin.Name = "txttopmargin"
-        Me.txttopmargin.Size = New System.Drawing.Size(11, 20)
+        Me.txttopmargin.Size = New System.Drawing.Size(8, 20)
         Me.txttopmargin.TabIndex = 25
         '
         'Label2
@@ -434,7 +437,7 @@ Partial Class rightpanel
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(3, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(4, 1)
+        Me.Label2.Size = New System.Drawing.Size(3, 1)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "&Top :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -451,7 +454,7 @@ Partial Class rightpanel
         Me.panelleftmargin.Name = "panelleftmargin"
         Me.panelleftmargin.RowCount = 1
         Me.panelleftmargin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.panelleftmargin.Size = New System.Drawing.Size(27, 1)
+        Me.panelleftmargin.Size = New System.Drawing.Size(23, 1)
         Me.panelleftmargin.TabIndex = 0
         '
         'txtleftmargin
@@ -459,9 +462,9 @@ Partial Class rightpanel
         Me.txtleftmargin.DecimalPlaces = 2
         Me.txtleftmargin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtleftmargin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.txtleftmargin.Location = New System.Drawing.Point(13, 3)
+        Me.txtleftmargin.Location = New System.Drawing.Point(12, 3)
         Me.txtleftmargin.Name = "txtleftmargin"
-        Me.txtleftmargin.Size = New System.Drawing.Size(11, 20)
+        Me.txtleftmargin.Size = New System.Drawing.Size(8, 20)
         Me.txtleftmargin.TabIndex = 22
         '
         'Label1
@@ -470,7 +473,7 @@ Partial Class rightpanel
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(3, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(4, 1)
+        Me.Label1.Size = New System.Drawing.Size(3, 1)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "&Left :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -483,11 +486,11 @@ Partial Class rightpanel
         Me.panelrightmargin.Controls.Add(Me.txtrightmargin, 1, 0)
         Me.panelrightmargin.Controls.Add(Me.Label3, 0, 0)
         Me.panelrightmargin.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelrightmargin.Location = New System.Drawing.Point(36, 3)
+        Me.panelrightmargin.Location = New System.Drawing.Point(32, 3)
         Me.panelrightmargin.Name = "panelrightmargin"
         Me.panelrightmargin.RowCount = 1
         Me.panelrightmargin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.panelrightmargin.Size = New System.Drawing.Size(27, 1)
+        Me.panelrightmargin.Size = New System.Drawing.Size(24, 1)
         Me.panelrightmargin.TabIndex = 3
         '
         'txtrightmargin
@@ -495,9 +498,9 @@ Partial Class rightpanel
         Me.txtrightmargin.DecimalPlaces = 2
         Me.txtrightmargin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtrightmargin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.txtrightmargin.Location = New System.Drawing.Point(14, 3)
+        Me.txtrightmargin.Location = New System.Drawing.Point(12, 3)
         Me.txtrightmargin.Name = "txtrightmargin"
-        Me.txtrightmargin.Size = New System.Drawing.Size(10, 20)
+        Me.txtrightmargin.Size = New System.Drawing.Size(9, 20)
         Me.txtrightmargin.TabIndex = 24
         '
         'Label3
@@ -506,7 +509,7 @@ Partial Class rightpanel
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(3, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(5, 1)
+        Me.Label3.Size = New System.Drawing.Size(3, 1)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "&Right :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -519,11 +522,11 @@ Partial Class rightpanel
         Me.panelbottommargin.Controls.Add(Me.txtbottommargin, 1, 0)
         Me.panelbottommargin.Controls.Add(Me.Label4, 0, 0)
         Me.panelbottommargin.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelbottommargin.Location = New System.Drawing.Point(36, 3)
+        Me.panelbottommargin.Location = New System.Drawing.Point(32, 3)
         Me.panelbottommargin.Name = "panelbottommargin"
         Me.panelbottommargin.RowCount = 1
         Me.panelbottommargin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.panelbottommargin.Size = New System.Drawing.Size(27, 1)
+        Me.panelbottommargin.Size = New System.Drawing.Size(24, 1)
         Me.panelbottommargin.TabIndex = 4
         '
         'txtbottommargin
@@ -531,9 +534,9 @@ Partial Class rightpanel
         Me.txtbottommargin.DecimalPlaces = 2
         Me.txtbottommargin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtbottommargin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.txtbottommargin.Location = New System.Drawing.Point(13, 3)
+        Me.txtbottommargin.Location = New System.Drawing.Point(12, 3)
         Me.txtbottommargin.Name = "txtbottommargin"
-        Me.txtbottommargin.Size = New System.Drawing.Size(11, 20)
+        Me.txtbottommargin.Size = New System.Drawing.Size(9, 20)
         Me.txtbottommargin.TabIndex = 23
         '
         'Label4
@@ -542,7 +545,7 @@ Partial Class rightpanel
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(3, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(4, 1)
+        Me.Label4.Size = New System.Drawing.Size(3, 1)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "&Bot :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -552,7 +555,7 @@ Partial Class rightpanel
         Me.chkboxWrap.AutoSize = True
         Me.chkboxWrap.Location = New System.Drawing.Point(3, 37)
         Me.chkboxWrap.Name = "chkboxWrap"
-        Me.chkboxWrap.Size = New System.Drawing.Size(72, 1)
+        Me.chkboxWrap.Size = New System.Drawing.Size(65, 1)
         Me.chkboxWrap.TabIndex = 1
         Me.chkboxWrap.Text = "&Wrap text in shape"
         Me.chkboxWrap.UseVisualStyleBackColor = True
@@ -563,7 +566,7 @@ Partial Class rightpanel
         Me.TextLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TextLayout.Location = New System.Drawing.Point(3, 3)
         Me.TextLayout.Name = "TextLayout"
-        Me.TextLayout.Size = New System.Drawing.Size(72, 4)
+        Me.TextLayout.Size = New System.Drawing.Size(65, 4)
         Me.TextLayout.TabIndex = 0
         Me.TextLayout.TabStop = False
         Me.TextLayout.Text = "TextLayout"
@@ -583,7 +586,7 @@ Partial Class rightpanel
         Me.contenttextlayout.RowCount = 2
         Me.contenttextlayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.18033!))
         Me.contenttextlayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.81967!))
-        Me.contenttextlayout.Size = New System.Drawing.Size(66, 0)
+        Me.contenttextlayout.Size = New System.Drawing.Size(59, 0)
         Me.contenttextlayout.TabIndex = 0
         '
         'Label5
@@ -611,7 +614,7 @@ Partial Class rightpanel
         Me.cboxtextdirection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboxtextdirection.FormattingEnabled = True
         Me.cboxtextdirection.Items.AddRange(New Object() {"Horizontal", "Rotate all text 90*", "Rotate all text 270*", "Stacked"})
-        Me.cboxtextdirection.Location = New System.Drawing.Point(-84, 3)
+        Me.cboxtextdirection.Location = New System.Drawing.Point(-91, 3)
         Me.cboxtextdirection.Name = "cboxtextdirection"
         Me.cboxtextdirection.Size = New System.Drawing.Size(147, 21)
         Me.cboxtextdirection.TabIndex = 1
@@ -621,7 +624,7 @@ Partial Class rightpanel
         Me.cboxtextalignment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboxtextalignment.FormattingEnabled = True
         Me.cboxtextalignment.Items.AddRange(New Object() {"Top", "Middle", "Bottom"})
-        Me.cboxtextalignment.Location = New System.Drawing.Point(-84, 3)
+        Me.cboxtextalignment.Location = New System.Drawing.Point(-91, 3)
         Me.cboxtextalignment.Name = "cboxtextalignment"
         Me.cboxtextalignment.Size = New System.Drawing.Size(147, 21)
         Me.cboxtextalignment.TabIndex = 3
@@ -645,7 +648,7 @@ Partial Class rightpanel
         Me.TextBoxPage.Controls.Add(Me.InternalMargin, 0, 2)
         Me.TextBoxPage.Controls.Add(Me.AutoFit, 0, 1)
         Me.TextBoxPage.Controls.Add(Me.TextLayout, 0, 0)
-        Me.TextBoxPage.Location = New System.Drawing.Point(112, 33)
+        Me.TextBoxPage.Location = New System.Drawing.Point(157, 88)
         Me.TextBoxPage.Name = "TextBoxPage"
         Me.TextBoxPage.RowCount = 4
         Me.TextBoxPage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.71428!))
@@ -653,13 +656,14 @@ Partial Class rightpanel
         Me.TextBoxPage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.61905!))
         Me.TextBoxPage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.52632!))
         Me.TextBoxPage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TextBoxPage.Size = New System.Drawing.Size(78, 39)
+        Me.TextBoxPage.Size = New System.Drawing.Size(71, 39)
         Me.TextBoxPage.TabIndex = 21
         Me.TextBoxPage.Visible = False
         '
         'ChoosePanel
         '
         Me.ChoosePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ChoosePanel.Controls.Add(Me.Button1)
         Me.ChoosePanel.Controls.Add(Me.cboxFormatShape)
         Me.ChoosePanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ChoosePanel.Location = New System.Drawing.Point(3, 52)
@@ -669,17 +673,54 @@ Partial Class rightpanel
         Me.ChoosePanel.Size = New System.Drawing.Size(276, 22)
         Me.ChoosePanel.TabIndex = 21
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(59, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(95, 15)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'TopPanel
         '
         Me.TopPanel.BackColor = System.Drawing.Color.White
-        Me.TopPanel.Controls.Add(Me.SizePage)
+        Me.TopPanel.Controls.Add(Me.lstvw_Compound)
+        Me.TopPanel.Controls.Add(Me.lstvw_ArrowType)
+        Me.TopPanel.Controls.Add(Me.lstvw_ArrowSize)
         Me.TopPanel.Controls.Add(Me.TextBoxPage)
+        Me.TopPanel.Controls.Add(Me.SizePage)
         Me.TopPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TopPanel.Location = New System.Drawing.Point(0, 0)
         Me.TopPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.TopPanel.Name = "TopPanel"
         Me.TopPanel.Size = New System.Drawing.Size(260, 162)
         Me.TopPanel.TabIndex = 22
+        '
+        'lstvw_Compound
+        '
+        Me.lstvw_Compound.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5})
+        Me.lstvw_Compound.LargeImageList = Me.imglst_Compund
+        Me.lstvw_Compound.Location = New System.Drawing.Point(91, 8)
+        Me.lstvw_Compound.Name = "lstvw_Compound"
+        Me.lstvw_Compound.Scrollable = False
+        Me.lstvw_Compound.Size = New System.Drawing.Size(28, 20)
+        Me.lstvw_Compound.SmallImageList = Me.imglst_Compund
+        Me.lstvw_Compound.TabIndex = 34
+        Me.lstvw_Compound.TileSize = New System.Drawing.Size(10, 10)
+        Me.lstvw_Compound.UseCompatibleStateImageBehavior = False
+        Me.lstvw_Compound.View = System.Windows.Forms.View.SmallIcon
+        Me.lstvw_Compound.Visible = False
+        '
+        'imglst_Compund
+        '
+        Me.imglst_Compund.ImageStream = CType(resources.GetObject("imglst_Compund.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.imglst_Compund.TransparentColor = System.Drawing.Color.Transparent
+        Me.imglst_Compund.Images.SetKeyName(0, "43.PNG")
+        Me.imglst_Compund.Images.SetKeyName(1, "44.PNG")
+        Me.imglst_Compund.Images.SetKeyName(2, "45.PNG")
+        Me.imglst_Compund.Images.SetKeyName(3, "46.PNG")
+        Me.imglst_Compund.Images.SetKeyName(4, "47.PNG")
         '
         'SizePage
         '
@@ -1247,17 +1288,72 @@ Partial Class rightpanel
         Me.Label7.TabIndex = 28
         Me.Label7.Text = """"
         '
+        'lstvw_ArrowSize
+        '
+        Me.lstvw_ArrowSize.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem12, ListViewItem13, ListViewItem14, ListViewItem15, ListViewItem16, ListViewItem17, ListViewItem18, ListViewItem19, ListViewItem20})
+        Me.lstvw_ArrowSize.LargeImageList = Me.imglst_ArrowSize
+        Me.lstvw_ArrowSize.Location = New System.Drawing.Point(189, 8)
+        Me.lstvw_ArrowSize.Name = "lstvw_ArrowSize"
+        Me.lstvw_ArrowSize.Scrollable = False
+        Me.lstvw_ArrowSize.Size = New System.Drawing.Size(26, 22)
+        Me.lstvw_ArrowSize.SmallImageList = Me.imglst_ArrowSize
+        Me.lstvw_ArrowSize.TabIndex = 36
+        Me.lstvw_ArrowSize.TileSize = New System.Drawing.Size(50, 25)
+        Me.lstvw_ArrowSize.UseCompatibleStateImageBehavior = False
+        Me.lstvw_ArrowSize.View = System.Windows.Forms.View.Tile
+        Me.lstvw_ArrowSize.Visible = False
+        '
+        'imglst_ArrowSize
+        '
+        Me.imglst_ArrowSize.ImageStream = CType(resources.GetObject("imglst_ArrowSize.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.imglst_ArrowSize.TransparentColor = System.Drawing.Color.Transparent
+        Me.imglst_ArrowSize.Images.SetKeyName(0, "60.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(1, "61.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(2, "62.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(3, "63.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(4, "64.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(5, "65.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(6, "66.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(7, "67.PNG")
+        Me.imglst_ArrowSize.Images.SetKeyName(8, "68.PNG")
+        '
+        'lstvw_ArrowType
+        '
+        Me.lstvw_ArrowType.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem6, ListViewItem7, ListViewItem8, ListViewItem9, ListViewItem10, ListViewItem11})
+        Me.lstvw_ArrowType.LargeImageList = Me.imglst_ArrowType
+        Me.lstvw_ArrowType.Location = New System.Drawing.Point(134, 31)
+        Me.lstvw_ArrowType.Name = "lstvw_ArrowType"
+        Me.lstvw_ArrowType.Scrollable = False
+        Me.lstvw_ArrowType.Size = New System.Drawing.Size(50, 29)
+        Me.lstvw_ArrowType.SmallImageList = Me.imglst_ArrowType
+        Me.lstvw_ArrowType.TabIndex = 37
+        Me.lstvw_ArrowType.TileSize = New System.Drawing.Size(35, 20)
+        Me.lstvw_ArrowType.UseCompatibleStateImageBehavior = False
+        Me.lstvw_ArrowType.View = System.Windows.Forms.View.Tile
+        Me.lstvw_ArrowType.Visible = False
+        '
+        'imglst_ArrowType
+        '
+        Me.imglst_ArrowType.ImageStream = CType(resources.GetObject("imglst_ArrowType.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.imglst_ArrowType.TransparentColor = System.Drawing.Color.Transparent
+        Me.imglst_ArrowType.Images.SetKeyName(0, "55.PNG")
+        Me.imglst_ArrowType.Images.SetKeyName(1, "56.PNG")
+        Me.imglst_ArrowType.Images.SetKeyName(2, "57.PNG")
+        Me.imglst_ArrowType.Images.SetKeyName(3, "58.PNG")
+        Me.imglst_ArrowType.Images.SetKeyName(4, "59.PNG")
+        Me.imglst_ArrowType.Images.SetKeyName(5, "69.PNG")
+        '
         'LinePage
         '
         Me.LinePage.BackColor = System.Drawing.Color.White
         Me.LinePage.ColumnCount = 1
         Me.LinePage.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.LinePage.Controls.Add(Me.gbox_LinePage, 0, 0)
-        Me.LinePage.Location = New System.Drawing.Point(314, 37)
+        Me.LinePage.Location = New System.Drawing.Point(399, 59)
         Me.LinePage.Name = "LinePage"
         Me.LinePage.RowCount = 1
         Me.LinePage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.LinePage.Size = New System.Drawing.Size(266, 409)
+        Me.LinePage.Size = New System.Drawing.Size(239, 397)
         Me.LinePage.TabIndex = 31
         '
         'gbox_LinePage
@@ -1266,7 +1362,7 @@ Partial Class rightpanel
         Me.gbox_LinePage.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gbox_LinePage.Location = New System.Drawing.Point(3, 3)
         Me.gbox_LinePage.Name = "gbox_LinePage"
-        Me.gbox_LinePage.Size = New System.Drawing.Size(260, 403)
+        Me.gbox_LinePage.Size = New System.Drawing.Size(233, 391)
         Me.gbox_LinePage.TabIndex = 0
         Me.gbox_LinePage.TabStop = False
         Me.gbox_LinePage.Text = "Line "
@@ -1287,13 +1383,13 @@ Partial Class rightpanel
         Me.tlp_LinePage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.025761!))
         Me.tlp_LinePage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.088993!))
         Me.tlp_LinePage.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.15691!))
-        Me.tlp_LinePage.Size = New System.Drawing.Size(254, 384)
+        Me.tlp_LinePage.Size = New System.Drawing.Size(227, 372)
         Me.tlp_LinePage.TabIndex = 0
         '
         'RadBtn_Solid
         '
         Me.RadBtn_Solid.AutoSize = True
-        Me.RadBtn_Solid.Location = New System.Drawing.Point(3, 31)
+        Me.RadBtn_Solid.Location = New System.Drawing.Point(3, 30)
         Me.RadBtn_Solid.Name = "RadBtn_Solid"
         Me.RadBtn_Solid.Size = New System.Drawing.Size(71, 17)
         Me.RadBtn_Solid.TabIndex = 1
@@ -1315,9 +1411,9 @@ Partial Class rightpanel
         'RadBtn_Grad
         '
         Me.RadBtn_Grad.AutoSize = True
-        Me.RadBtn_Grad.Location = New System.Drawing.Point(3, 58)
+        Me.RadBtn_Grad.Location = New System.Drawing.Point(3, 56)
         Me.RadBtn_Grad.Name = "RadBtn_Grad"
-        Me.RadBtn_Grad.Size = New System.Drawing.Size(88, 17)
+        Me.RadBtn_Grad.Size = New System.Drawing.Size(88, 16)
         Me.RadBtn_Grad.TabIndex = 2
         Me.RadBtn_Grad.TabStop = True
         Me.RadBtn_Grad.Text = "Gradient Line"
@@ -1331,21 +1427,21 @@ Partial Class rightpanel
         Me.tlp_SoldiLine.Controls.Add(Me.Scroll_Line, 1, 0)
         Me.tlp_SoldiLine.Controls.Add(Me.Cont_Line, 0, 0)
         Me.tlp_SoldiLine.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlp_SoldiLine.Location = New System.Drawing.Point(3, 81)
+        Me.tlp_SoldiLine.Location = New System.Drawing.Point(3, 78)
         Me.tlp_SoldiLine.Name = "tlp_SoldiLine"
         Me.tlp_SoldiLine.RowCount = 1
         Me.tlp_SoldiLine.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlp_SoldiLine.Size = New System.Drawing.Size(248, 300)
+        Me.tlp_SoldiLine.Size = New System.Drawing.Size(221, 291)
         Me.tlp_SoldiLine.TabIndex = 3
         '
         'Scroll_Line
         '
         Me.Scroll_Line.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Scroll_Line.LargeChange = 51
-        Me.Scroll_Line.Location = New System.Drawing.Point(233, 1)
+        Me.Scroll_Line.Location = New System.Drawing.Point(206, 1)
         Me.Scroll_Line.Margin = New System.Windows.Forms.Padding(1)
         Me.Scroll_Line.Name = "Scroll_Line"
-        Me.Scroll_Line.Size = New System.Drawing.Size(14, 298)
+        Me.Scroll_Line.Size = New System.Drawing.Size(14, 289)
         Me.Scroll_Line.SmallChange = 10
         Me.Scroll_Line.TabIndex = 0
         '
@@ -1356,7 +1452,7 @@ Partial Class rightpanel
         Me.Cont_Line.Location = New System.Drawing.Point(5, 5)
         Me.Cont_Line.Margin = New System.Windows.Forms.Padding(5)
         Me.Cont_Line.Name = "Cont_Line"
-        Me.Cont_Line.Size = New System.Drawing.Size(222, 290)
+        Me.Cont_Line.Size = New System.Drawing.Size(195, 281)
         Me.Cont_Line.TabIndex = 1
         '
         'Panel_SolidLine
@@ -1372,11 +1468,11 @@ Partial Class rightpanel
         Me.tlp_SolidlineInner.ColumnCount = 2
         Me.tlp_SolidlineInner.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.72549!))
         Me.tlp_SolidlineInner.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.27451!))
+        Me.tlp_SolidlineInner.Controls.Add(Me.btn_Compound, 1, 3)
         Me.tlp_SolidlineInner.Controls.Add(Me.btn_EndArrowSize, 1, 10)
         Me.tlp_SolidlineInner.Controls.Add(Me.btn_EndArrowType, 1, 9)
         Me.tlp_SolidlineInner.Controls.Add(Me.btn_BegArrowSize, 1, 8)
         Me.tlp_SolidlineInner.Controls.Add(Me.btn_BegArrowType, 1, 7)
-        Me.tlp_SolidlineInner.Controls.Add(Me.btn_Compound, 1, 3)
         Me.tlp_SolidlineInner.Controls.Add(Me.btn_colordlg, 1, 0)
         Me.tlp_SolidlineInner.Controls.Add(Me.Label14, 0, 0)
         Me.tlp_SolidlineInner.Controls.Add(Me.Label15, 0, 1)
@@ -1393,7 +1489,6 @@ Partial Class rightpanel
         Me.tlp_SolidlineInner.Controls.Add(Me.numeric_Width, 1, 2)
         Me.tlp_SolidlineInner.Controls.Add(Me.cbox_Cap, 1, 5)
         Me.tlp_SolidlineInner.Controls.Add(Me.cbox_Join, 1, 6)
-        Me.tlp_SolidlineInner.Controls.Add(Me.btn_DashType, 1, 4)
         Me.tlp_SolidlineInner.Location = New System.Drawing.Point(3, 3)
         Me.tlp_SolidlineInner.Name = "tlp_SolidlineInner"
         Me.tlp_SolidlineInner.RowCount = 11
@@ -1669,9 +1764,9 @@ Partial Class rightpanel
         Me.btn_DashType.BackgroundImage = CType(resources.GetObject("btn_DashType.BackgroundImage"), System.Drawing.Image)
         Me.btn_DashType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_DashType.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btn_DashType.Location = New System.Drawing.Point(160, 127)
+        Me.btn_DashType.Location = New System.Drawing.Point(46, 0)
         Me.btn_DashType.Name = "btn_DashType"
-        Me.btn_DashType.Size = New System.Drawing.Size(41, 24)
+        Me.btn_DashType.Size = New System.Drawing.Size(41, 32)
         Me.btn_DashType.TabIndex = 0
         Me.btn_DashType.UseVisualStyleBackColor = True
         '
@@ -2576,16 +2671,6 @@ Partial Class rightpanel
         '
         Me.EventsTimer.Enabled = True
         '
-        'imglst_Compund
-        '
-        Me.imglst_Compund.ImageStream = CType(resources.GetObject("imglst_Compund.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.imglst_Compund.TransparentColor = System.Drawing.Color.Transparent
-        Me.imglst_Compund.Images.SetKeyName(0, "43.PNG")
-        Me.imglst_Compund.Images.SetKeyName(1, "44.PNG")
-        Me.imglst_Compund.Images.SetKeyName(2, "45.PNG")
-        Me.imglst_Compund.Images.SetKeyName(3, "46.PNG")
-        Me.imglst_Compund.Images.SetKeyName(4, "47.PNG")
-        '
         'imglst_Buttons
         '
         Me.imglst_Buttons.ImageStream = CType(resources.GetObject("imglst_Buttons.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -2604,53 +2689,14 @@ Partial Class rightpanel
         Me.imglst_DashType.Images.SetKeyName(5, "53.PNG")
         Me.imglst_DashType.Images.SetKeyName(6, "54.PNG")
         '
-        'imglst_ArrowType
-        '
-        Me.imglst_ArrowType.ImageStream = CType(resources.GetObject("imglst_ArrowType.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.imglst_ArrowType.TransparentColor = System.Drawing.Color.Transparent
-        Me.imglst_ArrowType.Images.SetKeyName(0, "55.PNG")
-        Me.imglst_ArrowType.Images.SetKeyName(1, "56.PNG")
-        Me.imglst_ArrowType.Images.SetKeyName(2, "57.PNG")
-        Me.imglst_ArrowType.Images.SetKeyName(3, "58.PNG")
-        Me.imglst_ArrowType.Images.SetKeyName(4, "59.PNG")
-        Me.imglst_ArrowType.Images.SetKeyName(5, "69.PNG")
-        '
-        'imglst_ArrowSize
-        '
-        Me.imglst_ArrowSize.ImageStream = CType(resources.GetObject("imglst_ArrowSize.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.imglst_ArrowSize.TransparentColor = System.Drawing.Color.Transparent
-        Me.imglst_ArrowSize.Images.SetKeyName(0, "60.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(1, "61.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(2, "62.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(3, "63.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(4, "64.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(5, "65.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(6, "66.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(7, "67.PNG")
-        Me.imglst_ArrowSize.Images.SetKeyName(8, "68.PNG")
-        '
-        'lstvw_Compound
-        '
-        Me.lstvw_Compound.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem28, ListViewItem29, ListViewItem30, ListViewItem31, ListViewItem32})
-        Me.lstvw_Compound.LargeImageList = Me.imglst_Compund
-        Me.lstvw_Compound.Location = New System.Drawing.Point(622, 17)
-        Me.lstvw_Compound.Name = "lstvw_Compound"
-        Me.lstvw_Compound.Scrollable = False
-        Me.lstvw_Compound.Size = New System.Drawing.Size(28, 20)
-        Me.lstvw_Compound.SmallImageList = Me.imglst_Compund
-        Me.lstvw_Compound.TabIndex = 34
-        Me.lstvw_Compound.TileSize = New System.Drawing.Size(10, 10)
-        Me.lstvw_Compound.UseCompatibleStateImageBehavior = False
-        Me.lstvw_Compound.View = System.Windows.Forms.View.SmallIcon
-        Me.lstvw_Compound.Visible = False
-        '
         'lstvw_DashType
         '
-        Me.lstvw_DashType.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem33, ListViewItem34})
-        Me.lstvw_DashType.Location = New System.Drawing.Point(690, 66)
+        Me.lstvw_DashType.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lstvw_DashType.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem21, ListViewItem22, ListViewItem23, ListViewItem24, ListViewItem25, ListViewItem26, ListViewItem27})
+        Me.lstvw_DashType.Location = New System.Drawing.Point(0, 0)
         Me.lstvw_DashType.Name = "lstvw_DashType"
         Me.lstvw_DashType.Scrollable = False
-        Me.lstvw_DashType.Size = New System.Drawing.Size(27, 20)
+        Me.lstvw_DashType.Size = New System.Drawing.Size(41, 32)
         Me.lstvw_DashType.SmallImageList = Me.imglst_DashType
         Me.lstvw_DashType.TabIndex = 35
         Me.lstvw_DashType.TileSize = New System.Drawing.Size(10, 10)
@@ -2658,49 +2704,25 @@ Partial Class rightpanel
         Me.lstvw_DashType.View = System.Windows.Forms.View.SmallIcon
         Me.lstvw_DashType.Visible = False
         '
-        'lstvw_ArrowSize
+        'Panel1
         '
-        Me.lstvw_ArrowSize.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem6, ListViewItem7, ListViewItem8, ListViewItem9, ListViewItem10, ListViewItem11, ListViewItem12, ListViewItem35, ListViewItem36})
-        Me.lstvw_ArrowSize.LargeImageList = Me.imglst_ArrowSize
-        Me.lstvw_ArrowSize.Location = New System.Drawing.Point(690, 15)
-        Me.lstvw_ArrowSize.Name = "lstvw_ArrowSize"
-        Me.lstvw_ArrowSize.Scrollable = False
-        Me.lstvw_ArrowSize.Size = New System.Drawing.Size(26, 22)
-        Me.lstvw_ArrowSize.SmallImageList = Me.imglst_ArrowSize
-        Me.lstvw_ArrowSize.TabIndex = 36
-        Me.lstvw_ArrowSize.TileSize = New System.Drawing.Size(50, 25)
-        Me.lstvw_ArrowSize.UseCompatibleStateImageBehavior = False
-        Me.lstvw_ArrowSize.View = System.Windows.Forms.View.Tile
-        Me.lstvw_ArrowSize.Visible = False
-        '
-        'lstvw_ArrowType
-        '
-        Me.lstvw_ArrowType.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem13, ListViewItem14, ListViewItem15, ListViewItem16, ListViewItem17, ListViewItem18})
-        Me.lstvw_ArrowType.LargeImageList = Me.imglst_ArrowType
-        Me.lstvw_ArrowType.Location = New System.Drawing.Point(586, 63)
-        Me.lstvw_ArrowType.Name = "lstvw_ArrowType"
-        Me.lstvw_ArrowType.Scrollable = False
-        Me.lstvw_ArrowType.Size = New System.Drawing.Size(36, 17)
-        Me.lstvw_ArrowType.SmallImageList = Me.imglst_ArrowType
-        Me.lstvw_ArrowType.TabIndex = 37
-        Me.lstvw_ArrowType.TileSize = New System.Drawing.Size(35, 20)
-        Me.lstvw_ArrowType.UseCompatibleStateImageBehavior = False
-        Me.lstvw_ArrowType.View = System.Windows.Forms.View.Tile
-        Me.lstvw_ArrowType.Visible = False
+        Me.Panel1.Controls.Add(Me.lstvw_DashType)
+        Me.Panel1.Controls.Add(Me.btn_DashType)
+        Me.Panel1.Location = New System.Drawing.Point(309, 258)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(87, 32)
+        Me.Panel1.TabIndex = 36
         '
         'rightpanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.Controls.Add(Me.lstvw_Compound)
-        Me.Controls.Add(Me.lstvw_DashType)
-        Me.Controls.Add(Me.LinePage)
-        Me.Controls.Add(Me.lstvw_ArrowSize)
-        Me.Controls.Add(Me.lstvw_ArrowType)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.SCont_A)
+        Me.Controls.Add(Me.LinePage)
         Me.Name = "rightpanel"
-        Me.Size = New System.Drawing.Size(791, 493)
+        Me.Size = New System.Drawing.Size(669, 493)
         Me.AutoFit.ResumeLayout(False)
         Me.ContentAutofit.ResumeLayout(False)
         Me.ContentAutofit.PerformLayout()
@@ -2785,6 +2807,7 @@ Partial Class rightpanel
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2961,5 +2984,7 @@ Partial Class rightpanel
     Friend WithEvents lstvw_DashType As System.Windows.Forms.ListView
     Friend WithEvents lstvw_ArrowSize As System.Windows.Forms.ListView
     Friend WithEvents lstvw_ArrowType As System.Windows.Forms.ListView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 
 End Class

@@ -824,11 +824,11 @@ Public Class rightpanel
         location = MousePosition - Me.Location - delta
 
         If btn.Checked Then
-            list.Show()
+            list.Visible = True
             list.BringToFront()
             list.Location = location
         Else
-            list.Hide()
+            list.Visible = False
         End If
     End Sub
     'Event Handlers
@@ -860,8 +860,11 @@ Public Class rightpanel
     End Sub
     Private Sub numeric_Transp_ValueChanged(sender As Object, e As EventArgs) Handles numeric_Transp.ValueChanged
         TrackBar_Transp.Value = numeric_Transp.Value / 10
+        selectedshape.Line.Transparency = CSng(numeric_Transp.Value / 100)
     End Sub
-
+    Private Sub numeric_Width_ValueChanged(sender As Object, e As EventArgs) Handles numeric_Width.ValueChanged
+        selectedshape.Line.Weight = numeric_Width.Value
+    End Sub
 
     Private Sub btn_DashType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_DashType.CheckedChanged
         showlstvw(btn_DashType, lstvw_DashType)
@@ -960,4 +963,10 @@ Public Class rightpanel
 #End Region
 
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox(lstvw_DashType.Visible)
+        MsgBox(lstvw_DashType.Location.X & " " & lstvw_DashType.Location.Y)
+        MsgBox(lstvw_DashType.Size.Height & "  " & lstvw_DashType.Size.Width)
+
+    End Sub
 End Class
