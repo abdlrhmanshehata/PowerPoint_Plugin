@@ -12,3 +12,4 @@ F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\PowerPlug\PowerPlug
 F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\PowerPlug\PowerPlug\obj\Debug\PowerPlug.dll
 F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\PowerPlug\PowerPlug\obj\Debug\PowerPlug.xml
 F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\PowerPlug\PowerPlug\obj\Debug\PowerPlug.pdb
+F:\Programming\O-Desk Projects\Microsoft Plug-in (Mr.Robert)\PowerPlug\PowerPlug\obj\Debug\SemiFinalApproach.Design.resources

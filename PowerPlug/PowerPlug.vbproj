@@ -39,10 +39,10 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>F:\Programming\Published\Version 4.0\</PublishUrl>
+    <PublishUrl>C:\Users\Abdlrhman Shehata\Desktop\Version 4.1\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.9</ApplicationVersion>
+    <ApplicationVersion>1.0.0.10</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -303,6 +303,7 @@
     <None Include="Resources\Other-office-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icons_Alignment\70.PNG" />
     <None Include="icons_Alignment\Capture.PNG" />
     <None Include="Resources\refresh2.png" />
     <None Include="Resources\refresh1.png" />

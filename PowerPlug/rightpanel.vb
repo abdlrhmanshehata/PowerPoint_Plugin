@@ -498,7 +498,13 @@ Public Class rightpanel
     Private Sub btn_Reset_Click(sender As Object, e As EventArgs) Handles btn_Reset.Click
         txtNotes.SelectionFont = New Drawing.Font("Calibri", 12, FontStyle.Regular)
     End Sub
-
+    Private Sub btn_Wrap_CheckedChanged(sender As Object, e As EventArgs) Handles btn_Wrap.CheckedChanged
+        If btn_Wrap.Checked Then
+            txtNotes.WordWrap = True
+        Else
+            txtNotes.WordWrap = False
+        End If
+    End Sub
 
 #End Region
 
@@ -832,13 +838,13 @@ Public Class rightpanel
         End If
     End Sub
     'Event Handlers
-    Private Sub RadBtn_nocolor_CheckedChanged(sender As Object, e As EventArgs) Handles RadBtn_nocolor.CheckedChanged
+    Private Sub RadBtn_nocolor_CheckedChanged(sender As Object, e As EventArgs)
         If RadBtn_nocolor.Checked = True Then
             Panel_SolidLine.Visible = False
             Scroll_Line.Enabled = False
         End If
     End Sub
-    Private Sub RadBtn_Solid_CheckedChanged(sender As Object, e As EventArgs) Handles RadBtn_Solid.CheckedChanged
+    Private Sub RadBtn_Solid_CheckedChanged(sender As Object, e As EventArgs)
         If RadBtn_Solid.Checked = True Then
             Panel_SolidLine.Visible = True
             Panel_SolidLine.Location = New Drawing.Point(3, 3)
@@ -846,48 +852,48 @@ Public Class rightpanel
             Scroll_Line.Enabled = True
         End If
     End Sub
-    Private Sub RadBtn_Grad_CheckedChanged(sender As Object, e As EventArgs) Handles RadBtn_Grad.CheckedChanged
+    Private Sub RadBtn_Grad_CheckedChanged(sender As Object, e As EventArgs)
         If RadBtn_Solid.Checked = True Then
             Panel_SolidLine.Visible = True
         End If
     End Sub
-    Private Sub btn_colordlg_Click(sender As Object, e As EventArgs) Handles btn_colordlg.Click
+    Private Sub btn_colordlg_Click(sender As Object, e As EventArgs)
         Color_Solidline.ShowDialog()
     End Sub
 
     Private Sub Scroll_Line_Scroll(sender As Object, e As EventArgs) Handles Scroll_Line.Scroll
         setscroll(tlp_SolidlineInner, Panel_SolidLine, Scroll_Line)
     End Sub
-    Private Sub numeric_Transp_ValueChanged(sender As Object, e As EventArgs) Handles numeric_Transp.ValueChanged
+    Private Sub numeric_Transp_ValueChanged(sender As Object, e As EventArgs)
         TrackBar_Transp.Value = numeric_Transp.Value / 10
         selectedshape.Line.Transparency = CSng(numeric_Transp.Value / 100)
     End Sub
-    Private Sub numeric_Width_ValueChanged(sender As Object, e As EventArgs) Handles numeric_Width.ValueChanged
+    Private Sub numeric_Width_ValueChanged(sender As Object, e As EventArgs)
         selectedshape.Line.Weight = numeric_Width.Value
     End Sub
 
-    Private Sub btn_DashType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_DashType.CheckedChanged
+    Private Sub btn_DashType_CheckedChanged(sender As Object, e As EventArgs)
         showlstvw(btn_DashType, lstvw_DashType)
         resizelist(lstvw_DashType, 102, 120)
     End Sub
-    Private Sub btn_BegArrowType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_BegArrowType.CheckedChanged
+    Private Sub btn_BegArrowType_CheckedChanged(sender As Object, e As EventArgs)
         showlstvw(btn_BegArrowType, lstvw_ArrowType)
         resizelist(lstvw_ArrowType, 113, 48)
     End Sub
-    Private Sub btn_BegArrowSize_CheckedChanged(sender As Object, e As EventArgs) Handles btn_BegArrowSize.CheckedChanged
+    Private Sub btn_BegArrowSize_CheckedChanged(sender As Object, e As EventArgs)
         showlstvw(btn_BegArrowSize, lstvw_ArrowSize)
         resizelist(lstvw_ArrowSize, 154, 78)
     End Sub
-    Private Sub btn_EndArrowType_CheckedChanged(sender As Object, e As EventArgs) Handles btn_EndArrowType.CheckedChanged
+    Private Sub btn_EndArrowType_CheckedChanged(sender As Object, e As EventArgs)
         showlstvw(btn_EndArrowType, lstvw_ArrowType)
         resizelist(lstvw_ArrowType, 113, 48)
     End Sub
-    Private Sub btn_EndArrowSize_CheckedChanged(sender As Object, e As EventArgs) Handles btn_EndArrowSize.CheckedChanged
+    Private Sub btn_EndArrowSize_CheckedChanged(sender As Object, e As EventArgs)
         showlstvw(btn_EndArrowSize, lstvw_ArrowSize)
         resizelist(lstvw_ArrowSize, 154, 78)
     End Sub
 
-    Private Sub btn_Compound_CheckedChanged(sender As Object, e As EventArgs) Handles btn_Compound.CheckedChanged
+    Private Sub btn_Compound_CheckedChanged(sender As Object, e As EventArgs)
         showlstvw(btn_Compound, lstvw_Compound)
         resizelist(lstvw_Compound, 90, 91)
     End Sub
@@ -922,7 +928,7 @@ Public Class rightpanel
         execute("ObjectsAlignCenterHorizontalSmart")
     End Sub
     Private Sub btn_AlignMiddle_Click(sender As Object, e As EventArgs) Handles btn_AlignMiddle.Click
-        execute(" ObjectsAlignMiddleVerticalSmart")
+        execute("ObjectsAlignMiddleVerticalSmart")
     End Sub
     Private Sub btn_SendtoBack_Click(sender As Object, e As EventArgs) Handles btn_SendtoBack.Click
         execute("ObjectSendToBack")
@@ -960,13 +966,15 @@ Public Class rightpanel
     Private Sub btn_Paragraph_Click(sender As Object, e As EventArgs) Handles btn_Paragraph.Click
         execute("PowerPointParagraphDialog")
     End Sub
+    Private Sub btn_DistHor_Click(sender As Object, e As EventArgs) Handles btn_DistHor.Click
+        execute("AlignDistributeHorizontally")
+    End Sub
+    Private Sub btn_DistVer_Click(sender As Object, e As EventArgs) Handles btn_DistVer.Click
+        execute("AlignDistributeVertically")
+    End Sub
 #End Region
 
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MsgBox(lstvw_DashType.Visible)
-        MsgBox(lstvw_DashType.Location.X & " " & lstvw_DashType.Location.Y)
-        MsgBox(lstvw_DashType.Size.Height & "  " & lstvw_DashType.Size.Width)
+    Private Sub Label14_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class
